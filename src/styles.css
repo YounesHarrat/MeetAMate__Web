@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+.primary {
+  background-color: #1e3566 ;
+}
+
+.secondary {
+  background-color: #1e497c;
+}
+
+.tertiary {
+  background-color: #318CE7;
+}
+
+p {
+  color: white ;
+}
+
+mat-card {
+  border: 1px solid #318CE7;
+  box-shadow: 3px 3px 10px #318CE7;
+}
