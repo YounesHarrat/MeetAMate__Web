@@ -1,3 +1,30 @@
 div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+.container {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
+  flex: 1;
 }

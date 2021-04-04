@@ -1,0 +1,65 @@
+.example-card {
+  max-width: 250px;
+  margin: auto;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+mat-card-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+  margin: auto;
+  border-radius: 5px 5px;
+}
+
+.titleGame {
+  color: white;
+  text-align: center;
+}
+
+mat-icon {
+  color: white;
+}
+
+mat-card-actions{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
+  margin: 0;
+}
+
+.centered {
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.infosAccueil {
+  height: 80vh;
+  background-image: url("https://growupesports.com/up/wp-content/uploads/2017/05/up-15-anos-no-text-1.png");
+  opacity: 0.4;
+}
+
+.infosText {
+  font-size: xx-large;
+  color: white;
+  z-index: 10;
+  position: relative;
+  top: 150px;
+  text-align: center;
+}

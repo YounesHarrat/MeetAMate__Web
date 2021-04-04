@@ -1,1 +1,34 @@
-<p>top-nav-bar works!</p>
+<div class="container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar  class="toolbar">
+    <button mat-icon-button (click)="lsnav.toggle()"><mat-icon>menu</mat-icon></button>
+
+    <span class="spacer"></span>
+    <div class="logo">
+      <img src="https://i.ibb.co/swmrk5w/test1.png" alt="test1">
+    </div>
+    <span class="spacer"></span>
+
+    <button mat-icon-button ><mat-icon>home</mat-icon></button>
+
+  </mat-toolbar>
+
+  <div class="row blackbanner"></div>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #lsnav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
+          <mat-icon class="iconNavBar">{{nav.icon}}</mat-icon>
+              <span class="listMenu">{{nav.name}}</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>
