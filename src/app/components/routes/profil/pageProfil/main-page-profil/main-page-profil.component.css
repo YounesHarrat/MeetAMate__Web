@@ -1,0 +1,24 @@
+.mainCenter {
+    margin: 1rem;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    min-height: 80vh;
+    color: white;
+}
+
+h1 {
+  margin: 0 auto 0 auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.userGameList {
+}
+
+.userFriendList {
+
+}

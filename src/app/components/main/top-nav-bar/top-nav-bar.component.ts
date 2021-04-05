@@ -13,7 +13,7 @@ export class TopNavBarComponent implements OnInit {
 
   //fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   fillerNav = [
-    {name:"accueil", route:" /accueil", icon:"home"},
+    {name:"accueil", route:"/accueil", icon:"home"},
     {name:"profil", route:"/profil", icon:"account_circle"},
     {name:"liste des jeux", route:"/jeux", icon:"videogame_asset"},
     {name:"forum", route:"/forum", icon:"contact_support"},

@@ -1,0 +1,8 @@
+.profilContainer {
+  background-color: black;
+  margin: auto;
+  padding-top: 2rem;
+  width: fit-content;
+  height: fit-content;
+  backdrop-filter: blur(5px);
+}

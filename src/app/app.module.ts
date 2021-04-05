@@ -9,7 +9,6 @@ import { CenteredContentComponent } from './components/main/centered-content/cen
 import { RightSideNavBarComponent } from './components/main/right-side-nav-bar/right-side-nav-bar.component';
 import { BotNavBarComponent } from './components/main/bot-nav-bar/bot-nav-bar.component';
 import { MaterialModule } from './material/material.module';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { AccueilComponent } from './components/routes/accueil/accueil.component';
 import { JeuxComponent } from './components/routes/jeux/jeux.component';
 import { ForumComponent } from './components/routes/forum/forum.component';
@@ -17,6 +16,10 @@ import { CommunauteComponent } from './components/routes/communaute/communaute.c
 import { AmisComponent } from './components/routes/amis/amis.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
 import { ParametresComponent } from './components/routes/parametres/parametres.component';
+import { MainPageProfilComponent } from './components/routes/profil/pageProfil/main-page-profil/main-page-profil.component';
+import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top-infos-user/top-infos-user.component';
+import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
+import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
 
 
 @NgModule({
@@ -26,14 +29,17 @@ import { ParametresComponent } from './components/routes/parametres/parametres.c
     CenteredContentComponent,
     RightSideNavBarComponent,
     BotNavBarComponent,
-    SidenavComponent,
     ProfilComponent,
     AccueilComponent,
     JeuxComponent,
     ForumComponent,
     CommunauteComponent,
     AmisComponent,
-    ParametresComponent
+    ParametresComponent,
+    MainPageProfilComponent,
+    TopInfosUserComponent,
+    LeftListGameUserComponent,
+    RightFriendsUserComponent
   ],
   imports: [
     BrowserModule,

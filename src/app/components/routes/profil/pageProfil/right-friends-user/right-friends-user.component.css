@@ -1,0 +1,14 @@
+
+ul {
+  list-style: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+  max-height: 80vh;
+  min-width: 10rem;
+}
+
+li {
+  margin-right: 1rem;
+}
