@@ -6,3 +6,10 @@
   height: fit-content;
   backdrop-filter: blur(5px);
 }
+
+.blur {
+  background: rgba(0, 0, 0, 0.444);
+  backdrop-filter: blur(8px);
+  height: fit-content;
+	width: fit-content;
+}
