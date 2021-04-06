@@ -1,7 +1,5 @@
 .mainCenter {
     margin: 1rem;
-    display:flex;
-    flex-direction:row;
     justify-content: space-around;
     min-height: 80vh;
     color: white;
@@ -12,6 +10,10 @@ h1 {
   text-decoration: underline;
 }
 
+.row {
+  display:flex;
+  flex-direction:row;
+}
 .col {
   display: flex;
   flex-direction: column;

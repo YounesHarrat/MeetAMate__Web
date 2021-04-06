@@ -1,6 +1,12 @@
 
-<ul *ngFor="let game of user.friendsList">
+<ul *ngFor="let friend of user.friendsList">
   <li>
-    {{ game }}
+    {{ friend.MeetName }}    
+  </li>
+  <li>
+    {{ friend.Online }}    
+  </li>
+  <li>
+    {{ friend.MainGame }}    
   </li>
 </ul>

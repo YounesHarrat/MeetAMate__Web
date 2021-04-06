@@ -14,7 +14,28 @@ export class MainPageProfilComponent implements OnInit {
     age: "24",
     favorite: "Rocket League",
     chosenGames: ['Rocket League', 'Osu', 'Minecraft', 'League of Legends', 'Paladin'],
-    friendsList: ['Friend A', 'Friend B', 'Friend C', 'Friend D']
+    friendsList: [
+      {
+        "MeetName" : "Friend A",
+        "Online" : true,
+        "MainGame" : "CS:GO"
+      },
+      {
+        "MeetName" : "Friend B",
+        "Online" : false,
+        "MainGame" : "Battlefield"
+      },
+      {
+        "MeetName" : "Friend C",
+        "Online" : true,
+        "MainGame" : "Valorant"
+      },
+      {
+        "MeetName" : "Friend D",
+        "Online" : false,
+        "MainGame" : "Rocket League"
+      }     
+    ]
 
   }
 

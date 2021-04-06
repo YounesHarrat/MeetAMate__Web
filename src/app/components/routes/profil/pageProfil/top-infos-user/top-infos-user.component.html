@@ -1,7 +1,21 @@
 <div class="mainTopUser">
 
+  <!-- <div>
+  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/>
+  <input type='file' (change)="onSelectFile($event)"> <br/>
+  </div> -->
+
+  <div>
+    <label class="hoverable" for="fileInput">
+      <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+      <div class="hover-text">Modifier</div>
+      <div class="background"></div>
+    </label>
+    <br/>
+    <input id="fileInput" type='file' (change)="onSelectFile($event)">
+  </div>
   <!-- avatar user pp -->
-  <img mat-card-avatar>
+  <!-- <img mat-card-avatar> -->
   <!-- nom prenom age -->
 
   <ul>
