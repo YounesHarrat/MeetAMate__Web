@@ -11,7 +11,17 @@
   color: white;
   font-size: 1.8rem;
 }
-
+.mainMiddleUser{
+  border: 0px solid rgb(63, 235, 77);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 20vh;
+  min-width: 50vw;
+  max-width: 50rem;
+  align-items: center;
+  font-size: 1.8rem;
+}
 
 .mat-card-avatar {
   border: #318CE7 2px solid;
@@ -28,11 +38,125 @@
   color: red;
 }
 
+/* Cards infos jeux */
+
+/* .mainInfoDiscord {
+}
+.mainInfoSteam {
+  border: 1px solid rgb(71, 71, 71);
+}
+.mainInfoBattleNet{
+  border: 1px solid rgb(71, 166, 221);
+}
+.mainInfoOrigin{
+  border: 1px solid rgb(255, 174, 54);
+}
+.mainInfoEpicGames{
+  border: 1px solid rgb(0, 0, 0);
+} */
+
+.logoSocialSteam {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 3px solid rgb(71, 71, 71);
+
+}
+.logoSocialOrigin {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 3px solid rgb(255, 174, 54);
+
+}
+.logoSocialEpicGames {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 3px solid #000;
+}
+.logoSocialBN {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 3px solid rgb(71, 166, 221);
+
+}
+.logoSocialDiscord {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border :0px;
+  border: 3px solid rgb(132, 114, 156);
+}
+.imgLogoDiscord {
+  background-image: url('../../../../../assets/social/discord.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+  border-radius: inherit;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.imgLogoSteam {
+  background-image: url('../../../../../assets/social/steam.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  border-radius: inherit;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.imgLogoOrigin {
+  background-image: url('../../../../../assets/social/origin.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120%;
+  border-radius: inherit;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.imgLogoEpicGames {
+  background-image: url('../../../../../assets/social/epic_Games.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  border-radius: inherit;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.imgLogoBN {
+  background-image: url('../../../../../assets/social/battle_Net.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  border-radius: inherit;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Changement Image Profil  */
 p {
   font-family: Lato;
 }
 
-img {
+.imgProfil {
   height: 100%;
   width: 100%;
   border-radius: 50%;

@@ -7,6 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RightFriendsUserComponent implements OnInit {
 
+  inviter = true;
+
+  invitationEnvoyer() {
+    this.inviter = !this.inviter
+  }
+
   @Input() user: any;
 
   constructor() { }

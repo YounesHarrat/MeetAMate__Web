@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./top-infos-user.component.css']
 })
 export class TopInfosUserComponent implements OnInit {
+  cheminImage:any = "../../../../../assets/Social/Discord.jpg";
   name = 'Angular 4';
   url = '';
 

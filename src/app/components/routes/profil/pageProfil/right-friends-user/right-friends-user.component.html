@@ -1,12 +1,28 @@
 
 <ul *ngFor="let friend of user.friendsList">
-  <li>
-    {{ friend.MeetName }}    
-  </li>
-  <li>
-    {{ friend.Online }}    
-  </li>
-  <li>
-    {{ friend.MainGame }}    
-  </li>
+  
+  <mat-expansion-panel hideToggle class="expansion-panel-class" 
+  #panel 
+  (mouseenter)="panel.open()"
+  (mouseleave)="panel.close()">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <li>
+          {{ friend.MeetName }}    
+        </li>        
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <li>
+      {{ friend.Online }}    
+    </li>
+    <li>
+      {{ friend.MainGame }}    
+    </li>
+    <div *ngIf="inviter else templateInviter">
+    <button (click)="invitationEnvoyer()">Inviter</button>    
+    </div>
+    <ng-template #templateInviter>
+      <button (click)="invitationEnvoyer()"> Invitation Envoyer</button>
+    </ng-template>
+  </mat-expansion-panel>  
 </ul>

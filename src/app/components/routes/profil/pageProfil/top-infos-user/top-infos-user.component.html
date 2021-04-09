@@ -1,22 +1,14 @@
 <div class="mainTopUser">
 
-  <!-- <div>
-  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/>
-  <input type='file' (change)="onSelectFile($event)"> <br/>
-  </div> -->
-
   <div>
     <label class="hoverable" for="fileInput">
-      <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+      <img class="imgProfil" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
       <div class="hover-text">Modifier</div>
       <div class="background"></div>
     </label>
     <br/>
     <input id="fileInput" type='file' (change)="onSelectFile($event)">
   </div>
-  <!-- avatar user pp -->
-  <!-- <img mat-card-avatar> -->
-  <!-- nom prenom age -->
 
   <ul>
     <li>
@@ -30,5 +22,116 @@
     </li>
   </ul>
 
+</div>
 
+<br>
+
+<div class="mainMiddleUser">
+  <div class="mainInfoDiscord">
+  <mat-expansion-panel hideToggle class="expansion-panel-class" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <label class="logoSocialDiscord">
+            <img class="imgLogoDiscord">
+            <div class="background"></div>  
+          </label>      
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <p>{{user.socialNetwork[0].Pseudo}}</p>    
+  </mat-expansion-panel>  
+  </div>
+  <!-- <div class="mainInfoDiscord">
+    <label class="logoSocialDiscord">
+      <img class="imgLogoDiscord">
+      <div class="background"></div>  
+    </label>
+    <p>{{user.socialNetwork[0].Pseudo}}</p>
+  </div> -->
+
+    <div class="mainInfoSteam">
+    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <label class="logoSocialSteam">
+              <img class="imgLogoSteam">
+              <div class="background"></div>  
+            </label>      
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+    </mat-expansion-panel>  
+    </div>
+
+
+  <!-- <div class="mainInfoSteam">
+    <label class="logoSocialSteam">
+      <img class="imgLogoSteam"/> 
+    <div class="background"></div>  
+  </label>
+    <p>{{user.socialNetwork[1].Pseudo}}</p>
+  </div> -->
+
+    <div class="mainInfoBattleNet">
+    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <label class="logoSocialBN">
+              <img class="imgLogoBN">
+              <div class="background"></div>  
+            </label>      
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+    </mat-expansion-panel> 
+  </div>
+
+  <!-- <div class="mainInfoBattleNet">
+    <label class="logoSocialBN">
+      <img class="imgLogoBN"/>
+      <div class="background"></div>  
+    </label>
+    <p>{{user.socialNetwork[2].Pseudo}}</p>
+  </div> -->
+
+    <div class="mainInfoOrigin">
+    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <label class="logoSocialOrigin">
+              <img class="imgLogoOrigin">
+              <div class="background"></div>  
+            </label>      
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+    </mat-expansion-panel> 
+    </div>
+  <!-- <div class="mainInfoOrigin">
+    <label class="logoSocialOrigin">
+      <img class="imgLogoOrigin"/>  
+      <div class="background"></div>  
+    </label>
+    <p>{{user.socialNetwork[3].Pseudo}}</p>
+  </div>  -->
+
+    <div class="mainInfoEpicGames">
+    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <label class="logoSocialEpicGames">
+              <img class="imgLogoEpicGames">
+              <div class="background"></div>  
+            </label>      
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+    </mat-expansion-panel> 
+    </div>
+  <!-- <div class="mainInfoEpicGames">
+    <label class="logoSocialEpicGames">
+      <img class="imgLogoEpicGames"/> 
+      <div class="background"></div>  
+    </label>
+    <p>{{user.socialNetwork[4].Pseudo}}</p>
+  </div> -->
 </div>
