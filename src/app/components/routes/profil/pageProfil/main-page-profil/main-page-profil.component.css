@@ -19,9 +19,18 @@ h1 {
   flex-direction: column;
 }
 
-.userGameList {
+.btnJeux{
+  justify-content: center;
+  background-color: #1e497c;
+  color:white;
+  font-size: 100%;
+  margin-left: 5%;
+  height: 5rem;
+  width: 13rem;
 }
-
-.userFriendList {
-
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-right: 16px;
 }

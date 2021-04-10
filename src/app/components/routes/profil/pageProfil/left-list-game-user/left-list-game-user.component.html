@@ -1,5 +1,9 @@
+<div class="secondary">
 <ul *ngFor="let game of user.chosenGames">
-  <li>
-    {{ game }}
-  </li>
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <li>{{ game }} </li>
+    </mat-list-item>
+  </mat-list>    
 </ul>
+</div>

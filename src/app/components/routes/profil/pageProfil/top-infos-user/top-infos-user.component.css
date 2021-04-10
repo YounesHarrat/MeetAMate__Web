@@ -1,12 +1,11 @@
 .mainTopUser{
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display:flex;
   flex-direction:row;
-  justify-content: space-between;
+  justify-content: center;
   min-height: 20vh;
   min-width: 50vw;
   max-width: 50rem;
-  justify-content: flex-start;
   align-items: center;
   color: white;
   font-size: 1.8rem;
@@ -37,10 +36,15 @@
 .pseudo {
   color: red;
 }
+.pseudoSocial {
+  font-size: 60%;
+}
 
 /* Cards infos jeux */
 
 /* .mainInfoDiscord {
+  border: 1px solid rgb(199, 18, 18);
+
 }
 .mainInfoSteam {
   border: 1px solid rgb(71, 71, 71);
@@ -53,60 +57,62 @@
 }
 .mainInfoEpicGames{
   border: 1px solid rgb(0, 0, 0);
-} */
+}  */
 
 .logoSocialSteam {
+  cursor: pointer;
   position: relative;
   display: block;
   height: 50px;
   width: 50px;
-  border: 3px solid rgb(71, 71, 71);
+  border: 0px solid rgb(71, 71, 71);
 
 }
 .logoSocialOrigin {
+  cursor: pointer;
   position: relative;
   display: block;
   height: 50px;
   width: 50px;
-  border: 3px solid rgb(255, 174, 54);
+  border: 0px solid rgb(255, 174, 54);
 
 }
 .logoSocialEpicGames {
+  cursor: pointer;
   position: relative;
   display: block;
   height: 50px;
   width: 50px;
-  border: 3px solid #000;
+  border: 0px solid #000;
 }
 .logoSocialBN {
+  cursor: pointer;
   position: relative;
   display: block;
   height: 50px;
   width: 50px;
-  border: 3px solid rgb(71, 166, 221);
+  border: 0px solid rgb(71, 166, 221);
 
 }
 .logoSocialDiscord {
-  position: relative;
+  cursor: pointer;
   display: block;
+  position: relative;
   height: 50px;
   width: 50px;
-  border :0px;
-  border: 3px solid rgb(132, 114, 156);
+  border: 0px solid rgb(132, 114, 156);
 }
 .imgLogoDiscord {
-  background-image: url('../../../../../assets/social/discord.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 110%;
+  background-size: 140%;
   border-radius: inherit;
   position: absolute;
-  display: block;
+  display:block;
   width: 100%;
   height: 100%;
 }
 .imgLogoSteam {
-  background-image: url('../../../../../assets/social/steam.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 95%;
@@ -117,7 +123,6 @@
   height: 100%;
 }
 .imgLogoOrigin {
-  background-image: url('../../../../../assets/social/origin.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 120%;
@@ -128,7 +133,6 @@
   height: 100%;
 }
 .imgLogoEpicGames {
-  background-image: url('../../../../../assets/social/epic_Games.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 90%;
@@ -139,7 +143,6 @@
   height: 100%;
 }
 .imgLogoBN {
-  background-image: url('../../../../../assets/social/battle_Net.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 95%;

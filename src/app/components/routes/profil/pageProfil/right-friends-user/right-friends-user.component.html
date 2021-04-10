@@ -1,7 +1,7 @@
-
+<div  class="secondary">
 <ul *ngFor="let friend of user.friendsList">
   
-  <mat-expansion-panel hideToggle class="expansion-panel-class" 
+  <mat-expansion-panel hideToggle 
   #panel 
   (mouseenter)="panel.open()"
   (mouseleave)="panel.close()">
@@ -26,3 +26,4 @@
     </ng-template>
   </mat-expansion-panel>  
 </ul>
+</div>

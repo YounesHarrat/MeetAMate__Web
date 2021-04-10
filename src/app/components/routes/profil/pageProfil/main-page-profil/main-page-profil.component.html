@@ -1,22 +1,30 @@
 <div class="mainCenter row">
-  <div class="userGameList col">
-    <h1>Games-List</h1>
-    <app-left-list-game-user [user]="user"></app-left-list-game-user>
-  </div>
 
+  <div class="userGameList col">
+    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button class="btnJeux" mat-button >Jeux</button>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-left-list-game-user [user]="user"></app-left-list-game-user>   
+    </mat-expansion-panel>  
+  </div>
 
     <div class="lastInfoContent col">
       <app-top-infos-user [user]="user"></app-top-infos-user>
-
-      <p>
-        - Dévérouiller l'objectif : lorem Ipsum
-      </p>
-    </div>
-    
+    </div> 
 
     <div class="userFriendList col">
-      <h1>Friends-List</h1>
-      <app-right-friends-user [user]="user"></app-right-friends-user>
+      <mat-expansion-panel hideToggle class="expansion-panel-class" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <button class="btnJeux" mat-button color="primary" >Amis</button>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-right-friends-user [user]="user"></app-right-friends-user> 
+      </mat-expansion-panel>        
     </div>
+    
 </div>
 

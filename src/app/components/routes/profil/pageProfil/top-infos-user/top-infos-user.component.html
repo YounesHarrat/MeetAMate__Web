@@ -1,5 +1,4 @@
 <div class="mainTopUser">
-
   <div>
     <label class="hoverable" for="fileInput">
       <img class="imgProfil" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
@@ -21,23 +20,24 @@
       {{user.favorite}}
     </li>
   </ul>
-
 </div>
 
 <br>
+
+<!-- 'https://i.ibb.co/Nt9Z0VM/discord-Convert-Image.png' -->
 
 <div class="mainMiddleUser">
   <div class="mainInfoDiscord">
   <mat-expansion-panel hideToggle class="expansion-panel-class" >
     <mat-expansion-panel-header>
       <mat-panel-title>
-          <label class="logoSocialDiscord">
-            <img class="imgLogoDiscord">
+          <label class="logoSocialDiscord" >
+            <img class="imgLogoDiscord" src="discord.png">
             <div class="background"></div>  
           </label>      
       </mat-panel-title>
     </mat-expansion-panel-header>
-      <p>{{user.socialNetwork[0].Pseudo}}</p>    
+      <p class="pseudoSocial">{{user.socialNetwork[0].Pseudo}}</p>    
   </mat-expansion-panel>  
   </div>
   <!-- <div class="mainInfoDiscord">
@@ -53,12 +53,12 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialSteam">
-              <img class="imgLogoSteam">
+              <img class="imgLogoSteam" src="steam.png">
               <div class="background"></div>  
             </label>      
         </mat-panel-title>
       </mat-expansion-panel-header>
-        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+        <p class="pseudoSocial">{{user.socialNetwork[1].Pseudo}}</p>    
     </mat-expansion-panel>  
     </div>
 
@@ -76,12 +76,12 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialBN">
-              <img class="imgLogoBN">
+              <img class="imgLogoBN" src="battle_Net.png">
               <div class="background"></div>  
             </label>      
         </mat-panel-title>
       </mat-expansion-panel-header>
-        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+        <p class="pseudoSocial">{{user.socialNetwork[2].Pseudo}}</p>    
     </mat-expansion-panel> 
   </div>
 
@@ -98,12 +98,12 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialOrigin">
-              <img class="imgLogoOrigin">
+              <img class="imgLogoOrigin" src="origin.png">
               <div class="background"></div>  
             </label>      
         </mat-panel-title>
       </mat-expansion-panel-header>
-        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+        <p class="pseudoSocial">{{user.socialNetwork[3].Pseudo}}</p>    
     </mat-expansion-panel> 
     </div>
   <!-- <div class="mainInfoOrigin">
@@ -119,12 +119,12 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialEpicGames">
-              <img class="imgLogoEpicGames">
+              <img class="imgLogoEpicGames" src="epic_Games.png">
               <div class="background"></div>  
             </label>      
         </mat-panel-title>
       </mat-expansion-panel-header>
-        <p>{{user.socialNetwork[1].Pseudo}}</p>    
+        <p class="pseudoSocial">{{user.socialNetwork[4].Pseudo}}</p>    
     </mat-expansion-panel> 
     </div>
   <!-- <div class="mainInfoEpicGames">
