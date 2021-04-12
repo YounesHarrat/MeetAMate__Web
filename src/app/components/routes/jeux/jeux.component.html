@@ -1,1 +1,24 @@
-<p>jeux works!</p>
+
+<div class="container row">
+  <mat-card class="card col secondary" *ngFor="let jeux of (ListeDeJeux |slice: lowValue: highValue)">
+    <img mat-card-image src="{{jeux.pictureUrl}}" alt="Apex Legend">
+    <h1 class="titleGame">{{jeux.title}}</h1>
+    <mat-card-actions>
+      <button mat-button class="tertiary" >
+        <mat-icon class="favorite">favorite</mat-icon>
+      </button>
+      <button mat-button class="tertiary" >
+        <mat-icon>info</mat-icon>
+      </button>
+      <button mat-button class="tertiary" >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="row paginatorContainer">
+  <mat-paginator [length]="totalSize" [pageSize]="pageSize" (page)="getPaginatorData($event)" showFirstLastButtons="false">
+  </mat-paginator>
+</div>
+
