@@ -1,9 +1,16 @@
-<div class="secondary">
-<ul *ngFor="let game of user.chosenGames">
-  <mat-list role="list">
-    <mat-list-item role="listitem">
-      <li>{{ game }} </li>
-    </mat-list-item>
-  </mat-list>    
-</ul>
-</div>
+
+  <mat-card *ngFor="let game of user.gameUser" class="gameList">
+    
+    <mat-expansion-panel>
+  
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ game.Name }}          
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        {{ game.Hours }} h    
+      </p>
+    </mat-expansion-panel>  
+  
+  </mat-card>

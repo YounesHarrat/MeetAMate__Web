@@ -11,3 +11,11 @@ ul {
 li {
   margin-right: 1rem;
 }
+
+.friendList{
+  margin-top: 3%;
+  justify-content: center;
+  font-size: 100%;
+  margin-left: 5%;
+  width: 10.3rem;
+}

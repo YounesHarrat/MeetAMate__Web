@@ -13,7 +13,33 @@ export class MainPageProfilComponent implements OnInit {
     prenom: "Younes",
     age: "24",
     favorite: "Rocket League",
-    chosenGames: ['Rocket League', 'Osu', 'Minecraft', 'League of Legends', 'Paladin'],
+    gameUser: [
+      {
+        "Id" : 1,
+        "Name" : "Rocket League",
+        "Hours" : 15,
+      },
+      {
+        "Id" : 2,
+        "Name" : "Osu",
+        "Hours" : 4,
+      },
+      {
+        "Id" : 3,
+        "Name" : "Minecraft",
+        "Hours" : 64,
+      },
+      {
+        "Id" : 4,
+        "Name" : "League of Legends",
+        "Hours" : 547,
+      },
+      {
+        "Id" : 5,
+        "Name" : "Paladin",
+        "Hours" : 47,
+      },
+    ],
     friendsList: [
       {
         "Id" : 1,

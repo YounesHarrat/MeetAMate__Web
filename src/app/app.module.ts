@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
