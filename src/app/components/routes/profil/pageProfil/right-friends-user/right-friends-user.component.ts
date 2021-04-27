@@ -9,8 +9,9 @@ export class RightFriendsUserComponent implements OnInit {
 
   inviter = true;
 
-  invitationEnvoyer() {
-    this.inviter = !this.inviter
+  invitationEnvoyer(friend:any) {
+    console.log(friend.SentInvite)
+    friend.SentInvite = !friend.SentInvite
   }
 
   @Input() user: any;
