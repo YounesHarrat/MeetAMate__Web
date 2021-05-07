@@ -1,38 +1,48 @@
 .example-card {
-  max-width: 250px;
-  margin: auto;
+  max-width: 230px;
+  max-height: 300px;
 }
 
-.example-header-image {
+mat-card {
+  padding: 0;
+}
+
+/* .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
-}
+} */
 
 
 mat-card-image {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 8vh;
+  max-height: 10vh;
 }
 
-img {
-  max-width: 200px;
-  max-height: 200px;
+.mat-card-image:first-child{
+  margin-top: 0;
+}
+
+.imgCard {
+  max-width: 230px;
+  max-height: 300px;
   margin: auto;
   border-radius: 5px 5px;
-}
-
-.titleGame {
-  color: white;
-  text-align: center;
 }
 
 mat-icon {
   color: white;
 }
 
+mat-button {
+  z-index: 99999;
+}
+
 mat-card-actions{
   display: flex;
   justify-content: space-evenly;
+  position: relative;
+  z-index: 99999;
+  top: -60px;
 }
 
 .mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
@@ -41,16 +51,22 @@ mat-card-actions{
 
 .centered {
   margin: auto;
+  margin-top: -30px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 30px;
 }
 
 .infosAccueil {
-  height: 80vh;
+  height: 60vh;
+  margin-top: 0;
   background-image: url("https://growupesports.com/up/wp-content/uploads/2017/05/up-15-anos-no-text-1.png");
   opacity: 0.4;
 }
@@ -62,4 +78,96 @@ mat-card-actions{
   position: relative;
   top: 150px;
   text-align: center;
+}
+
+.textCenterAccueil{
+  font-family: Rockwell;
+  text-align: center;
+  color: white;
+}
+
+/* le block conteneur */
+.marquee-rtl {
+  max-width: 100%;                      /* largeur de la fenêtre */
+  margin: 1em auto 2em;
+  overflow: hidden;                     /* masque tout ce qui dépasse */
+  margin-top: 100px;
+}
+
+/* le bloc défilant */
+.marquee-rtl > :first-child {
+  display: flex;
+  flex-direction: row;                /* modèle de boîte en ligne */
+  padding-right: 2em;                   /* un peu d'espace pour la transition */
+  padding-left: 100%;                   /* placement à droite du conteneur */
+  white-space: nowrap;                  /* pas de passage à la ligne */
+  animation: defilement-rtl 20s infinite linear;
+
+}
+
+@keyframes defilement-rtl {
+  0% {
+    transform: translate3d(0,0,0);      /* position initiale à droite */
+  }
+  100% {
+    transform: translate3d(-300%,0,0);  
+  }
+}
+
+.imgSlider {
+  max-width: 330px;
+  max-height: 400px;
+  padding: 10px;
+}
+
+.icon{
+  width: 6%;
+  height: 6%;
+
+}
+
+.containerIcon{
+  width: 50%;
+  height: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.discord{
+  display: flex;
+  margin-top: 50px;
+}
+
+.imgDiscord{
+  margin: auto;
+  width: 95%;
+  height: 95%;
+  border-radius: 5px 5px;
+}
+
+#top {
+  -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+  animation-timing-function: linear;
+  
+}
+
+.btnUp {
+  border-radius: 30px;
+  width: 76px;
+  height: 56px;
+}
+
+.posBtn {
+  position:fixed;
+  bottom:1%;
+  right:1%;
+  z-index:9999;
+  scroll-behavior: smooth;
+}
+
+.iconUp{
+size: 50px;
 }

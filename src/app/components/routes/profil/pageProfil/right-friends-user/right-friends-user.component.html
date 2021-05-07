@@ -1,26 +1,26 @@
 
 <mat-card *ngFor="let friend of user.friendsList" class="friendList">
-  
+
   <mat-expansion-panel>
 
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ friend.MeetName }}          
+        {{ friend.MeetName }}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <p>
-      {{ friend.Online }}    
+      {{ friend.Online }}
     </p>
     <p>
-      {{ friend.MainGame }}  
-    </p>  
+      {{ friend.MainGame }}
+    </p>
     <div *ngIf="friend.SentInvite else templateInviter">
-    <button [disabled]="true" (click)="invitationEnvoyer(friend)">Envoyé</button>    
+    <button [disabled]="true" (click)="invitationEnvoyer(friend)">Envoyé</button>
     </div>
     <ng-template #templateInviter>
       <button (click)="invitationEnvoyer(friend)"> Inviter</button>
     </ng-template>
-  </mat-expansion-panel>  
+  </mat-expansion-panel>
 
 </mat-card>
 

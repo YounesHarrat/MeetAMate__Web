@@ -41,6 +41,7 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     TopInfosUserComponent,
     LeftListGameUserComponent,
     RightFriendsUserComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,7 @@
   height: 90px;
   width: 83px;
   border-radius: 50%;
-  /* background-image: url('src\app\assets\avatar.png'); */
+  /* background-image: url('src\assets\Logo.png'); */
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
@@ -179,7 +179,7 @@ p {
   display: none;
   top: 50%;
   left:  50%;
-  transform: translate(-50%,-50%);   
+  transform: translate(-50%,-50%);
   z-index: 2;
 }
 .hoverable .background{

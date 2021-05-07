@@ -1,6 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -13,28 +14,28 @@ export class TopNavBarComponent implements OnInit {
 
   //fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   fillerNav = [
-    {name:"accueil", route:"/accueil", icon:"home"},
-    {name:"profil", route:"/profil", icon:"account_circle"},
-    {name:"liste des jeux", route:"/jeux", icon:"videogame_asset"},
-    {name:"forum", route:"/forum", icon:"contact_support"},
-    {name:"communauté", route:"/communaute", icon:"contact_support"},
-    {name:"paramètre", route:"/parametres", icon:"settings"},
-    {name:"se connecter/deconnecter", route:"", icon:"fingerprint"}
+    {name:" Accueil", route:"/accueil", icon:"home"},
+    {name:" Profil", route:"/profil", icon:"account_circle"},
+    {name:" Liste des jeux", route:"/jeux", icon:"videogame_asset"},
+    {name:" Forum", route:"/forum", icon:"contact_support"},
+    {name:" Communauté", route:"/communaute", icon:"contact_support"},
+    {name:" Paramètre", route:"/parametres", icon:"settings"},
+    {name:" Se connecter/deconnecter", route:"", icon:"fingerprint"}
   ]
 
-  // fillerContent = Array.from({length: 50}, () =>
-  //     `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-  //      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-  //      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-  //      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  //      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
   private _mobileQueryListener: () => void;
+  router: Router;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.router = router;
+  }
+
+  redirectHome(): void {
+    this.router.navigateByUrl("/accueil");
   }
 
   ngOnDestroy(): void {
