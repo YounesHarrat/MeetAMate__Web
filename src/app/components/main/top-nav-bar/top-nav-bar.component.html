@@ -2,17 +2,16 @@
   <mat-toolbar  class="toolbar">
     <button mat-icon-button (click)="lsnav.toggle()"><mat-icon>menu</mat-icon></button>
 
+
     <span class="spacer"></span>
     <div class="logo">
-      <img src="https://i.ibb.co/swmrk5w/test1.png" alt="test1">
+      <img src="assets/logo.png" alt="logo">
     </div>
     <span class="spacer"></span>
 
-    <button mat-icon-button ><mat-icon>home</mat-icon></button>
+    <button mat-icon-button  (click)="redirectHome()"><mat-icon>home</mat-icon></button>
 
   </mat-toolbar>
-
-  <div class="row blackbanner"></div>
 
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #lsnav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">

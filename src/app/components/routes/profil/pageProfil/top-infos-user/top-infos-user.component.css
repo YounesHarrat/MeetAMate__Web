@@ -18,7 +18,7 @@
   height: 90px;
   width: 83px;
   border-radius: 50%;
-  background-image: url('src\app\assets\avatar.png');
+  background-image: url('src\assets\avatar.png');
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
