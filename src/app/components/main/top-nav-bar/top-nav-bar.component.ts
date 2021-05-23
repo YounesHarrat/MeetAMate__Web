@@ -20,7 +20,7 @@ export class TopNavBarComponent implements OnInit {
     {name:" Forum", route:"/forum", icon:"contact_support"},
     {name:" Communauté", route:"/communaute", icon:"contact_support"},
     {name:" Paramètre", route:"/parametres", icon:"settings"},
-    {name:" Se connecter/deconnecter", route:"", icon:"fingerprint"}
+    {name:" Se connecter/deconnecter", route:"", icon:"fingerprint"},
   ]
 
 

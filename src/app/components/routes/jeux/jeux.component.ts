@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 
+
+
 @Component({
   selector: 'app-jeux',
   templateUrl: './jeux.component.html',
@@ -21,12 +23,15 @@ export class JeuxComponent implements OnInit {
     {id:"10", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png"},
     {id:"11", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png"},
     {id:"12", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19"},
-
   ]
 
   totalSize= this.ListeDeJeux.length;
-  pageSize = 5;
-  pageIndex = 0;
+  pageSize = 2;
+
+
+
+  pageEvent: any = null;
+
 
   constructor() { }
 
@@ -34,16 +39,14 @@ export class JeuxComponent implements OnInit {
 
   }
 
+    // highValue is the number of games displayed per page
   lowValue: number = 0;
-  highValue: number = 5;
+  highValue: number = 2;
 
-  // used to build an array of papers relevant at any given time
-  public getPaginatorData(event: PageEvent): PageEvent {
-    //event.pageIndex = this.pageIndex;
+  public switchPaginatorData(event: PageEvent): PageEvent {
     this.lowValue = event.pageIndex * event.pageSize;
     this.highValue = this.lowValue + event.pageSize;
-    console.log('return this::', event);
-
+    // console.log('return this::', event);
     return event;
   }
 

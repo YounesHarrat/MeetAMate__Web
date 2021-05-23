@@ -21,7 +21,8 @@ import { MainPageProfilComponent } from './components/routes/profil/pageProfil/m
 import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top-infos-user/top-infos-user.component';
 import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
-
+import { CarouselComponent } from './components/routes/jeux/carousel/carousel';
+// import { NgxGlideModule } from 'ngx-glide';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,10 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     MainPageProfilComponent,
     TopInfosUserComponent,
     LeftListGameUserComponent,
-    RightFriendsUserComponent
-    
+    RightFriendsUserComponent,
+    CarouselComponent,
+    // NgxGlideModule,
+
   ],
   imports: [
     BrowserModule,
