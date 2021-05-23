@@ -1,7 +1,7 @@
 <div class="main">
 
-  <div class="LogOff">
-    <form action="" method="post" class="form">
+  <div class="LogOff" *ngIf="!loggedIn; else LogOn">
+    <!-- <form action="" method="post" class="form">
 
       <label for="email">Email</label>
       <input type="text" name="email" id="email">
@@ -9,14 +9,17 @@
       <label for="password">Password</label>
       <input type="password">
 
-      <input type="submit" value="Se connecter" class="tertiary">
-    </form>
+
+    </form> -->
+    <input type="button" (click)="loginWithRedirect()" value="Se connecter" class="tertiary">
   </div>
 
   <ng-template #LogOn >
 
     <div class="form">
       <h1>Vous etes connecté</h1>
+      <input type="submit" (click)="loginWithRedirect()" value="Se Deconnecter" class="tertiary">
+
     </div>
   </ng-template>
 
