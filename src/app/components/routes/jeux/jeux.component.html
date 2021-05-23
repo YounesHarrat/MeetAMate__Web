@@ -1,4 +1,10 @@
 
+<div class="row">
+  <h1>A Quoi TU Joue ?</h1>
+</div>
+
+
+
 <div class="container row">
   <mat-card class="card col secondary" *ngFor="let jeux of (ListeDeJeux |slice: lowValue: highValue)">
     <img mat-card-image src="{{jeux.pictureUrl}}" alt="Apex Legend">
