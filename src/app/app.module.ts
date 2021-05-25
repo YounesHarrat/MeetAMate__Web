@@ -23,8 +23,12 @@ import { LeftListGameUserComponent } from './components/routes/profil/pageProfil
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
 import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
+
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
+
+import { LoginButtonComponent } from './shared/authButtons/loginButton/login-button.component';
+import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,9 @@ import { environment as env } from '../environments/environment';
     TopInfosUserComponent,
     LeftListGameUserComponent,
     RightFriendsUserComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent
   ],
   imports: [
     BrowserModule,

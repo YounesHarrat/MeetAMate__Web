@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { AuthService } from '@auth0/auth0-angular';
+import { LoginButtonComponent } from 'src/app/shared/authButtons/loginButton/login-button.component';
 
 @Component({
   selector: 'app-authentification',
@@ -9,19 +10,15 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class AuthentificationComponent implements OnInit {
 
-  loggedIn = false;
+  profileJson: string = "null";
 
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
-    console.log('loggedIn', this.loggedIn);
-
+    this.auth.user$.subscribe(
+      (profile) => (this.profileJson = JSON.stringify(profile, null, 2))
+    );
   }
 
-  loginWithRedirect(): void {
-    this.loggedIn = !this.loggedIn;
-    this.auth.loginWithRedirect();
-
-  }
 
 }
