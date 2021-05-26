@@ -64,10 +64,10 @@ mat-card-actions{
   margin-top: 30px;
 }
 
-.infosAccueil {
-  height: 60vh;
+.infosAccueil>img {
+  width: 100%;
+  height: 100vh;
   margin-top: 0;
-  background-image: url("https://growupesports.com/up/wp-content/uploads/2017/05/up-15-anos-no-text-1.png");
   opacity: 0.4;
 }
 
