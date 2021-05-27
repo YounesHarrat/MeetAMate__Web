@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-top-infos-user',
@@ -9,9 +11,9 @@ export class TopInfosUserComponent implements OnInit {
 
   name = 'Angular 4';
   url = '';
-  
+
 onSelectFile(event:any) {
-   if (event.target.files && event.target.files[0]) { 
+   if (event.target.files && event.target.files[0]) {
      console.log(event)
       var reader = new FileReader();
 
@@ -23,7 +25,7 @@ onSelectFile(event:any) {
           this.url = reader.result.toString()
           console.log(this.url)
         }
-       
+
       }
     }
   }
@@ -39,18 +41,17 @@ onSelectFile(event:any) {
   //       {
   //         this.url = reader.result.toString()
   //       }
-       
+
   //     }
   //   }
   // }
   @Input() user: any;
 
-  constructor() { 
-    
-  }
+  constructor(public userService: UserService, public auth0: AuthService) { }
 
   ngOnInit(): void {
-    
+    console.log('TopInfoUser init', this.user);
+    this.url = this.user.avatarIMG
   }
 
 }

@@ -22,8 +22,20 @@ import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top
 import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
 import { PageCommunauteComponent } from './components/routes/communaute/page-communaute/page-communaute.component';
+import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
+import { CarouselComponent } from './components/routes/jeux/carousel/carousel';
+// import { NgxGlideModule } from 'ngx-glide';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+
+import { LoginButtonComponent } from './shared/authButtons/loginButton/login-button.component';
+import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
+
+// Services
+import { UserService } from '../app/shared/services/user/user.service';
+import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +54,13 @@ import { PageCommunauteComponent } from './components/routes/communaute/page-com
     TopInfosUserComponent,
     LeftListGameUserComponent,
     RightFriendsUserComponent,
-    PageCommunauteComponent
-    
+    PageCommunauteComponent,
+    AuthentificationComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent,
+    SigninButtonComponent,
+    CarouselComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -51,8 +68,12 @@ import { PageCommunauteComponent } from './components/routes/communaute/page-com
     MaterialModule,
     BrowserAnimationsModule,
     ScrollingModule,
+    // 👇 add and initialize AuthModule
+    AuthModule.forRoot({
+      ...env.auth,
+    }),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

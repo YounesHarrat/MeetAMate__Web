@@ -40,15 +40,7 @@ export class AccueilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const app = document;
-    console.log( app.getElementById('backtotop'));
-    if (app.getElementById('backtotop') !== null ) {
-      let el = app.getElementById('backtotop');
-      // @ts-ignore: Object is possibly 'null'.
-      el.onclick = function () {
-        document.documentElement.scrollTop = 0;
-      }
-    }
+
   }
 
 }

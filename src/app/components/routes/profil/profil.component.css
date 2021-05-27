@@ -22,3 +22,20 @@
   height: fit-content;
 	width: fit-content;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 20vh 20vh 20vh 20vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}

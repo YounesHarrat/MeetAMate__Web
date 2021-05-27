@@ -8,6 +8,7 @@ import { ForumComponent } from './components/routes/forum/forum.component';
 import { JeuxComponent } from './components/routes/jeux/jeux.component';
 import { ParametresComponent } from './components/routes/parametres/parametres.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
+import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'forum', component: ForumComponent},
   { path: 'communaute', component: CommunauteComponent},
   { path: 'parametres', component: ParametresComponent},
-  { path: 'amis', component: AmisComponent}
+  { path: 'amis', component: AmisComponent},
+  { path: 'authentification', component: AuthentificationComponent },
+
 ];
 
 @NgModule({
