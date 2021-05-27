@@ -21,8 +21,18 @@ import { MainPageProfilComponent } from './components/routes/profil/pageProfil/m
 import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top-infos-user/top-infos-user.component';
 import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
+import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+
+import { LoginButtonComponent } from './shared/authButtons/loginButton/login-button.component';
+import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
+
+// Services
+import { UserService } from '../app/shared/services/user/user.service';
+import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +50,11 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     MainPageProfilComponent,
     TopInfosUserComponent,
     LeftListGameUserComponent,
-    RightFriendsUserComponent
-    
+    RightFriendsUserComponent,
+    AuthentificationComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent,
+    SigninButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +62,12 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     MaterialModule,
     BrowserAnimationsModule,
     ScrollingModule,
+    // 👇 add and initialize AuthModule
+    AuthModule.forRoot({
+      ...env.auth,
+    }),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Game } from 'src/app/shared/models/game';
+import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-jeux',
@@ -28,7 +30,7 @@ export class JeuxComponent implements OnInit {
   pageSize = 5;
   pageIndex = 0;
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
 
@@ -45,6 +47,12 @@ export class JeuxComponent implements OnInit {
     console.log('return this::', event);
 
     return event;
+  }
+
+  public selectFavorite(jeux: Game): void {
+    console.log('selectFavorite');
+
+    this.userService.setFavorite(jeux);
   }
 
 }
