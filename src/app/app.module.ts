@@ -23,6 +23,8 @@ import { LeftListGameUserComponent } from './components/routes/profil/pageProfil
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
 import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
+import { CarouselComponent } from './components/routes/jeux/carousel/carousel';
+// import { NgxGlideModule } from 'ngx-glide';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
@@ -54,7 +56,9 @@ import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-
     AuthentificationComponent,
     LoginButtonComponent,
     LogoutButtonComponent,
-    SigninButtonComponent
+    SigninButtonComponent,
+    CarouselComponent,
+
   ],
   imports: [
     BrowserModule,

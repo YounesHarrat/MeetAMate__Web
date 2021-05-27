@@ -55,6 +55,6 @@ img {
   margin-left: 10px;
 }
 
-mat-sidenav-content {
+.mat-sidenav-content {
   min-height: 100vh;
 }

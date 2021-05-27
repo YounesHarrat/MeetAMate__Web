@@ -8,19 +8,31 @@
   flex-direction: column;
 }
 
-.card {
-  width: 15vw;
-  height:fit-content;
+.mat-card {
+  width: min-content;
+  height: min-content;
+  border: 1px solid black;
   margin:auto;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.mat-card-actions {
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.mat-button {
+  margin-left: 20px;
+  border: 1px solid red
 }
 
 .container {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  max-width: 92vw;
   margin: auto;
 }
 
@@ -29,4 +41,34 @@
   font-size: 2.5rem;
   color: white;
   justify-content: center;
+}
+
+.header {
+  justify-content: center;
+  color: white;
+  padding: 50px;
+  margin: 25px;
+  border: white dashed 5px;
+  /* background-image: ; */
+}
+
+.mat-card-image {
+  width: 240px;
+  height: 160px;
+
+}
+
+.paginator {
+  font-size: 2rem;
+  margin-right: 100px;
+}
+
+.containerCarousel {
+  margin: auto;
+  display: block;
+  height: 400px;
+  width: 400px;
+  padding: 2em;
+  box-shadow: #318CE7 1px 1px 3px 3px ;
+  border-radius: 25%;
 }
