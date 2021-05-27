@@ -15,10 +15,10 @@
       {{ friend.MainGame }}
     </p>
     <div *ngIf="friend.SentInvite else templateInviter">
-    <button [disabled]="true" (click)="invitationEnvoyer(friend)">Envoyé</button>
+    <button mat-raised-button disabled [disabled]="true" (click)="invitationEnvoyer(friend)">Envoyé</button>
     </div>
     <ng-template #templateInviter>
-      <button (click)="invitationEnvoyer(friend)"> Inviter</button>
+      <button mat-raised-button (click)="invitationEnvoyer(friend)"> Inviter</button>
     </ng-template>
   </mat-expansion-panel>
 
