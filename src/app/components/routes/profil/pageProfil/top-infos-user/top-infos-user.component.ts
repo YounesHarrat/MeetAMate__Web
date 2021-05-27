@@ -56,8 +56,9 @@ onSelectFile(event:any) {
 
   setPseudo(): void {
     //set user pseudo by what's in input
-
-
+    // @ts-ignore: Object is possibly 'null'
+    let pseudoInput = document.getElementById("inputPseudo").value;
+    this.userService.setPseudo(pseudoInput);
   }
 
 }
