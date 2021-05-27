@@ -57,6 +57,7 @@ onSelectFile(event:any) {
   setPseudo(): void {
     //set user pseudo by what's in input
 
+
   }
 
 }
