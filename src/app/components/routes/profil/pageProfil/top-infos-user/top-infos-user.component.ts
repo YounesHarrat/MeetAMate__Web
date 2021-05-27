@@ -54,4 +54,9 @@ onSelectFile(event:any) {
     this.url = this.user.avatarIMG
   }
 
+  setPseudo(): void {
+    //set user pseudo by what's in input
+
+  }
+
 }

@@ -13,8 +13,13 @@
     <li>
       {{user.nom}} {{user.prenom}}, {{user.age}} ans
     </li>
-    <li class="pseudo">
+    <li class="pseudo" *ngIf="user.pseudo !== '?'; else setMateName;">
       MateName : {{user.pseudo}}
+    </li>
+    <li #setMateName>
+      choose a pseudo:
+      <input type="text" name="pseudo" >
+      <button type="submit" (click)="setPseudo()"></button>
     </li>
     <li>
       {{user.favorite}}
