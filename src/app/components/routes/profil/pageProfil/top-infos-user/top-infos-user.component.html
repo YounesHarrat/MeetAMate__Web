@@ -16,11 +16,13 @@
     <li class="pseudo" *ngIf="user.pseudo !== '?'; else setMateName;">
       MateName : {{user.pseudo}}
     </li>
-    <li #setMateName>
-      choose a pseudo:
-      <input type="text" name="pseudo" >
-      <button type="submit" (click)="setPseudo()"></button>
-    </li>
+    <ng-template #setMateName>
+      <li>
+        choose a pseudo:
+        <input type="text" name="pseudo" >
+        <button type="submit" (click)="setPseudo()"></button>
+      </li>
+    </ng-template>
     <li>
       {{user.favorite}}
     </li>
