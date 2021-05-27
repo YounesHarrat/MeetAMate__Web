@@ -6,15 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./communaute.component.css']
 })
 export class CommunauteComponent implements OnInit {
+  display:boolean;
 
-  constructor() { }
+  constructor() { 
+    this.display = false;
+  }
 
   ngOnInit(): void {
   }
-
- display = false;
- onPress() {
-   console.log("ehheheh")
-   this.display = true;
- }
+ 
+  onPress() {
+    this.display = true;
+  }
 }
