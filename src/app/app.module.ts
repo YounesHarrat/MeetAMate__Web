@@ -21,6 +21,7 @@ import { MainPageProfilComponent } from './components/routes/profil/pageProfil/m
 import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top-infos-user/top-infos-user.component';
 import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
 import { RightFriendsUserComponent } from './components/routes/profil/pageProfil/right-friends-user/right-friends-user.component';
+import { PageCommunauteComponent } from './components/routes/communaute/page-communaute/page-communaute.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RightFriendsUserComponent } from './components/routes/profil/pageProfil
     MainPageProfilComponent,
     TopInfosUserComponent,
     LeftListGameUserComponent,
-    RightFriendsUserComponent
+    RightFriendsUserComponent,
+    PageCommunauteComponent
     
   ],
   imports: [

@@ -1,28 +1,32 @@
 <div class="container">
     <mat-card class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/fortnite.jpg" alt="Fortnite">
+        <img class="imgCard" mat-card-image src="assets/games/fortnite.jpg" alt="Fortnite" >
         <mat-card-actions>
-            <button mat-button class="tertiary" >
+            <button mat-button class="tertiary" (click)="onPress()">
                 <mat-icon>add </mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>
   
     <mat-card class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/rocket.jpg" alt="Rocket League">
+        <img class="imgCard" mat-card-image src="assets/games/rocket.jpg" alt="Rocket League" >
         <mat-card-actions>
-            <button mat-button class="tertiary" >
+            <button mat-button class="tertiary" (click)="onPress()">
                 <mat-icon>add</mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>
   
     <mat-card  class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/apex.jpg" alt="Apex Legend">
+        <img class="imgCard" mat-card-image src="assets/games/apex.jpg" alt="Apex Legend" >
         <mat-card-actions>
-            <button mat-button class="tertiary" >
+            <button mat-button class="tertiary" (click)="onPress()">
                 <mat-icon>add</mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>
+</div>
+
+<div id="anyone" *ngIf="display">
+    <app-page-communaute></app-page-communaute>
 </div>

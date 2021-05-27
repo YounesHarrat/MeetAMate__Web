@@ -12,4 +12,9 @@ export class CommunauteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ display = false;
+ onPress() {
+   console.log("ehheheh")
+   this.display = true;
+ }
 }
