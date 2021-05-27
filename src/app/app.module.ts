@@ -30,6 +30,9 @@ import { environment as env } from '../environments/environment';
 import { LoginButtonComponent } from './shared/authButtons/loginButton/login-button.component';
 import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
 
+// Services
+import { UserService } from '../app/shared/services/user/user.service';
+import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +53,8 @@ import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-
     RightFriendsUserComponent,
     AuthentificationComponent,
     LoginButtonComponent,
-    LogoutButtonComponent
+    LogoutButtonComponent,
+    SigninButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,7 @@ import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-
       ...env.auth,
     }),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

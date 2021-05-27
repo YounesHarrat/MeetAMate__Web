@@ -24,7 +24,8 @@
 
 <br>
 
-<div class="mainMiddleUser">
+<div class="mainMiddleUser" *ngIf="user.socialNetwork[0]">
+
   <div class="mainInfoDiscord">
   <mat-expansion-panel hideToggle class="expansion-panel-class" >
     <mat-expansion-panel-header>
@@ -133,3 +134,10 @@
     <p>{{user.socialNetwork[4].Pseudo}}</p>
   </div> -->
 </div>
+
+
+
+
+
+
+
