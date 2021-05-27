@@ -51,7 +51,7 @@ onSelectFile(event:any) {
 
   ngOnInit(): void {
     console.log('TopInfoUser init', this.user);
-
+    this.url = this.user.avatarIMG
   }
 
 }

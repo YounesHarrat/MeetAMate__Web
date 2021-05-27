@@ -11,6 +11,8 @@ export class User {
 
   // personal Info
   pseudo: string = "";
+  avatarIMG: string = "";
+
   nom: string = "";
   prenom: string = "";
   age: string = "";

@@ -29,6 +29,8 @@ export class UserService {
         this.user.age = "?";
         this.user.pseudo = "?";
         this.user.favorite = "?";
+        // @ts-ignore: Object is possibly 'null'
+        this.user.avatarIMG = profile.picture;
 
         console.log('UserService init', {
           profile,
