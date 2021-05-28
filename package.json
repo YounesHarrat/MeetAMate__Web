@@ -6,7 +6,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "create": "ng g c"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/router": "~11.0.9",
     "@auth0/auth0-angular": "^1.5.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "glider-js": "^1.7.7",
     "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

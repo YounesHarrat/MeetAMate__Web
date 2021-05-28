@@ -51,6 +51,22 @@ onSelectFile(event:any) {
 
   ngOnInit(): void {
     console.log('TopInfoUser init', this.user);
+    this.url = this.user.avatarIMG
+  }
+
+  setPseudo(): void {
+    //set user pseudo by what's in input
+    // @ts-ignore: Object is possibly 'null'
+    let pseudoInput = document.getElementById("inputPseudo").value;
+    this.userService.setPseudo(pseudoInput);
+  }
+
+  setAge(): void {
+    // @ts-ignore
+    const age = document.getElementsByClassName('age').value;
+    console.log('setAge', age);
+
+    this.userService.setAge(age);
 
   }
 

@@ -9,10 +9,10 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <p>
-      {{ friend.Online }}
+      is Online: {{ friend.Online }}
     </p>
     <p>
-      {{ friend.MainGame }}
+      Favorite Game: {{ friend.MainGame }}
     </p>
     <div *ngIf="friend.SentInvite else templateInviter">
     <button mat-raised-button disabled [disabled]="true" (click)="invitationEnvoyer(friend)">Envoyé</button>
