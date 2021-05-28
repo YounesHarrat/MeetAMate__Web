@@ -56,11 +56,9 @@ onSelectFile(event:any) {
 
   setPseudo(): void {
     //set user pseudo by what's in input
-    // @ts-ignore
-    const pseudo = document.getElementsByClassName('pseudo').value;
-    console.log('setPseudo', pseudo);
-
-    this.userService.setPseudo(pseudo);
+    // @ts-ignore: Object is possibly 'null'
+    let pseudoInput = document.getElementById("inputPseudo").value;
+    this.userService.setPseudo(pseudoInput);
   }
 
   setAge(): void {
@@ -69,6 +67,7 @@ onSelectFile(event:any) {
     console.log('setAge', age);
 
     this.userService.setAge(age);
+
   }
 
 }
