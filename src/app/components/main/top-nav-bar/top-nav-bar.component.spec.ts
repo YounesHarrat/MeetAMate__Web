@@ -12,7 +12,7 @@ describe('TopNavBarComponent', () => {
     })
     .compileComponents();
   });
-
+  
   beforeEach(() => {
     fixture = TestBed.createComponent(TopNavBarComponent);
     component = fixture.componentInstance;

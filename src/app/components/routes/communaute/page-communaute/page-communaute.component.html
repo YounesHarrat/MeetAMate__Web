@@ -15,10 +15,27 @@
 </div>
 
 <div class="mainContainer">
-    <div class="centerContainer">
-        <div *ngIf="btnEventClick;else questions">
-            <p>Les events !</p>
-        </div>
+    <div class="centerContainer" *ngIf="btnEventClick;else questions">
+        <div class="containerEvent" *ngFor="let event of ListeEvent">
+            <mat-card class="cardEvent">
+                <mat-card-header>
+                    <div mat-card-avatar class="imgProfil"></div>
+                    <mat-card-title>PSEUDO CREATEUR</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-card-title>{{event.title}}</mat-card-title>
+                    <p>Type: {{event.type}}</p>
+                    <p>Date: {{event.date}}</p>
+                    <p>Heure: {{event.heure}}</p>
+                    <p>
+                    Paragraphe de présentation de l'event (quelques lignes)
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="btnParticiper" mat-button>Participer</button>
+                </mat-card-actions>
+            </mat-card>            
+        </div>        
     </div>
     <div class="rightContainer">
         <p>Membre de la communauté :</p>
@@ -27,7 +44,6 @@
             <li>Michelle</li>
             <li>Dru</li>
             <li>Cker</li>
-
         </ul>
     </div>
 </div>

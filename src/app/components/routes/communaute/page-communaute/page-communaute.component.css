@@ -38,11 +38,31 @@
 }
 .centerContainer{
     display: flex;    
-    width: 90%;
-    border: solid;
-    border-color: lavenderblush;
+    width: 90%;    
+    flex-wrap: wrap;
+    /* border: solid;
+    border-color: lavenderblush; */
+
 }
 .rightContainer{
     border: solid;
     height: 100% ;
+}
+
+.cardEvent {
+    max-width: 400px;
+    margin-right: 40px;
+    margin-top: 40px;
+    background-color: #184c80;
+    border-radius: 10%;
+}
+  
+.imgProfil {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.containerEvent{
+    display: flex;
+    flex-direction: row;
 }
