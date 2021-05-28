@@ -13,13 +13,13 @@
     <li>
       {{user.nom}} {{user.prenom}}
     </li>
-    <li class="age" *ngIf="user.age !== '?'; else setAgeTemplate;">
+    <li *ngIf="user.age !== '?'; else setAgeTemplate;">
       {{user.age}} ans
     </li>
     <ng-template #setAgeTemplate>
       <li>
         how old are you ?
-        <input type="number" name="age" >
+        <input id="age" type="number" name="age" >
         <button type="button" (click)="setAge()" >Valider</button>
       </li>
     </ng-template>

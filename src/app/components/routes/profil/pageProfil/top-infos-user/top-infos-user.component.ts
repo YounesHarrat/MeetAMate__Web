@@ -63,7 +63,7 @@ onSelectFile(event:any) {
 
   setAge(): void {
     // @ts-ignore
-    const age = document.getElementsByClassName('age').value;
+    const age = document.getElementById('age').value;
     console.log('setAge', age);
 
     this.userService.setAge(age);
