@@ -1,28 +1,10 @@
 <ng-template #mainPage>
-    <div class="container">
-    <mat-card class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/fortnite.jpg" alt="Fortnite" >
+    <div class="container" >
+    <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
+        <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
         <mat-card-actions>
-            <button mat-button class="tertiary" (click)="onPress()">
+            <button mat-button class="tertiary" (click)="onPress(jeu)">
                 <mat-icon>add </mat-icon>
-            </button>
-        </mat-card-actions>
-    </mat-card>
-  
-    <mat-card class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/rocket.jpg" alt="Rocket League" >
-        <mat-card-actions>
-            <button mat-button class="tertiary" (click)="onPress()">
-                <mat-icon>add</mat-icon>
-            </button>
-        </mat-card-actions>
-    </mat-card>
-  
-    <mat-card  class="example-card secondary">
-        <img class="imgCard" mat-card-image src="assets/games/apex.jpg" alt="Apex Legend" >
-        <mat-card-actions>
-            <button mat-button class="tertiary" (click)="onPress()">
-                <mat-icon>add</mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>
@@ -30,5 +12,5 @@
 </ng-template>
 
 <div id="anyone" *ngIf="display; else mainPage">
-    <app-page-communaute></app-page-communaute>
+    <app-page-communaute [jeu]="selectJeu"></app-page-communaute>
 </div>

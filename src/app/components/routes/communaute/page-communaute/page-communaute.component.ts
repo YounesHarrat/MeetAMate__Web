@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Game } from 'src/app/shared/models/game';
 
 @Component({
   selector: 'app-page-communaute',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCommunauteComponent implements OnInit {
 
+  @Input()
+  jeu:Game = new Game();
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.jeu)
   }
 
 }
