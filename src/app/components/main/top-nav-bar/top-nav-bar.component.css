@@ -58,3 +58,8 @@ img {
 mat-sidenav-content {
   min-height: 100vh;
 }
+
+mat-nav-list{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
