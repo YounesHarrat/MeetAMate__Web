@@ -2,3 +2,46 @@
     width: 100%;
     opacity: 0.5;
 }
+.joinCommunity{
+    position:relative;
+    z-index: 9999;
+    top: -445px;
+    left: 90%;
+}
+.leaveCommunity{
+    position:relative;
+    z-index: 9999;
+    top: -445px;
+    left: 90%;
+}
+.example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+}
+.leftContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+}
+.btnMenu{
+    margin-bottom: 50px;
+    width: 150px;
+}
+.centerContainer{
+    display: flex;    
+    width: 100%;
+}
+.rightContainer{
+    border: solid;
+    height: 100% ;
+}
