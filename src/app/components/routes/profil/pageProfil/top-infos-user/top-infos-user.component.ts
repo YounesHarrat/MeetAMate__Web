@@ -23,7 +23,7 @@ onSelectFile(event:any) {
       if(reader.result != null)
         {
           this.url = reader.result.toString()
-          console.log(this.url)
+          this.userService.user.avatarIMG = this.url;
         }
 
       }
