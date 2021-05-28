@@ -45,8 +45,7 @@
   justify-content: center;
   color: white;
   padding: 50px;
-  margin: 25px;
-  border: white dashed 5px;
+  margin: 25px 0px 25px 0px;
   /* background-image: ; */
 }
 
@@ -59,7 +58,13 @@
 .paginator {
   font-size: 2rem;
   margin-right: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
+
 
 .containerCarousel {
   margin: auto;
@@ -69,4 +74,24 @@
   padding: 2em;
   box-shadow: #318CE7 1px 1px 3px 3px ;
   border-radius: 25%;
+}
+
+.fluidContainer1 {
+  width: 100vw;
+  background-color: rgba(18, 179, 179, 0.781);
+}
+
+.fluidContainer2 {
+  width: 100vw;
+  background-color: rgba(170, 190, 190, 0.87);
+}
+
+.fluidContainer3 {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.781);
+}
+
+.boxH {
+  min-height: 25vh;
+  margin: 5vh 0px 5vh 0px;
 }

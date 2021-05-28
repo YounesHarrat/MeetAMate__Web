@@ -1,5 +1,5 @@
 
-<div class="row header">
+<div class="row header fluidContainer3">
   <h1>A Quoi TU Joue ?</h1>
 </div>
 
@@ -7,6 +7,10 @@
 
 <div class="containerCarousel">
   <carousel [slides]="ListeDeJeux"></carousel>
+</div>
+
+<div class="fluidContainer2 boxH">
+
 </div>
 
 <!-- Cards List with Paginator -->
@@ -31,10 +35,17 @@
 </div>
 
 
-<div class="paginator">
+<div class="paginator ">
+  <form action="">
+    <label for="itemsPerPage">Nombre de jeux par page: </label>
+    <input type="number" id="highValue">
+    <button type="button" (click)="setHighValue();">set</button>
+  </form>
   <mat-paginator [length]="totalSize"
       [pageSize]="pageSize"
       (page)="pageEvent = $event;switchPaginatorData($event)">
   </mat-paginator>
+
+
 </div>
 

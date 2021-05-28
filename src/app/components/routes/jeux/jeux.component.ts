@@ -69,5 +69,12 @@ export class JeuxComponent implements OnInit {
     this.userService.addToGameUser(jeux);
   }
 
+  public setHighValue(): void {
+    // @ts-ignore
+    const value = document.getElementById('highValue').value;
+    this.pageSize = value;
+    this.highValue = value;
+  }
+
 }
 
