@@ -11,8 +11,18 @@
 
   <ul>
     <li>
-      {{user.nom}} {{user.prenom}}, {{user.age}} ans
+      {{user.nom}} {{user.prenom}}
     </li>
+    <li class="age" *ngIf="user.age !== '?'; else setAgeTemplate;">
+      {{user.age}} ans
+    </li>
+    <ng-template #setAgeTemplate>
+      <li>
+        how old are you ?
+        <input type="number" name="age" >
+        <button type="button" (click)="setAge()" >Valider</button>
+      </li>
+    </ng-template>
     <li class="pseudo" *ngIf="user.pseudo !== '?'; else setMateName;">
       MateName : {{user.pseudo}}
     </li>
@@ -20,7 +30,7 @@
       <li>
         choose a pseudo:
         <input type="text" name="pseudo" >
-        <button type="submit" (click)="setPseudo()"></button>
+        <button type="button" (click)="setPseudo()">Valider</button>
       </li>
     </ng-template>
     <li>

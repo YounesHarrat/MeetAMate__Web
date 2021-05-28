@@ -134,4 +134,13 @@ export class UserService {
   setFavorite(jeux: Game) {
     this.user.favorite = jeux.title;
   }
+
+  setPseudo(pseudo:string) {
+    this.user.pseudo = pseudo;
+  }
+
+  setAge(age:string) {
+    this.user.age = age;
+  }
+
 }
