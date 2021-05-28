@@ -6,7 +6,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavBarComponent } from './components/main/top-nav-bar/top-nav-bar.component';
-import { CenteredContentComponent } from './components/main/centered-content/centered-content.component';
 import { RightSideNavBarComponent } from './components/main/right-side-nav-bar/right-side-nav-bar.component';
 import { BotNavBarComponent } from './components/main/bot-nav-bar/bot-nav-bar.component';
 import { MaterialModule } from './material/material.module';
@@ -39,7 +38,6 @@ import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-
   declarations: [
     AppComponent,
     TopNavBarComponent,
-    CenteredContentComponent,
     RightSideNavBarComponent,
     BotNavBarComponent,
     ProfilComponent,
