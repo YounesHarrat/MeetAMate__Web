@@ -11,7 +11,6 @@
 .mat-card {
   width: min-content;
   height: min-content;
-  border: 1px solid black;
   margin:auto;
   justify-content: center;
   align-items: center;
@@ -26,7 +25,6 @@
 
 .mat-button {
   margin-left: 20px;
-  border: 1px solid red
 }
 
 .container {

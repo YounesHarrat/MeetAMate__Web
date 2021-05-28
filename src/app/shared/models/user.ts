@@ -21,7 +21,7 @@ export class User {
   favorite: string = "";
 
   // User's info on each game he played
-  gameUser: Array<GameInfo> = [];
+  gameUser: Array<Game> = [];
 
   // User's friends info and their most played gameUser
   friendsList: Array<FriendStatus> = [];

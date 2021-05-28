@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Game } from '../../models/game';
+import { GameInfo } from '../../models/game-info';
 import { User } from '../../models/user';
 
 @Injectable({
@@ -72,32 +73,25 @@ export class UserService {
       ]
 
   seerakGameUserMock = [
-        {
-          "Id" : 1,
-          "Nom" : "Rocket League",
-          "Heures" : 15,
-        },
-        {
-          "Id" : 2,
-          "Nom" : "Osu",
-          "Heures" : 4,
-        },
-        {
-          "Id" : 3,
-          "Nom" : "Minecraft",
-          "Heures" : 64,
-        },
-        {
-          "Id" : 4,
-          "Nom" : "League of Legends",
-          "Heures" : 547,
-        },
-        {
-          "Id" : 5,
-          "Nom" : "Paladin",
-          "Heures" : 47,
-        },
-      ]
+    {id:"1", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png",
+      info: new GameInfo(1, 'Apex Legend', 10)},
+    {id:"2", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png",
+      info: new GameInfo(2, 'Rocket League', 100)},
+    {id:"3", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19",
+      info: new GameInfo(3, 'Fortnite', 20)},
+      {id:"4", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png",
+      info: new GameInfo(4, 'Apex Legend', 10)},
+    {id:"5", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png",
+      info: new GameInfo(5, 'Rocket League', 100)},
+    {id:"6", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19",
+      info: new GameInfo(6, 'Fortnite', 20)},
+      {id:"7", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png",
+      info: new GameInfo(7, 'Apex Legend', 10)},
+    {id:"8", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png",
+      info: new GameInfo(8, 'Rocket League', 100)},
+    {id:"9", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19",
+      info: new GameInfo(9, 'Fortnite', 20)},
+    ]
 
   constructor(public auth: AuthService) { }
 
@@ -122,7 +116,7 @@ export class UserService {
         this.user.avatarIMG = profile.picture;
         this.user.socialNetwork = this.seerakNetworkMock;
         this.user.friendsList = this.seerakFriendsListMock;
-        this.user.gameUser = this.seerakGameUserMock;
+        // this.user.gameUser = this.seerakGameUserMock;
         console.log('UserService init', {
           profile,
           user: this.user,
@@ -141,6 +135,15 @@ export class UserService {
 
   setAge(age:string) {
     this.user.age = age;
+  }
+
+  addToGameUser(jeux: Game) {
+
+    const found  = this.user.gameUser.find(o => o.id === jeux.id );
+    console.log('addToGameUser', jeux, found, this.user.gameUser );
+    if ( !found ) {
+      this.user.gameUser.push(jeux)
+    }
   }
 
 }
