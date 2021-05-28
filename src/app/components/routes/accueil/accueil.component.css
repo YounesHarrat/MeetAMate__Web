@@ -110,7 +110,7 @@ mat-card-actions{
     transform: translate3d(0,0,0);      /* position initiale à droite */
   }
   100% {
-    transform: translate3d(-300%,0,0);  
+    transform: translate3d(-300%,0,0);
   }
 }
 
@@ -151,6 +151,20 @@ mat-card-actions{
 #top {
   -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
   animation-timing-function: linear;
-  
+
 }
 
+.fluidContainer1 {
+  width: 100vw;
+  background-color: rgba(18, 179, 179, 0.781);
+}
+
+.fluidContainer2 {
+  width: 100vw;
+  background-color: rgba(170, 190, 190, 0.87);
+}
+
+.fluidContainer3 {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.781);
+}
