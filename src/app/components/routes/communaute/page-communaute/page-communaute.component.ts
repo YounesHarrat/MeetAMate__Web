@@ -8,6 +8,8 @@ import { Game } from 'src/app/shared/models/game';
 })
 export class PageCommunauteComponent implements OnInit {
 
+  btnEventClick = false;
+  btnQuestionClick = false;
   @Input()
   jeu:Game = new Game();
 
@@ -17,4 +19,12 @@ export class PageCommunauteComponent implements OnInit {
     console.log(this.jeu)
   }
 
+  clickEvents(){
+    this.btnEventClick = true
+    this.btnQuestionClick = false;
+  }
+  clickQuestions(){
+    this.btnQuestionClick = true;
+    this.btnEventClick = false
+  }
 }

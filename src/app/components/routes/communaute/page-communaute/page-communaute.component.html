@@ -4,25 +4,38 @@
     <button mat-raised-button color="warn" class="leaveCommunity" >Quitter</button>
     <button mat-raised-button color="primary" class="joinCommunity" >Rejoindre</button>
 </div>
-<div class="mainContainer">
-    <div class="lefContainer">
-        <div>
-            <button mat-raised-button color="primary" class="btnMenu">Evenement</button>
-        </div>
-        <div>
-            <button mat-raised-button color="primary" class="btnMenu">Questions</button>
-        </div>
-        <div>
-            <button mat-raised-button color="primary" class="btnMenu"> ????? </button>
-        </div>
+ 
+<div class="leftContainer">
+    <div>
+        <button mat-raised-button color="primary" class="btnMenu" (click)="clickEvents()">Evenement</button>
     </div>
+    <div>
+        <button mat-raised-button color="primary" class="btnMenu" (click)="clickQuestions()">Questions</button>
+    </div>
+</div>
+
+<div class="mainContainer">
     <div class="centerContainer">
-        <p>amamamamamm</p>
+        <div *ngIf="btnEventClick;else questions">
+            <p>Les events !</p>
+        </div>
     </div>
     <div class="rightContainer">
         <p>Membre de la communauté :</p>
+        <ul>
+            <li>Jean</li>
+            <li>Michelle</li>
+            <li>Dru</li>
+            <li>Cker</li>
+
+        </ul>
     </div>
 </div>
+
+
+<ng-template #questions>
+    <div>Les questions !</div>
+</ng-template>
 
 
 

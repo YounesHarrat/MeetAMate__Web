@@ -25,13 +25,12 @@
     flex-direction: row;
     justify-content: space-around;
     height: 100%;
+    border-right: 15px;
 }
 .leftContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    width: 10%;
 }
 .btnMenu{
     margin-bottom: 50px;
@@ -39,7 +38,9 @@
 }
 .centerContainer{
     display: flex;    
-    width: 100%;
+    width: 90%;
+    border: solid;
+    border-color: lavenderblush;
 }
 .rightContainer{
     border: solid;
