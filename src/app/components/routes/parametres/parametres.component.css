@@ -1,0 +1,47 @@
+.fluidContainer0 {
+  width: 100vw;
+  background-color: rgba(3, 68, 99, 0.877);
+
+}
+
+.fluidContainer1 {
+  width: 100vw;
+  background-color: rgba(18, 179, 179, 0.781);
+}
+
+.fluidContainer2 {
+  width: 100vw;
+  background-color: rgba(170, 190, 190, 0.87);
+}
+
+.fluidContainer3 {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.781);
+}
+
+.heightTen {
+  height: 10vh;
+}
+
+.heightTwenty {
+  height: 20vh;
+
+}
+
+.box {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.square {
+  text-align: center;
+}

@@ -32,10 +32,11 @@
   justify-content: space-around;
   align-items: center;
   margin: auto;
+  padding: 25px;
 }
 
 .paginatorContainer{
-  margin: 2rem 0px 2rem 0px;
+  padding: 50px;
   font-size: 2.5rem;
   color: white;
   justify-content: center;
@@ -79,19 +80,33 @@
 .fluidContainer1 {
   width: 100vw;
   background-color: rgba(18, 179, 179, 0.781);
+  margin:0px;
 }
 
 .fluidContainer2 {
   width: 100vw;
-  background-color: rgba(170, 190, 190, 0.87);
+  background-color: rgba(209, 29, 29, 0.678);
+  margin:0px;
 }
 
 .fluidContainer3 {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.781);
+  margin:0px;
+}
+
+.fluidContainer4 {
+  width: 100vw;
+  background-color: rgba(155, 111, 111, 0.678);
+  margin:0px;
+}
+
+.fluidContainer5 {
+  width: 100vw;
+  background-color: #1e497c;
+  margin:0px;
 }
 
 .boxH {
   min-height: 25vh;
-  margin: 5vh 0px 5vh 0px;
 }

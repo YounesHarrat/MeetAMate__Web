@@ -4,18 +4,20 @@
 </div>
 
 <!-- Carousel of Cards Images -->
-
-<div class="containerCarousel">
-  <carousel [slides]="ListeDeJeux"></carousel>
+<div class="fluidContainer5">
+  <div class="containerCarousel">
+    <carousel [slides]="ListeDeJeux"></carousel>
+  </div>
 </div>
 
-<div class="fluidContainer2 boxH">
+
+<div class="fluidContainer3 boxH">
 
 </div>
 
 <!-- Cards List with Paginator -->
 
-<div class="container row ">
+<div class="container row fluidContainer5">
   <mat-card class="card col secondary" *ngFor="let jeux of (ListeDeJeux |slice: lowValue: highValue)">
     <img mat-card-image src="{{jeux.pictureUrl}}" alt="Apex Legend">
     <h1 class="titleGame">{{jeux.title}}</h1>
@@ -35,7 +37,7 @@
 </div>
 
 
-<div class="paginator ">
+<div class="paginator paginatorContainer fluidContainer3">
   <form action="">
     <label for="itemsPerPage">Nombre de jeux par page: </label>
     <input type="number" id="highValue">
