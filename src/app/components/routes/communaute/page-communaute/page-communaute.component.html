@@ -38,12 +38,11 @@
         </div>        
     </div>
     <div class="rightContainer">
-        <p>Membre de la communauté :</p>
+        <p class="titleRight">Membre :</p>
         <ul>
-            <li>Jean</li>
-            <li>Michelle</li>
-            <li>Dru</li>
-            <li>Cker</li>
+            <div class="containerEvent" *ngFor="let commuanute of commu">
+                <li>{{commuanute}}</li>
+            </div>
         </ul>
     </div>
 </div>

@@ -33,5 +33,6 @@ export class CommunauteComponent implements OnInit {
     this.selectJeu = jeu;
     var index = Number(jeu.id)
     this.communauteJeu = this.ListeCommunaute[index - 1 ].listePseudo 
+    console.log(this.communauteJeu);
   }
 }

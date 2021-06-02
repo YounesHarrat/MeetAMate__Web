@@ -26,7 +26,7 @@ export class PageCommunauteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.commu)
+
   }
 
   clickEvents(){

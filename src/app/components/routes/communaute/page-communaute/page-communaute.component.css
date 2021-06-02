@@ -47,6 +47,9 @@
 .rightContainer{
     border: solid;
     height: 100% ;
+    background-color: #318CE7;
+    border-radius: 10%;
+    width:8%;
 }
 
 .cardEvent {
@@ -65,4 +68,9 @@
 .containerEvent{
     display: flex;
     flex-direction: row;
+}
+.titleRight{
+    text-align: center;
+    font-weight: bold;
+    
 }
