@@ -49,8 +49,22 @@
 
 
 <ng-template #questions>
-    <div>Les questions !</div>
+    <div class="centerContainerQuestion">
+    <div class="containerEvent" *ngFor="let question of ListeQuestion">
+        <mat-card class="cardEvent">
+            <mat-card-header>
+                <div mat-card-avatar class="imgProfil"></div>
+                <mat-card-title>PSEUDO CREATEUR</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                {{question.contenu}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btnParticiper" mat-button>Repondre</button>
+            </mat-card-actions>
+        </mat-card>            
+    </div>   
+</div>     
 </ng-template>
-
-
-

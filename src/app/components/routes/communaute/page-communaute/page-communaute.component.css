@@ -74,3 +74,9 @@
     font-weight: bold;
     
 }
+
+.centerContainerQuestion{
+    display: flex;    
+    width: 90%;    
+    flex-wrap: wrap;
+}
