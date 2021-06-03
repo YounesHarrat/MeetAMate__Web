@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavBarComponent } from './components/main/top-nav-bar/top-nav-bar.component';
@@ -36,6 +35,7 @@ import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-
 // Services
 import { UserService } from '../app/shared/services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +74,6 @@ import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-
     }),
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -53,11 +53,11 @@
 }
 
 .cardEvent {
-    max-width: 400px;
+    min-width: 50%;
     margin-right: 40px;
     margin-top: 40px;
     background-color: #184c80;
-    border-radius: 10%;
+    border-radius: 3%;
 }
   
 .imgProfil {
@@ -68,6 +68,8 @@
 .containerEvent{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-left: 13%;
 }
 .titleRight{
     text-align: center;
@@ -76,7 +78,11 @@
 }
 
 .centerContainerQuestion{
-    display: flex;    
+    display: flex;
+    flex-direction: column;    
     width: 90%;    
     flex-wrap: wrap;
+}
+.questionLabel{
+    text-align: center;
 }

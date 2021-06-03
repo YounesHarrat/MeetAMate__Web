@@ -14,6 +14,7 @@ export class PageCommunauteComponent implements OnInit {
 
   btnEventClick = false;
   btnQuestionClick = false;
+  panelOpenState = false;
   
   ListeEvent = [
     {id:"1", idJeu:"1", title:"Tournoi", type:"4v4", date:"28/04/2021", heure:"11h00"},
@@ -29,13 +30,13 @@ export class PageCommunauteComponent implements OnInit {
     {id:"4", idJeu:"1", date:"28/04/2021", heure:"11h00", contenu:"Quel est le véhicule qu'on a en tout premier ?"},
     {id:"5", idJeu:"1", date:"28/04/2021", heure:"11h00", contenu:"Quel était l'ancêtre de Rocket League ?"},  
   ]
-    
+  
   constructor() {}
 
   ngOnInit(): void {
 
   }
-  
+
   clickEvents(){
     this.btnEventClick = true
     this.btnQuestionClick = false;
