@@ -70,14 +70,16 @@
 
 
 <div class="centerContainerQuestion">
-<div class="containerEvent" *ngFor="let question of ListeQuestion">
-    <div class="cardEvent">
+<div class="containerQuestion" *ngFor="let question of ListeQuestion">
+    <div class="cardQuestion">
 <mat-accordion>
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>        
         <mat-panel-title>
             <div mat-card-avatar class="imgProfil"></div>
-          PSEUDO
+          <p class="pseudoLabel">
+            PSEUDO
+          </p>
         </mat-panel-title>
         <mat-panel-description class="questionLabel">
             {{question.contenu}}
