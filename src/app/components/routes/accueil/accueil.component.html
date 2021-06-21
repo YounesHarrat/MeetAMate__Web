@@ -1,76 +1,80 @@
 
-<div class="centered">
+<div class="centered ">
 
   <div id="top"></div>
 
-  <div class="infosAccueil">
+  <div class="infosAccueil fluidContainer3">
       <img src="assets/imgAccueil.png" alt="">
   </div>
 
-  <h1 class="textCenterAccueil">Tendances du moment :</h1>
+  <div class="fluidContainer1">
+    <h1 class="textCenterAccueil">Tendances du moment :</h1>
 
-  <div class="container">
+    <div class="container ">
 
-    <mat-card class="example-card secondary">
-      <img class="imgCard" mat-card-image src="assets/games/fortnite.jpg" alt="Fortnite">
-      <mat-card-actions>
-        <button mat-button class="tertiary" >
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>info</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card class="example-card secondary">
+        <img class="imgCard" mat-card-image src="assets/games/fortnite.jpg" alt="Fortnite">
+        <mat-card-actions>
+          <button mat-button class="tertiary" >
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>info</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
 
-    <mat-card class="example-card secondary">
-      <img class="imgCard" mat-card-image src="assets/games/rocket.jpg" alt="Rocket League">
-      <mat-card-actions>
-        <button mat-button class="tertiary" >
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>info</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card class="example-card secondary">
+        <img class="imgCard" mat-card-image src="assets/games/rocket.jpg" alt="Rocket League">
+        <mat-card-actions>
+          <button mat-button class="tertiary" >
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>info</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
 
-    <mat-card  class="example-card secondary">
-      <img class="imgCard" mat-card-image src="assets/games/apex.jpg" alt="Apex Legend">
-      <mat-card-actions>
-        <button mat-button class="tertiary" >
-          <mat-icon class="favorite">favorite</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>info</mat-icon>
-        </button>
-        <button mat-button class="tertiary" >
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card  class="example-card secondary">
+        <img class="imgCard" mat-card-image src="assets/games/apex.jpg" alt="Apex Legend">
+        <mat-card-actions>
+          <button mat-button class="tertiary" >
+            <mat-icon class="favorite">favorite</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>info</mat-icon>
+          </button>
+          <button mat-button class="tertiary" >
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
 
+    </div>
   </div>
 
-  <div class="discord">
-    <img class="imgDiscord" src="assets/presentationDiscord.png" alt="">    
+
+
+  <div class="discord fluidContainer3">
+    <img class="imgDiscord" src="assets/presentationDiscord.png" alt="">
   </div>
 
   <!-- le conteneur fenêtre -->
-<div class="marquee-rtl">
+<div class="marquee-rtl fluidContainer2">
   <!-- le contenu défilant -->
   <div>
     <img class="imgSlider" *ngFor="let stock of stockImg" src={{stock.src}} alt="">
   </div>
 </div>
 
-<div class="containerIcon">
+<div class="containerIcon fluidContainer1">
   <img class="icon" *ngFor="let plat of plateformes" src={{plat.src}} alt="">
 </div>
 

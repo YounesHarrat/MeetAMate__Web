@@ -1,1 +1,16 @@
-<p>communaute works!</p>
+<ng-template #mainPage>
+    <div class="container" >
+    <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
+        <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
+        <mat-card-actions>
+            <button mat-button class="tertiary" (click)="onPress(jeu)">
+                <mat-icon>add </mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</ng-template>
+
+<div id="anyone" *ngIf="display; else mainPage">
+    <app-page-communaute [jeu]="selectJeu" [commu]="communauteJeu"></app-page-communaute>
+</div>

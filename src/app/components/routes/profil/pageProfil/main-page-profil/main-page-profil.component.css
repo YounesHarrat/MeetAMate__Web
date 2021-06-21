@@ -1,7 +1,6 @@
 .mainCenter {
     margin: 1rem;
     justify-content: space-around;
-    min-height: 80vh;
     color: white;
 }
 
@@ -36,4 +35,8 @@ h1 {
 }
 .servDiscord{
   margin-top: 100%;
+}
+
+.userProfil {
+  color: white;
 }

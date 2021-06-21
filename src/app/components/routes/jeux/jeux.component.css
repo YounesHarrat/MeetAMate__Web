@@ -32,10 +32,11 @@
   justify-content: space-around;
   align-items: center;
   margin: auto;
+  padding: 25px;
 }
 
 .paginatorContainer{
-  margin: 2rem 0px 2rem 0px;
+  padding: 50px;
   font-size: 2.5rem;
   color: white;
   justify-content: center;
@@ -45,8 +46,7 @@
   justify-content: center;
   color: white;
   padding: 50px;
-  margin: 25px;
-  border: white dashed 5px;
+  margin: 25px 0px 25px 0px;
   /* background-image: ; */
 }
 
@@ -59,7 +59,13 @@
 .paginator {
   font-size: 2rem;
   margin-right: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
+
 
 .containerCarousel {
   margin: auto;
@@ -69,4 +75,38 @@
   padding: 2em;
   box-shadow: #318CE7 1px 1px 3px 3px ;
   border-radius: 25%;
+}
+
+.fluidContainer1 {
+  width: 100vw;
+  background-color: rgba(18, 179, 179, 0.781);
+  margin:0px;
+}
+
+.fluidContainer2 {
+  width: 100vw;
+  background-color: rgba(209, 29, 29, 0.678);
+  margin:0px;
+}
+
+.fluidContainer3 {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.781);
+  margin:0px;
+}
+
+.fluidContainer4 {
+  width: 100vw;
+  background-color: rgba(155, 111, 111, 0.678);
+  margin:0px;
+}
+
+.fluidContainer5 {
+  width: 100vw;
+  background-color: #1e497c;
+  margin:0px;
+}
+
+.boxH {
+  min-height: 25vh;
 }

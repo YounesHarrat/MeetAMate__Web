@@ -1,0 +1,42 @@
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fluid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.containerFluid {
+  margin: auto;
+  width: 100%;
+  background-color: rgba(250, 6, 6, 0.5);
+  min-height: 25vh;
+}
+
+.containerFluidAlt {
+  margin: auto;
+  width: 100%;
+  background-color: rgba(6, 201, 250, 0.5);
+  min-height: 25vh;
+}
+
+.vocalChannelsContainer {
+  background-color: rgba(26, 22, 22, 0.5);
+  color: white;
+  padding: 15px;
+}

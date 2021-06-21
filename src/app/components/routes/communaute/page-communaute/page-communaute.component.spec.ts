@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CenteredContentComponent } from './centered-content.component';
+import { PageCommunauteComponent } from './page-communaute.component';
 
-describe('CenteredContentComponent', () => {
-  let component: CenteredContentComponent;
-  let fixture: ComponentFixture<CenteredContentComponent>;
+describe('PageCommunauteComponent', () => {
+  let component: PageCommunauteComponent;
+  let fixture: ComponentFixture<PageCommunauteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CenteredContentComponent ]
+      declarations: [ PageCommunauteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CenteredContentComponent);
+    fixture = TestBed.createComponent(PageCommunauteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

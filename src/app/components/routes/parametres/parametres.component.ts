@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParametresComponent implements OnInit {
 
+  colors = ['red', 'blue', 'green'];
+
+
   constructor() { }
 
   ngOnInit(): void {

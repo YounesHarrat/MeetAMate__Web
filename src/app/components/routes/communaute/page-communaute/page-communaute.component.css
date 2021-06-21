@@ -1,0 +1,100 @@
+.container{
+    width: 100%;
+    opacity: 0.5;
+}
+.joinCommunity{
+    position:relative;
+    z-index: 9999;
+    top: -445px;
+    left: 90%;
+}
+.leaveCommunity{
+    position:relative;
+    z-index: 9999;
+    top: -445px;
+    left: 90%;
+}
+.example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    border-right: 15px;
+}
+.leftContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.btnMenu{
+    margin-bottom: 50px;
+    width: 150px;
+}
+.centerContainer{
+    display: flex;    
+    width: 90%;    
+    flex-wrap: wrap;
+}
+.rightContainer{
+    border: solid;
+    height: 100% ;
+    background-color: #318CE7;
+    border-radius: 10%;
+    width:8%;
+}
+
+.cardEvent {
+    margin-right: 40px;
+    margin-top: 40px;
+    background-color: #184c80;
+    border-radius: 3%;
+}
+  
+.imgProfil {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.containerEvent{
+    display: flex;
+    flex-direction: row;
+}
+.titleRight{
+    text-align: center;
+    font-weight: bold;
+}
+
+.centerContainerQuestion{
+    display: flex;  
+    width: 50%;    
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 25%;
+}
+.questionLabel{
+    text-align: center;
+    margin-top: 10px;
+    color:white;
+}
+.pseudoLabel{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.containerQuestion{
+    display: flex;
+    flex-direction: column;
+}
+.cardQuestion{
+    margin-top: 40px;
+    background-color: #184c80;
+    border-radius: 3%;
+    border: 1px solid #318CE7;
+    box-shadow: 3px 3px 10px #318CE7;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
