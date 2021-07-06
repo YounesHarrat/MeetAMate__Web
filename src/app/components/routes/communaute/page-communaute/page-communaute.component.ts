@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from 'src/app/shared/models/game';
+import { User } from 'src/app/shared/models/user';
 import { JeuxComponent } from '../../jeux/jeux.component';
 
 @Component({

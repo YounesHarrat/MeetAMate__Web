@@ -28,4 +28,7 @@ export class User {
 
   // User's SocialNetworkData
   socialNetwork: Array<SocialNetworkData> = [];
+
+  // User's SocialNetworkData
+  communityList: Array<SocialNetworkData> = [];
 }

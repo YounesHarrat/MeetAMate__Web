@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/shared/models/game';
 import { GameInfo } from 'src/app/shared/models/game-info';
+import { AuthService } from '@auth0/auth0-angular';
+import { UserService } from 'src/app/shared/services/user/user.service';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-communaute',
@@ -11,6 +14,7 @@ export class CommunauteComponent implements OnInit {
   display:boolean;
   selectJeu:Game = new Game();
   communauteJeu:Array<string> = new Array();
+  user:User = new User();
 
   ListeDeJeux = [
     {id:"1", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", communityBackgroundUrl:"https://www.orks.fr/wp-content/uploads/2019/03/apexlegendscat.jpg", info: new GameInfo()},
@@ -22,11 +26,15 @@ export class CommunauteComponent implements OnInit {
     {idJeu:"2", listePseudo:["Papapoule", "Docker", "Powershell", "K8s"]},
     {idJeu:"3", listePseudo:["Chrome", "Steeaaam", "Explorer", "Opera"]}
   ]
-  constructor() { 
+  constructor(public userService: UserService, public auth0: AuthService) { 
     this.display = false;
   }
 
   ngOnInit(): void {
+    this.user = this.userService.user;
+    if (this.user.pseudo === "") {
+      this.userService.init();
+    }
   }
  
   onPress(jeu : Game) {
