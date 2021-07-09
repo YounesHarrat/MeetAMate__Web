@@ -2,12 +2,6 @@
   <app-main-page-profil></app-main-page-profil>
 </div>
 
-<div class="profilContainer blur" *ngIf="(auth0.isAuthenticated$ | async) === false">
-
-  <div class="col message">
-    <h1>Vous n'êtes pas Connecté.</h1>
-    <hr>
-    <h1>Connectez vous pour accéder à votre profil</h1>
-  </div>
-
+<div class="profilContainer" *ngIf="(auth0.isAuthenticated$ | async) === false">
+    <app-non-connecter></app-non-connecter>
 </div>

@@ -1,0 +1,27 @@
+.row{
+    display: flex;
+    flex-direction: row;
+  }
+  
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.nonConnecter {
+    width: fit-content;
+    height: fit-content;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.profilContainer {
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 2rem;
+    width: fit-content;
+    height: fit-content;
+    backdrop-filter: blur(5px);
+  }

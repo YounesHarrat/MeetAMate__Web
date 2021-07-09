@@ -33,6 +33,7 @@ import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-
 // Services
 import { UserService } from '../app/shared/services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
+import { NonConnecterComponent } from './non-connecter/non-connecter.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-
     LogoutButtonComponent,
     SigninButtonComponent,
     CarouselComponent,
+    NonConnecterComponent,
 
   ],
   imports: [

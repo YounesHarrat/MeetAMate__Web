@@ -2,19 +2,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 .primary {
-  background-color: #171a1d ;
+  background-color: #171a1d; /*FONT*/
 }
 
 .secondary {
-  background-color: #212529;
+  background-color: #212529; /*HEADER*/
 }
 
 .tertiary {
-  background-color: #e2a551;
+  background-color: #e2a551; /*BORDER*/
 }
 
-p {
+p,h1,h2,h3 {
   color: white ;
+}
+hr{
+  border: 1px solid #e2a551;
 }
 
 mat-card {
