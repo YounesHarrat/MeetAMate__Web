@@ -43,4 +43,7 @@ export class AccueilComponent implements OnInit {
 
   }
 
+  openDiscord(){
+    window.open("https://discord.gg/PW237he3Mx", "_blank")
+  }
 }

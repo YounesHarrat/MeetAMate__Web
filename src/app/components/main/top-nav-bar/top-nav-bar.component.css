@@ -23,9 +23,9 @@
   z-index: 100;
   width: fit-content;
   height: fit-content;
-  background-color: #318CE7;
+  background-color: #212529;
   border-radius: 15%;
-  border: #1e3566 2px solid ;
+  border: #e2a551 2px solid ;
 }
 
 .sidenav-container {
@@ -42,9 +42,9 @@ img {
 }
 
 .toolbar {
-  background-color: #1e3566;
+  background-color: #212529;
   color: white;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid #e2a551;
 }
 
 .mat-list-item {
