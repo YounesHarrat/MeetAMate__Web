@@ -6,11 +6,11 @@
 }
 
 .secondary {
-  background-color: #1e497c;
+  background-color: #212529;
 }
 
 .tertiary {
-  background-color: #318CE7;
+  background-color: #e2a551;
 }
 
 p {
@@ -18,7 +18,7 @@ p {
 }
 
 mat-card {
-  border: 1px solid #318CE7;
-  box-shadow: 3px 3px 10px #318CE7;
+  border: 1px solid #e2a551;
+  box-shadow: 3px 3px 10px #e2a551;
 }
 

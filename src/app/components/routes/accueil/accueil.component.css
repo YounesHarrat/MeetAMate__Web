@@ -2,7 +2,19 @@
   max-width: 230px;
   max-height: 300px;
 }
+.discord-card {
+  width: fit-content;
+  height: fit-content;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
 mat-card {
   padding: 0;
 }

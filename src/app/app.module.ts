@@ -10,7 +10,6 @@ import { BotNavBarComponent } from './components/main/bot-nav-bar/bot-nav-bar.co
 import { MaterialModule } from './material/material.module';
 import { AccueilComponent } from './components/routes/accueil/accueil.component';
 import { JeuxComponent } from './components/routes/jeux/jeux.component';
-import { ForumComponent } from './components/routes/forum/forum.component';
 import { CommunauteComponent } from './components/routes/communaute/communaute.component';
 import { AmisComponent } from './components/routes/amis/amis.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
@@ -44,7 +43,6 @@ import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-
     ProfilComponent,
     AccueilComponent,
     JeuxComponent,
-    ForumComponent,
     CommunauteComponent,
     AmisComponent,
     ParametresComponent,
