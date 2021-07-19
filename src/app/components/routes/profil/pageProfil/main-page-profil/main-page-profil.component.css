@@ -20,6 +20,16 @@ h1 {
 
 .btnJeux{
   justify-content: center;
+  background-color: #171a1d;
+  border: solid #e2a551;
+  color:white;
+  font-size: 100%;
+  margin-left: 5%;
+  height: 5rem;
+  width: 13rem;
+}
+.btnAmis{
+  justify-content: center;
   background-color: #1e497c;
   color:white;
   font-size: 100%;

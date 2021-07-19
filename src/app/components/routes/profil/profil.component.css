@@ -13,7 +13,10 @@
   height: fit-content;
 	width: fit-content;
 }
-
+.profilContainer1 {
+  background: #212529;
+  border: solid #e2a551;
+}
 .row {
   display: flex;
   flex-direction: row;
