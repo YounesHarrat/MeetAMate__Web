@@ -31,7 +31,7 @@ import { LoginButtonComponent } from './shared/authButtons/loginButton/login-but
 import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
 
 // Services
-import { UserService } from '../app/shared/services/user/user.service';
+import { UserService } from './services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 import { NonConnecterComponent } from './non-connecter/non-connecter.component';
 

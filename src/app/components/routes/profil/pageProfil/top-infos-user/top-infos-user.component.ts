@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-top-infos-user',

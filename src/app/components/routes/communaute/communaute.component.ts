@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from 'src/app/shared/models/game';
-import { GameInfo } from 'src/app/shared/models/game-info';
+import { Game } from 'src/app/models/game';
+import { GameInfo } from 'src/app/models/game-info';
 import { AuthService } from '@auth0/auth0-angular';
-import { UserService } from 'src/app/shared/services/user/user.service';
-import { User } from 'src/app/shared/models/user';
+import { UserService } from 'src/app/services/user/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-communaute',
@@ -26,7 +26,7 @@ export class CommunauteComponent implements OnInit {
     {idJeu:"2", listePseudo:["Papapoule", "Docker", "Powershell", "K8s"]},
     {idJeu:"3", listePseudo:["Chrome", "Steeaaam", "Explorer", "Opera"]}
   ]
-  constructor(public userService: UserService, public auth0: AuthService) { 
+  constructor(public userService: UserService, public auth0: AuthService) {
     this.display = false;
   }
 
@@ -36,12 +36,12 @@ export class CommunauteComponent implements OnInit {
       this.userService.init();
     }
   }
- 
+
   onPress(jeu : Game) {
     this.display = true;
     this.selectJeu = jeu;
     var index = Number(jeu.id)
-    this.communauteJeu = this.ListeCommunaute[index - 1 ].listePseudo 
+    this.communauteJeu = this.ListeCommunaute[index - 1 ].listePseudo
     console.log(this.communauteJeu);
   }
 }

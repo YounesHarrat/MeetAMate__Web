@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Game } from 'src/app/shared/models/game';
-import { GameInfo } from 'src/app/shared/models/game-info';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { Game } from 'src/app/models/game';
+import { GameInfo } from 'src/app/models/game-info';
+import { UserService } from 'src/app/services/user/user.service';
 
 
 
