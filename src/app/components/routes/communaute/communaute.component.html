@@ -1,7 +1,9 @@
 
 <div class="profilContainer blur" *ngIf="auth0.isAuthenticated$ | async">
     <ng-template #mainPage>
-        <div class="container" >
+        
+        <button mat-raised-button color="primary" style="margin-top:30px;">Creer une communauté</button>
+        <div class="container" >            
         <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
             <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
             <mat-card-actions>

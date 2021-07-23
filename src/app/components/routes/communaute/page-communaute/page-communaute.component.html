@@ -14,8 +14,13 @@
     </div>
 </div>
 
+
 <div class="mainContainer">
-    <div class="centerContainer" *ngIf="btnEventClick;else questions">
+    <div *ngIf="btnEventClick;else questions">
+        <div>
+            <button mat-raised-button color="primary">Creer un évènement</button>
+        </div>
+        <div class="centerContainer">
         <div class="containerEvent" *ngFor="let event of ListeEvent">
             <mat-card class="cardEvent">
                 <mat-card-header>
@@ -35,7 +40,8 @@
                     <button class="btnParticiper" mat-button>Participer</button>
                 </mat-card-actions>
             </mat-card>            
-        </div>        
+        </div>     
+        </div>   
     </div>
     <div class="rightContainer">
         <p class="titleRight">Membre :</p>
@@ -46,7 +52,6 @@
         </ul>
     </div>
 </div>
-
 
 <ng-template #questions>
     <!-- <div class="centerContainerQuestion">
@@ -68,9 +73,9 @@
     </div>   
 </div>      -->
 
-
 <div class="centerContainerQuestion">
-<div class="containerQuestion" *ngFor="let question of ListeQuestion">
+    <button mat-raised-button color="primary" style="width: min-content;" >Creer une question</button>
+    <div class="containerQuestion" *ngFor="let question of ListeQuestion">
     <div class="cardQuestion">
 <mat-accordion>
     <mat-expansion-panel hideToggle>
