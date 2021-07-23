@@ -10,32 +10,33 @@
   </div>
 
   <ul>
-    <li>
+    <li *ngIf="user.nom !== '?' && user.prenom != '?'">
       {{user.nom}} {{user.prenom}}
     </li>
-    <li *ngIf="user.age !== '?'; else setAgeTemplate;">
+    <li *ngIf="user.age !== '?'">
       {{user.age}} ans
     </li>
-    <ng-template #setAgeTemplate>
+    <!-- <ng-template #setAgeTemplate>
       <li>
         how old are you ?
         <input id="age" type="number" name="age" >
         <button type="button" (click)="setAge()" >Valider</button>
       </li>
-    </ng-template>
+    </ng-template> -->
     <li class="pseudo" *ngIf="user.pseudo !== '?'; else setMateName;">
       MateName : {{user.pseudo}}
     </li>
-    <ng-template #setMateName>
+    <!-- <ng-template #setMateName>
       <li>
         choose a pseudo:
         <input id="inputPseudo" type="text" name="pseudo" value="" >
         <button type="submit" (click)="setPseudo()">Valider</button>
       </li>
-    </ng-template>
-    <li>
+    </ng-template> -->
+    <li *ngIf="user.favorite !== '?'">
       {{user.favorite}}
     </li>
+
   </ul>
 </div>
 
