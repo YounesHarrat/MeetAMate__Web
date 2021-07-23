@@ -23,7 +23,7 @@
         <button type="button" (click)="setAge()" >Valider</button>
       </li>
     </ng-template> -->
-    <li class="pseudo" *ngIf="user.pseudo !== '?'; else setMateName;">
+    <li class="pseudo" *ngIf="user.pseudo !== '?'">
       MateName : {{user.pseudo}}
     </li>
     <!-- <ng-template #setMateName>

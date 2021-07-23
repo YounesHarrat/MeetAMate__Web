@@ -17,10 +17,32 @@ class AuthProfileController extends AbstractController
 {
 
     /**
+     * @Route("/new/connection")
+     */
+    public function newConnection(Request $request, AuthProfileRepository $authProfileRepository): Response
+    {
+        $authProfile = new AuthProfile();
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($authProfile);
+        $entityManager->flush();
+
+        $response = new Response();
+        $profiles = $authProfileRepository->findAll();
+        $response->sendHeaders('Status', 'ok');
+        $response->sendHeaders('Access-Control-Allow-Origin', '*');
+        $response->setContent(json_encode([
+          'profiles' => $profiles,
+        ]));
+        return $response;
+
+    }
+
+    /**
      * @Route("/new/connection/{id}")
      * @Entity("authProfile", expr="repository.find(id)")
      */
-    public function newConnection(Request $request, AuthProfile $authProfile, AuthProfileRepository $authProfileRepository): Response
+    public function newConnectionID(Request $request, AuthProfile $authProfile, AuthProfileRepository $authProfileRepository): Response
     {
         // echo 'new auth profile request';
         var_dump($authProfile);
