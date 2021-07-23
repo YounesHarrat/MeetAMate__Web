@@ -1,4 +1,5 @@
 
+import { AuthProfile } from './auth-profile';
 import { FriendStatus } from './friend-status';
 import { Game } from './game';
 import { GameInfo } from './game-info';
@@ -31,4 +32,6 @@ export class User {
 
   // User's SocialNetworkData
   communityList: Array<SocialNetworkData> = [];
+
+  authProfile: AuthProfile = new AuthProfile;
 }

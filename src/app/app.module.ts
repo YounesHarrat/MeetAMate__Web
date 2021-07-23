@@ -34,6 +34,7 @@ import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-
 import { UserService } from './services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 import { NonConnecterComponent } from './non-connecter/non-connecter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { NonConnecterComponent } from './non-connecter/non-connecter.component';
     AuthModule.forRoot({
       ...env.auth,
     }),
+    HttpClientModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { User } from 'src/app/shared/models/user';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-main-page-profil',
@@ -112,6 +112,12 @@ export class MainPageProfilComponent implements OnInit {
     if (this.user.pseudo === "") {
       this.userService.init();
     }
+
+  }
+
+  public handleForm() {
+    console.log('handleForm');
+
 
   }
 

@@ -14,8 +14,6 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('ProfilComponent init', this.userService);
-
   }
 
 }

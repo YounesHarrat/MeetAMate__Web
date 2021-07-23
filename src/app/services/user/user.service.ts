@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { ApiService } from 'src/app/api/api.service';
+import { AuthProfile } from 'src/app/models/auth-profile';
 import { Game } from '../../models/game';
 import { GameInfo } from '../../models/game-info';
 import { User } from '../../models/user';
@@ -13,16 +14,23 @@ export class UserService {
 
   user: User = new User();
   profile: any;
-  http: HttpClient;
-  API_URL: string;
-  options;
 
+  API_URL = "http://localhost:8000/";
+
+  resp: any = null;
+
+  options = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Headers':	'Content-Type, Authorization, access-control-allow-origin, responseType, access-control-allow-headers,access-control-allow-methods, X-API-KEY, Origin, X-Requested-With, Accept, Access-Control-Request-Method',
+      'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, PUT, DELETE',
+      'Access-Control-Allow-Origin' : '*',
+    }),
+
+  };
   constructor(
-    public auth: AuthService,
-    private apiService: ApiService) {
-      this.http = this.apiService.httpClient;
-      this.API_URL = this.apiService.API_URL;
-      this.options = this.apiService.httpOptions;
+    private http: HttpClient,
+    private auth: AuthService) {
+
     }
 
   ngOnInit() {
@@ -33,9 +41,18 @@ export class UserService {
     return this.http.get(this.API_URL+'user/getAll', this.options );
   }
 
+  public onAuth(authProfile: AuthProfile) {
+    this.user = new User();
+    this.user.authProfile = authProfile;
+    let req = this.http.post(this.API_URL+'auth/profile/new/connection/7', {user: this.user, authProfile: authProfile}, this.options)
+    // .subscribe(obs => {
+    //   console.log('inside subscription ', obs);
 
-  getAll() {
-    this.apiService
+    // });
+    console.log('onAuth::user', {
+      user: this.user,
+      sub: req,
+    });
   }
 
   init() {

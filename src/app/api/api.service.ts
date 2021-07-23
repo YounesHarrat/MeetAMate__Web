@@ -5,13 +5,11 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
 
   API_URL = "http://localhost:8000/";
-
-  httpClient: HttpClient;
 
   resp: any = null;
 
@@ -25,16 +23,16 @@ export class ApiService {
   };
 
   constructor(private http: HttpClient) {
-    this.httpClient = http;
+
   }
 
-  public getAllGames(): any {
-    return this.http.get(this.API_URL+'game/getAll', this.httpOptions );
-  }
+  // public getAllGames(): any {
+  //   return this.http.get(this.API_URL+'game/getAll', this.httpOptions );
+  // }
 
-  public getAllUsers(): any {
-    return this.http.get(this.API_URL+'user/getAll', this.httpOptions );
-  }
+  // public getAllUsers(): any {
+  //   return this.http.get(this.API_URL+'user/getAll', this.httpOptions );
+  // }
 
   // public getUsers(): any {
   //   console.log('getUsers');
