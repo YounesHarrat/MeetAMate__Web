@@ -7,16 +7,15 @@
 }
 
 .form {
-
   width: fit-content;
   border: 2px solid white;
   background-color: black;
   margin: auto;
+  margin-top: 2rem;
   padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: #e2a551;
   font-size: 1.5rem;
 }
