@@ -24,6 +24,8 @@ export class UserService {
       'Access-Control-Allow-Headers':	'Content-Type, Authorization, access-control-allow-origin, responseType, access-control-allow-headers,access-control-allow-methods, X-API-KEY, Origin, X-Requested-With, Accept, Access-Control-Request-Method',
       'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, PUT, DELETE',
       'Access-Control-Allow-Origin' : '*',
+      'Content-Type': '',
+
     }),
 
   };
@@ -44,14 +46,16 @@ export class UserService {
   public onAuth(authProfile: AuthProfile) {
     this.user = new User();
     this.user.authProfile = authProfile;
-    let req = this.http.post(this.API_URL+'auth/profile/new/connection/7', {user: this.user, authProfile: authProfile}, this.options)
+    this.http.post(this.API_URL+'auth/profile/new/connection', {user: this.user, authProfile: authProfile}, this.options).subscribe( sub => {
+      console.log('subscribe', sub);
+
+    });
     // .subscribe(obs => {
     //   console.log('inside subscription ', obs);
 
     // });
     console.log('onAuth::user', {
       user: this.user,
-      sub: req,
     });
   }
 
