@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Entity;
-
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\AuthProfileRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=AuthProfileRepository::class)
  */
+#[ApiResource]
 class AuthProfile
 {
     /**

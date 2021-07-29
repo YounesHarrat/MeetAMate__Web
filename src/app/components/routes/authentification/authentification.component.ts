@@ -20,17 +20,21 @@ export class AuthentificationComponent implements OnInit {
     this.auth.user$.subscribe(
       (profile) => {
         console.log('Authentification', profile);
+        if (profile ) {
 
-        this.profileJson = JSON.stringify(profile, null, 2);
-        let authProfile = new AuthProfile();
-        authProfile.nickname = profile?.nickname ? profile.nickname : "";
-        authProfile.name = profile?.name ? profile.name : "";
-        authProfile.picture = profile?.picture ? profile.picture : "";
-        authProfile.updated_at = profile?.updated_at ? Date.parse(profile.updated_at) : 0;
-        authProfile.email = profile?.email ? profile.email : "";
-        authProfile.email_verified = profile?.email_verified ? profile.email_verified : false;
-        authProfile.sub = profile?.sub ? profile.sub : "";
-        this.userService.onAuth(authProfile);
+          this.profileJson = JSON.stringify(profile, null, 2);
+          let authProfile = new AuthProfile();
+          authProfile.nickname = profile?.nickname ? profile.nickname : "";
+          authProfile.name = profile?.name ? profile.name : "";
+          authProfile.picture = profile?.picture ? profile.picture : "";
+          authProfile.updated_at = profile?.updated_at !== undefined ? Date.parse(profile.updated_at) : 0;
+          authProfile.email = profile?.email ? profile.email : "";
+          authProfile.email_verified = profile?.email_verified !== undefined ? profile.email_verified : false;
+          authProfile.sub = profile?.sub ? profile.sub : "";
+
+          this.userService.onAuth(authProfile);
+
+        }
       }
     );
   }

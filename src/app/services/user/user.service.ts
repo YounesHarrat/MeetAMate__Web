@@ -23,9 +23,10 @@ export class UserService {
     headers: new HttpHeaders({
       'Access-Control-Allow-Headers':	'Content-Type, Authorization, access-control-allow-origin, responseType, access-control-allow-headers,access-control-allow-methods, X-API-KEY, Origin, X-Requested-With, Accept, Access-Control-Request-Method',
       'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, PUT, DELETE',
-      'Access-Control-Allow-Origin' : '*',
-      'Content-Type': '',
-
+      'Access-Control-Allow-Origin' : 'http://localhost:4200',
+      'Allow': 'GET',
+      'Content-Type': 'application/json; utf-8',
+      'Accept': 'application/json',
     }),
 
   };
@@ -36,6 +37,7 @@ export class UserService {
     }
 
   ngOnInit() {
+    console.log('userService init', localStorage);
 
   }
 
@@ -46,17 +48,17 @@ export class UserService {
   public onAuth(authProfile: AuthProfile) {
     this.user = new User();
     this.user.authProfile = authProfile;
-    this.http.post(this.API_URL+'auth/profile/new/connection', {user: this.user, authProfile: authProfile}, this.options).subscribe( sub => {
-      console.log('subscribe', sub);
+    let authProfileJson = JSON.stringify(authProfile);
+    this.http.post(this.API_URL+'api/auth_profiles', authProfileJson, this.options)
+    .subscribe(obs => {
+      console.log('inside subscription ', obs);
 
     });
-    // .subscribe(obs => {
-    //   console.log('inside subscription ', obs);
-
-    // });
     console.log('onAuth::user', {
       user: this.user,
     });
+    localStorage.setItem('isLoggedIn', "true");
+    localStorage.setItem('token', this.user.authProfile.sub);
   }
 
   init() {

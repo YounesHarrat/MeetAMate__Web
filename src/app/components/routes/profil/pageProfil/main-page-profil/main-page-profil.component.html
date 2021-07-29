@@ -33,10 +33,20 @@
 
   <div class="col">
     <div>
-      <h1>Valider votre profil: </h1>
+      <h1>1er Etape => Validez votre profil: </h1>
     </div>
 
-    <div >
+
+    <div>
+      <form >
+        <label for="nom">Nom: </label>
+        <input type="text" name="nom" id="nom">
+        <button type="submit" [disabled]="!form.valid" (click)="handleForm()">
+          Save
+        </button>
+      </form>
+    </div>
+    <!-- <div >
       <form class="col userProfil">
         <label for="nom">Nom: </label>
         <input type="text" id="nom">
@@ -53,7 +63,7 @@
         <button (click)="handleForm()">SET</button>
       </form>
 
-    </div>
+    </div> -->
 
   </div>
 
