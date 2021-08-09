@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Game } from 'src/app/shared/models/game';
@@ -19,26 +20,26 @@ export class PageCommunauteComponent implements OnInit {
   panelOpenState = false;
   
   ListeEvent = [
-    {id:"1", idJeu:"1", title:"A1", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"2", idJeu:"1", title:"A2", type:"1v1", date:"28/04/2021", heure:"11h00"},
-    {id:"3", idJeu:"1", title:"A3", type:"2v2", date:"28/04/2021", heure:"11h00"},
-    {id:"4", idJeu:"1", title:"A4", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"5", idJeu:"1", title:"A5", type:"1v1", date:"28/04/2021", heure:"11h00"},  
-    {id:"6", idJeu:"2", title:"RL1", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"7", idJeu:"2", title:"RL2", type:"1v1", date:"28/04/2021", heure:"11h00"},
-    {id:"8", idJeu:"2", title:"RL3", type:"2v2", date:"28/04/2021", heure:"11h00"},
-    {id:"9", idJeu:"2", title:"RL4", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"10", idJeu:"2", title:"RL5", type:"1v1", date:"28/04/2021", heure:"11h00"}, 
-    {id:"11", idJeu:"3", title:"F1", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"12", idJeu:"3", title:"F2", type:"1v1", date:"28/04/2021", heure:"11h00"},
-    {id:"13", idJeu:"3", title:"F3", type:"2v2", date:"28/04/2021", heure:"11h00"},
-    {id:"14", idJeu:"3", title:"F4", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"15", idJeu:"3", title:"F5", type:"1v1", date:"28/04/2021", heure:"11h00"},
-    {id:"16", idJeu:"4", title:"Tournoi", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"17", idJeu:"4", title:"Solo", type:"1v1", date:"28/04/2021", heure:"11h00"},
-    {id:"18", idJeu:"4", title:"Duo", type:"2v2", date:"28/04/2021", heure:"11h00"},
-    {id:"19", idJeu:"4", title:"Tournoi", type:"4v4", date:"28/04/2021", heure:"11h00"},
-    {id:"20", idJeu:"4", title:"Solo", type:"1v1", date:"28/04/2021", heure:"11h00"}, 
+    {id:"1", idJeu:"1", title:"A1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"2", idJeu:"1", title:"A2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"3", idJeu:"1", title:"A3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"4", idJeu:"1", title:"A4", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"5", idJeu:"1", title:"A5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},  
+    {id:"6", idJeu:"2", title:"RL1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"7", idJeu:"2", title:"RL2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"8", idJeu:"2", title:"RL3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"9", idJeu:"2", title:"RL4", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"10", idJeu:"2", title:"RL5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"}, 
+    {id:"11", idJeu:"3", title:"F1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"12", idJeu:"3", title:"F2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"13", idJeu:"3", title:"F3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"14", idJeu:"3", title:"F4", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"15", idJeu:"3", title:"F5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"16", idJeu:"4", title:"Tournoi", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"17", idJeu:"4", title:"Solo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"18", idJeu:"4", title:"Duo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"19", idJeu:"4", title:"Tournoi", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
+    {id:"20", idJeu:"4", title:"Solo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"}, 
     ]
   ListeQuestion = [
     {id:"1", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Quel est le Dominus : Snake Skin ?"},
@@ -117,6 +118,10 @@ export class PageCommunauteComponent implements OnInit {
   addQuestion(contenu: string) {
     var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
     this.ListeQuestion.push(newQuestion)    
+  }
+  addEvent(titres: string, dates: Time, heures: Time, descs: string){
+    var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
+    this.ListeEvent.push(newEvent)    
   }
 
   clickEvents(){

@@ -17,9 +17,44 @@
 
 <div class="mainContainer">
     <div *ngIf="btnEventClick;else questions">
-        <div>
+        <div class="cardBtnQuestion">
+            <mat-accordion>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>        
+                    <mat-panel-title>
+                        <div>
+                            <p class="labelBtn">
+                                Creer un évènement
+                              </p>
+                        </div>              
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <div class="divEvent">
+                            <p>Titre :</p>
+                            <input type="text" size="40" #titre>                  
+                        </div> <br>
+                        <div>
+                            <p>Date :</p>
+                            <input type="date" #dates>                  
+                        </div>  
+                        <div>
+                            <p>Heure :</p>
+                            <input type="time" #heure>                  
+                        </div>  
+                        <div>
+                            <p>Description :</p>
+                            <textarea type="text"cols="50" rows="5"  #description></textarea>                  
+                        </div>  
+                    </mat-panel-description>
+                    <button (click)="addEvent(titre.value, dates.toString(), heure.value, description.value)">Valider</button>
+                </mat-expansion-panel>
+            </mat-accordion>
+            </div>
+
+        <!-- <div>
             <button mat-raised-button color="primary">Creer un évènement</button>
-        </div>
+        </div> -->
         <div class="centerContainer">
         <div class="containerEvent" *ngFor="let event of ListeEvent">
             <mat-card class="cardEvent">
@@ -29,11 +64,10 @@
                 </mat-card-header>
                 <mat-card-content>
                     <mat-card-title>{{event.title}}</mat-card-title>
-                    <p>Type: {{event.type}}</p>
                     <p>Date: {{event.date}}</p>
                     <p>Heure: {{event.heure}}</p>
                     <p>
-                    Paragraphe de présentation de l'event (quelques lignes)
+                        {{event.contenu}}
                     </p>
                 </mat-card-content>
                 <mat-card-actions>

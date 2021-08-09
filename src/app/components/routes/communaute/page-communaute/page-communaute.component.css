@@ -118,3 +118,14 @@
     margin-top: 10px;
     margin-left: 15px;
 }
+.divEvent{
+    margin-right: 1rem;
+}
+mat-panel-description
+{
+  display: block;
+}
+textarea{
+    resize: none;
+    outline: none;
+}
