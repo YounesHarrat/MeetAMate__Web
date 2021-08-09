@@ -28,9 +28,9 @@
   border: #e2a551 2px solid ;
 }
 
-.sidenav-container {
-  top: -35vh;
-}
+/* .sidenav-container {
+  top: -338px;
+} */
 
 mat-toolbar {
   height: 10vh;
@@ -56,7 +56,7 @@ img {
 }
 
 .mat-sidenav-content {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width:100vw;
 }
 
@@ -68,3 +68,9 @@ mat-nav-list{
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+.mat-drawer.mat-drawer-side {
+  z-index: 9999;
+  margin-top: -338px;
+}
+
