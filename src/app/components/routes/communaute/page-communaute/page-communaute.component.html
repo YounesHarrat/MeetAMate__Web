@@ -74,7 +74,27 @@
 </div>      -->
 
 <div class="centerContainerQuestion">
-    <button mat-raised-button color="primary" style="width: min-content;" >Creer une question</button>
+
+    <div class="cardBtnQuestion">
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>        
+            <mat-panel-title>
+                <div>
+                    <p class="labelBtn">
+                        Creer une question
+                      </p>
+                </div>              
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+            <mat-panel-description class="questionLabel">    
+                <input class="text" class="textAreaReponse" #question>                  
+            </mat-panel-description>
+            <button (click)="addQuestion(question.value)">Valider</button>
+        </mat-expansion-panel>
+    </mat-accordion>
+    </div>
+
     <div class="containerQuestion" *ngFor="let question of ListeQuestion">
     <div class="cardQuestion">
 <mat-accordion>
@@ -90,7 +110,24 @@
             {{question.contenu}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
+      <div class="containerQuestion" *ngFor="let reponse of ListeReponse">
+        <div *ngIf="reponse.idQuestion === question.id">
+        <mat-panel-description class="questionLabel">
+            <mat-panel-title>
+                <div mat-card-avatar class="imgProfil"></div>
+              <p class="pseudoLabel">
+                PSEUDO
+              </p>
+              
+            </mat-panel-title>
+            {{reponse.contenu}}            
+        </mat-panel-description>
+      </div>
+    </div>
+    <div>
+        <textarea class="textAreaReponse"type="text" #reponse></textarea>
+    </div>
+    <button (click)="addReponse(reponse.value,  question.id)">Répondre</button>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
