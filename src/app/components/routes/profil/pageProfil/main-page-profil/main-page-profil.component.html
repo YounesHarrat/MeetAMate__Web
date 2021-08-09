@@ -37,11 +37,12 @@
     </div>
 
 
-    <div>
-      <form >
+    <div *ngIf="user">
+      <form action="https://localhost:8000/api/users" method='put'>
         <label for="nom">Nom: </label>
+        <h1>USER ID: {{ user.id }} </h1>
         <input type="text" name="nom" id="nom">
-        <button type="submit" (click)="handleForm()">
+        <button type="submit">
           Save
         </button>
       </form>

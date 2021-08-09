@@ -65,10 +65,33 @@ class User
      */
     private $followedGames;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $favorite;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="friends")
+     */
+    private $friends;
+
+    // /**
+    //  * @ORM\ManyToMany(targetEntity=SocialNetworkData::class)
+    //  */
+    // private $socialNetworks;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=SocialNetworkData::class)
+     */
+    private $communityList;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
         $this->followedGames = new ArrayCollection();
+        $this->friends = new ArrayCollection();
+        $this->socialNetworks = new ArrayCollection();
+        $this->communityList = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -210,6 +233,90 @@ class User
     public function removeFollowedGame(Game $followedGame): self
     {
         $this->followedGames->removeElement($followedGame);
+
+        return $this;
+    }
+
+    public function getFavorite(): ?string
+    {
+        return $this->favorite;
+    }
+
+    public function setFavorite(?string $favorite): self
+    {
+        $this->favorite = $favorite;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getFriends(): Collection
+    {
+        return $this->friends;
+    }
+
+    public function addFriend(self $friend): self
+    {
+        if (!$this->friends->contains($friend)) {
+            $this->friends[] = $friend;
+        }
+
+        return $this;
+    }
+
+    public function removeFriend(self $friend): self
+    {
+        $this->friends->removeElement($friend);
+
+        return $this;
+    }
+
+    // /**
+    //  * @return Collection|SocialNetworkData[]
+    //  */
+    // public function getSocialNetworks(): Collection
+    // {
+    //     return $this->socialNetworks;
+    // }
+
+    // public function addSocialNetwork(SocialNetworkData $socialNetwork): self
+    // {
+    //     if (!$this->socialNetworks->contains($socialNetwork)) {
+    //         $this->socialNetworks[] = $socialNetwork;
+    //     }
+
+    //     return $this;
+    // }
+
+    // public function removeSocialNetwork(SocialNetworkData $socialNetwork): self
+    // {
+    //     $this->socialNetworks->removeElement($socialNetwork);
+
+    //     return $this;
+    // }
+
+    /**
+     * @return Collection|SocialNetworkData[]
+     */
+    public function getCommunityList(): Collection
+    {
+        return $this->communityList;
+    }
+
+    public function addCommunityList(SocialNetworkData $communityList): self
+    {
+        if (!$this->communityList->contains($communityList)) {
+            $this->communityList[] = $communityList;
+        }
+
+        return $this;
+    }
+
+    public function removeCommunityList(SocialNetworkData $communityList): self
+    {
+        $this->communityList->removeElement($communityList);
 
         return $this;
     }

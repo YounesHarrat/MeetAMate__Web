@@ -104,7 +104,7 @@ export class MainPageProfilComponent implements OnInit {
 
   // }
 
-  user: User = new User();
+  user: any = new User();
   constructor(public userService: UserService, public auth0: AuthService) { }
 
   ngOnInit(): void {
@@ -112,11 +112,6 @@ export class MainPageProfilComponent implements OnInit {
     if (this.user.pseudo === "") {
       this.userService.init();
     }
-
-  }
-
-  public handleForm() {
-    console.log('handleForm');
 
 
   }

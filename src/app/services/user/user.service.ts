@@ -39,12 +39,27 @@ export class UserService {
     }
 
   ngOnInit() {
-    console.log('userService init', localStorage);
-
   }
 
   public getAllUsers(): any {
-    return this.http.get(this.API_URL+'user/getAll', this.options );
+    return this.http.get(this.API_URL+'/users', this.options );
+  }
+
+  public getUserByEmail(email: string) {
+
+    this.getAllUsers()
+    .subscribe( (data: any) => {
+      const Json = JSON.stringify(data);
+      const obj = JSON.parse(Json);
+      console.log('getUserByEmail', obj);
+      Object.keys(obj).forEach( (element:any) => {
+        let user = obj[element];
+        if ( user.mail === email ) {
+          this.user = user;
+        }
+      });
+    })
+
   }
 
   public postNewUser(user: any) {
@@ -71,7 +86,7 @@ export class UserService {
           age: this.user.age,
           mail: this.profile_email,
           pseudo: this.user.pseudo,
-          avatar: this.user.avatarIMG,
+          avatar: this.user.avatar,
         }
         this.postNewUser(body);
     } else {
@@ -79,7 +94,9 @@ export class UserService {
     }
     localStorage.setItem('isLoggedIn', "true");
     localStorage.setItem('token', authProfile.sub);
+    this.getUserByEmail(this.profile_email);
   }
+
 
 
   init() {
@@ -94,10 +111,10 @@ export class UserService {
         this.user.pseudo = "?";
         this.user.favorite = "?";
         // @ts-ignore: Object is possibly 'null'
-        this.user.avatarIMG = profile.picture;
+        this.user.avatar = profile.picture;
         // this.user.socialNetwork = this.seerakNetworkMock;
         // this.user.friendsList = this.seerakFriendsListMock;
-        // this.user.gameUser = this.seerakGameUserMock;
+        // this.user.games = this.seerakGameUserMock;
         console.log('UserService init', {
           profile,
           user: this.user,
@@ -119,10 +136,10 @@ export class UserService {
   }
 
   addToGameUser(jeux: Game) {
-    const found  = this.user.gameUser.find(o => o.id === jeux.id );
-    console.log('addToGameUser', jeux, found, this.user.gameUser );
+    const found  = this.user.games.find(o => o.id === jeux.id );
+    console.log('addToGameUser', jeux, found, this.user.games );
     if ( !found ) {
-      this.user.gameUser.push(jeux)
+      this.user.games.push(jeux)
     }
   }
 

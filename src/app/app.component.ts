@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'startingFront';
 
-  
+
   ngOnInit(): void {
     const app = document;
     if (app.getElementById('backtotop') !== null ) {

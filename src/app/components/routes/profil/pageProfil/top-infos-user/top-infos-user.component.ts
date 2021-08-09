@@ -23,7 +23,7 @@ onSelectFile(event:any) {
       if(reader.result != null)
         {
           this.url = reader.result.toString()
-          this.userService.user.avatarIMG = this.url;
+          this.userService.user.avatar = this.url;
         }
 
       }
@@ -51,7 +51,7 @@ onSelectFile(event:any) {
 
   ngOnInit(): void {
     console.log('TopInfoUser init', this.user);
-    this.url = this.user.avatarIMG
+    this.url = this.user.avatar;
   }
 
   setPseudo(): void {
