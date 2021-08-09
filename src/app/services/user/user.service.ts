@@ -6,6 +6,7 @@ import { AuthProfile } from 'src/app/models/auth-profile';
 import { Game } from '../../models/game';
 import { GameInfo } from '../../models/game-info';
 import { User } from '../../models/user';
+import { AuthProfileService } from '../authProfile/authProfile.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class UserService {
   user: User = new User();
   profile: any;
 
-  API_URL = "http://localhost:8000/";
+  API_URL = "http://localhost:8000/api";
 
   resp: any = null;
 
@@ -32,7 +33,8 @@ export class UserService {
   };
   constructor(
     private http: HttpClient,
-    private auth: AuthService) {
+    private auth: AuthService,
+    private authProfileService: AuthProfileService) {
 
     }
 
@@ -45,21 +47,40 @@ export class UserService {
     return this.http.get(this.API_URL+'user/getAll', this.options );
   }
 
-  public onAuth(authProfile: AuthProfile) {
+  public postNewUser(user: any) {
+    this.http.post(this.API_URL+'/users', user, this.options)
+    .subscribe(obs => {
+      console.log('POST USER inside subscription ', obs);
+    });
+  }
+
+  profile_Id = "";
+  profile_email = "";
+
+  public async onAuth(authProfile: AuthProfile) {
     this.user = new User();
     this.user.authProfile = authProfile;
-    let authProfileJson = JSON.stringify(authProfile);
-    this.http.post(this.API_URL+'api/auth_profiles', authProfileJson, this.options)
-    .subscribe(obs => {
-      console.log('inside subscription ', obs);
-
-    });
-    console.log('onAuth::user', {
-      user: this.user,
-    });
+    this.authProfileService.onAuth(authProfile);
+    this.profile_email = authProfile.email;
+    let cd = await this.authProfileService.isNewAuthProfile(authProfile)
+    if ( cd ) {
+        const body = {
+          auth_profile_id: this.profile_Id,
+          nom: this.user.nom,
+          prenom: this.user.prenom,
+          age: this.user.age,
+          mail: this.profile_email,
+          pseudo: this.user.pseudo,
+          avatar: this.user.avatarIMG,
+        }
+        this.postNewUser(body);
+    } else {
+      console.log('%c NO NEED TO POST A NEW USER TO DATABASE ! IT ALREADY EXISTS', 'color:red');
+    }
     localStorage.setItem('isLoggedIn', "true");
-    localStorage.setItem('token', this.user.authProfile.sub);
+    localStorage.setItem('token', authProfile.sub);
   }
+
 
   init() {
     // set auth0 info into our user
