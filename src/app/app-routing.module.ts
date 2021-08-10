@@ -8,14 +8,12 @@ import { JeuxComponent } from './components/routes/jeux/jeux.component';
 import { ParametresComponent } from './components/routes/parametres/parametres.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
 import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
-import { EditProfileComponent } from './components/routes/profil/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: "", component: AppComponent, pathMatch: 'full'},
   { path: 'accueil', component: AccueilComponent},
   { path: 'profil', component: ProfilComponent},
-  { path: 'profil/edit', component: EditProfileComponent},
   { path: 'jeux', component: JeuxComponent},
   { path: 'communaute', component: CommunauteComponent},
   { path: 'parametres', component: ParametresComponent},

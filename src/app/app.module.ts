@@ -35,7 +35,6 @@ import { UserService } from './services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 import { NonConnecterComponent } from './non-connecter/non-connecter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EditProfileComponent } from './components/routes/profil/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,7 @@ import { EditProfileComponent } from './components/routes/profil/edit-profile/ed
     SigninButtonComponent,
     CarouselComponent,
     NonConnecterComponent,
-    EditProfileComponent,
+
 
   ],
   imports: [
