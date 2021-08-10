@@ -50,7 +50,6 @@ onSelectFile(event:any) {
   constructor(public userService: UserService, public auth0: AuthService) { }
 
   ngOnInit(): void {
-    console.log('TopInfoUser init', this.user);
     this.url = this.user.avatar;
   }
 
@@ -65,9 +64,7 @@ onSelectFile(event:any) {
     // @ts-ignore
     const age = document.getElementById('age').value;
     console.log('setAge', age);
-
     this.userService.setAge(age);
-
   }
 
 }
