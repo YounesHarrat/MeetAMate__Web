@@ -25,49 +25,6 @@
         <app-right-friends-user [user]="user"></app-right-friends-user>
       </mat-expansion-panel>
     </div>
-
-
 </div>
 
-<div class="row" style="justify-content: center;">
-
-  <div class="col">
-    <div>
-      <h1>1er Etape => Validez votre profil: </h1>
-    </div>
-
-
-    <div *ngIf="user">
-      <form action="https://localhost:8000/api/users" method='put'>
-        <label for="nom">Nom: </label>
-        <h1>USER ID: {{ user.id }} </h1>
-        <input type="text" name="nom" id="nom">
-        <button type="submit">
-          Save
-        </button>
-      </form>
-    </div>
-    <!-- <div >
-      <form class="col userProfil">
-        <label for="nom">Nom: </label>
-        <input type="text" id="nom">
-
-        <label for="prenom">Prenom: </label>
-        <input type="text" id="prenom">
-
-        <label for="age">Age: </label>
-        <input type="number" id="age">
-
-        <label for="pseudo">Pseudo:</label>
-        <input type="text" name="pseudo" id="pseudo">
-
-        <button (click)="handleForm()">SET</button>
-      </form>
-
-    </div> -->
-
-  </div>
-
-
-</div>
 
