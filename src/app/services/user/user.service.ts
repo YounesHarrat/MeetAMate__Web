@@ -58,7 +58,6 @@ export class UserService {
     .subscribe( (data: any) => {
       const Json = JSON.stringify(data);
       const obj = JSON.parse(Json);
-      console.log('getUserByEmail', obj);
       Object.keys(obj).forEach( (element:any) => {
         let user = obj[element];
         if ( user.mail === email ) {
