@@ -44,7 +44,9 @@
                         </div>  
                         <div>
                             <p>Description :</p>
-                            <textarea type="text"cols="50" rows="5"  #description></textarea>                  
+                            <textarea type="text"cols="50" rows="5" maxlength="150" 
+                                        placeholder="Veuillez saisir la description de votre évènement" 
+                                        required #description></textarea>                  
                         </div>  
                     </mat-panel-description>
                     <button (click)="addEvent(titre.value, dates.value, heure.value, description.value)">Valider</button>

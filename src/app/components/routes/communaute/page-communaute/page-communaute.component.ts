@@ -2,7 +2,6 @@ import { Time } from '@angular/common';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Game } from 'src/app/shared/models/game';
-import { User } from 'src/app/shared/models/user';
 import { JeuxComponent } from '../../jeux/jeux.component';
 @Component({
   selector: 'app-page-communaute',
@@ -86,7 +85,6 @@ export class PageCommunauteComponent implements OnInit {
     this.onLoadEvents();
     this.onLoadQuestions();
     this.onLoadReponses();
-
   }
 
   onLoadEvents() {
