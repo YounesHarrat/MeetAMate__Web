@@ -6,9 +6,9 @@ use App\Repository\AuthProfileRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=AuthProfileRepository::class)
  */
-#[ApiResource]
 class AuthProfile
 {
     /**

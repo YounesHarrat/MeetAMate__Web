@@ -7,9 +7,9 @@ use App\Repository\SocialNetworkDataRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=SocialNetworkDataRepository::class)
  */
-#[ApiResource]
 class SocialNetworkData
 {
     /**

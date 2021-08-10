@@ -39,6 +39,13 @@ export class UserService {
     }
 
   ngOnInit() {
+    this.auth.user$.subscribe(
+      data => {
+        if ( data && data.email) {
+          this.getUserByEmail(data?.email);
+        }
+      }
+    );
   }
 
   public getAllUsers(): any {
