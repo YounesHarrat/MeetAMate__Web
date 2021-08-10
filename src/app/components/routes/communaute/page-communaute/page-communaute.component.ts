@@ -119,7 +119,7 @@ export class PageCommunauteComponent implements OnInit {
     var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
     this.ListeQuestion.push(newQuestion)    
   }
-  addEvent(titres: string, dates: Time, heures: Time, descs: string){
+  addEvent(titres: string, dates: string, heures: string, descs: string){
     var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
     this.ListeEvent.push(newEvent)    
   }
