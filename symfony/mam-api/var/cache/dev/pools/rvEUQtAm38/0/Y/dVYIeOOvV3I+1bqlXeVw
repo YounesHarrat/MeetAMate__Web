@@ -1,0 +1,3 @@
+<?php //route_name_810688d832aa534f02f23c3af1ab0e9c
+
+return [PHP_INT_MAX, 'api_auth_profiles_get_item'];
