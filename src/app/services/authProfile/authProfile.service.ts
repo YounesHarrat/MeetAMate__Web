@@ -25,24 +25,54 @@ export class AuthProfileService {
   };
 
   // AUTHPROFILE ATTRIBUTES
-  authProfilesObservable: BehaviorSubject<AuthProfile> = new BehaviorSubject<AuthProfile>(new AuthProfile());
+  authProfilesObservable!: BehaviorSubject<AuthProfile>;
 
   currentEmail = "";
   authProfiles: any;
+  result: any;
 
   constructor( private http: HttpClient) {
     this.authProfiles = [];
+    this.authProfilesObservable = new BehaviorSubject<AuthProfile>(new AuthProfile());
     this.getAuthProfiles();
   }
 
+  // GET
 
-  public onAuth(authProfile: AuthProfile) {
-    if ( this.isNewAuthProfile(authProfile) ) {
-      this.addAuthProfile(authProfile);
-    } else {
-      console.log('%c NO NEED TO POST A NEW AuthProfile TO DATABASE ! IT ALREADY EXISTS', 'color:red');
-    }
+  private async getAuthProfiles() {
+    return await this.http.get(this.API_URL+'/auth_profiles', this.options)
+    .subscribe(
+      profiles => {
+        const profileJson = JSON.stringify(profiles);
+        const profilesObject = JSON.parse(profileJson);
+        this.authProfilesObservable.next(profilesObject);
+      }
+    );
   }
+
+  public getAuthProfileByEmail(email: string) {
+
+    this.authProfilesObservable
+    .subscribe( (data: any) => {
+      const Json = JSON.stringify(data);
+      const obj = JSON.parse(Json);
+      Object.keys(obj).forEach( (element:any) => {
+        let authProfile = obj[element];
+
+        console.log('checking result', authProfile, email);
+        if ( authProfile.email === email ) {
+          this.result = authProfile;
+          console.log('checking result', authProfile);
+        }
+      });
+    })
+
+
+    return this.result;
+
+  }
+
+  // POST
 
   private postAuthProfile(authProfile: string) {
     console.log('postAuthProfile');
@@ -54,17 +84,12 @@ export class AuthProfileService {
     });
   }
 
-  private async getAuthProfiles() {
-    return await this.http.get(this.API_URL+'/auth_profiles', this.options)
-    .subscribe(
-      profiles => {
-        const profileJson = JSON.stringify(profiles);
-        const profilesObject = JSON.parse(profileJson);
-        this.authProfilesObservable.next(profilesObject);
-      }
-    );
-
-
+  public onAuth(authProfile: AuthProfile) {
+    if ( this.isNewAuthProfile(authProfile) ) {
+      this.addAuthProfile(authProfile);
+    } else {
+      console.log('%c NO NEED TO POST A NEW AuthProfile TO DATABASE ! IT ALREADY EXISTS', 'color:red');
+    }
   }
 
   private addAuthProfile(authProfile: AuthProfile) {
@@ -73,8 +98,6 @@ export class AuthProfileService {
     this.postAuthProfile(authProfileJson);
   }
 
-
-  result: any;
   public isNewAuthProfile( authProfile: AuthProfile ): boolean {
     this.authProfilesObservable.asObservable().subscribe(
       data => {

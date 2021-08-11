@@ -16,23 +16,23 @@
     <li *ngIf="user.age !== '?'">
       {{user.age}} ans
     </li>
-    <!-- <ng-template #setAgeTemplate>
+    <ng-template #setAgeTemplate>
       <li>
         how old are you ?
         <input id="age" type="number" name="age" >
         <button type="button" (click)="setAge()" >Valider</button>
       </li>
-    </ng-template> -->
+    </ng-template>
     <li class="pseudo" *ngIf="user.pseudo !== '?'">
       MateName : {{user.pseudo}}
     </li>
-    <!-- <ng-template #setMateName>
+    <ng-template #setMateName>
       <li>
         choose a pseudo:
         <input id="inputPseudo" type="text" name="pseudo" value="" >
         <button type="submit" (click)="setPseudo()">Valider</button>
       </li>
-    </ng-template> -->
+    </ng-template>
     <li *ngIf="user.favorite !== '?'">
       {{user.favorite}}
     </li>
@@ -42,7 +42,7 @@
 
 <br>
 
-<div class="mainMiddleUser" *ngIf="user.communityList[0]">
+<!-- <div class="mainMiddleUser" *ngIf="user.communityList[0]">
 
   <div class="mainInfoDiscord">
   <mat-expansion-panel hideToggle class="expansion-panel-class" >
@@ -57,13 +57,13 @@
       <p class="pseudoSocial">{{user.socialNetwork[0].Pseudo}}</p>
   </mat-expansion-panel>
   </div>
-  <!-- <div class="mainInfoDiscord">
+  <div class="mainInfoDiscord">
     <label class="logoSocialDiscord">
       <img class="imgLogoDiscord">
       <div class="background"></div>
     </label>
     <p>{{user.socialNetwork[0].Pseudo}}</p>
-  </div> -->
+  </div>
 
     <div class="mainInfoSteam">
     <mat-expansion-panel hideToggle class="expansion-panel-class" >
@@ -80,13 +80,13 @@
     </div>
 
 
-  <!-- <div class="mainInfoSteam">
+  <div class="mainInfoSteam">
     <label class="logoSocialSteam">
       <img class="imgLogoSteam"/>
     <div class="background"></div>
   </label>
     <p>{{user.socialNetwork[1].Pseudo}}</p>
-  </div> -->
+  </div>
 
     <div class="mainInfoBattleNet">
     <mat-expansion-panel hideToggle class="expansion-panel-class" >
@@ -102,13 +102,13 @@
     </mat-expansion-panel>
   </div>
 
-  <!-- <div class="mainInfoBattleNet">
+  <div class="mainInfoBattleNet">
     <label class="logoSocialBN">
       <img class="imgLogoBN"/>
       <div class="background"></div>
     </label>
     <p>{{user.socialNetwork[2].Pseudo}}</p>
-  </div> -->
+  </div>
 
     <div class="mainInfoOrigin">
     <mat-expansion-panel hideToggle class="expansion-panel-class" >
@@ -123,13 +123,13 @@
         <p class="pseudoSocial">{{user.socialNetwork[3].Pseudo}}</p>
     </mat-expansion-panel>
     </div>
-  <!-- <div class="mainInfoOrigin">
+  <div class="mainInfoOrigin">
     <label class="logoSocialOrigin">
       <img class="imgLogoOrigin"/>
       <div class="background"></div>
     </label>
     <p>{{user.socialNetwork[3].Pseudo}}</p>
-  </div>  -->
+  </div>
 
     <div class="mainInfoEpicGames">
     <mat-expansion-panel hideToggle class="expansion-panel-class" >
@@ -144,14 +144,14 @@
         <p class="pseudoSocial">{{user.socialNetwork[4].Pseudo}}</p>
     </mat-expansion-panel>
     </div>
-  <!-- <div class="mainInfoEpicGames">
+  <div class="mainInfoEpicGames">
     <label class="logoSocialEpicGames">
       <img class="imgLogoEpicGames"/>
       <div class="background"></div>
     </label>
     <p>{{user.socialNetwork[4].Pseudo}}</p>
-  </div> -->
-</div>
+  </div>
+</div> -->
 
 
 

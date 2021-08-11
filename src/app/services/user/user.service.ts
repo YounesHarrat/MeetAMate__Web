@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { ApiService } from 'src/app/api/api.service';
 import { AuthProfile } from 'src/app/models/auth-profile';
 import { Game } from '../../models/game';
@@ -13,15 +14,15 @@ import { AuthProfileService } from '../authProfile/authProfile.service';
 })
 export class UserService {
 
-  user: User = new User();
-  profile: any;
+  user! : User;
 
   API_URL = "http://localhost:8000/api";
 
   resp: any = null;
+  profile_Id = "";
+  profile_email = "";
 
-  options = {
-    headers: new HttpHeaders({
+  options = {headers: new HttpHeaders({
       'Access-Control-Allow-Headers':	'Content-Type, Authorization, access-control-allow-origin, responseType, access-control-allow-headers,access-control-allow-methods, X-API-KEY, Origin, X-Requested-With, Accept, Access-Control-Request-Method',
       'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, PUT, DELETE',
       'Access-Control-Allow-Origin' : 'http://localhost:4200',
@@ -31,11 +32,17 @@ export class UserService {
     }),
 
   };
+
+
+  // User ATTRIBUTES
+  userObservable!: BehaviorSubject<User>;
+
+
   constructor(
     private http: HttpClient,
     private auth: AuthService,
     private authProfileService: AuthProfileService) {
-
+      this.userObservable = new BehaviorSubject<User>(new User());
     }
 
   ngOnInit() {
@@ -48,25 +55,32 @@ export class UserService {
     );
   }
 
+  // GET
+
   public getAllUsers(): any {
     return this.http.get(this.API_URL+'/users', this.options );
   }
 
-  public getUserByEmail(email: string) {
+  public async getUserByEmail(email: string) {
 
-    this.getAllUsers()
+    await this.getAllUsers()
     .subscribe( (data: any) => {
       const Json = JSON.stringify(data);
       const obj = JSON.parse(Json);
       Object.keys(obj).forEach( (element:any) => {
         let user = obj[element];
         if ( user.mail === email ) {
-          this.user = user;
+          // this.user = user;
+          this.user.id = user.id;
+          this.user.mail = user.mail
+          this.userObservable.next(user);
         }
       });
-    })
+    });
 
   }
+
+  // POST
 
   public postNewUser(user: any) {
     this.http.post(this.API_URL+'/users', user, this.options)
@@ -75,8 +89,8 @@ export class UserService {
     });
   }
 
-  profile_Id = "";
-  profile_email = "";
+
+  // FUNCTIONS
 
   public async onAuth(authProfile: AuthProfile) {
     this.user = new User();
@@ -101,9 +115,8 @@ export class UserService {
     localStorage.setItem('isLoggedIn', "true");
     localStorage.setItem('token', authProfile.sub);
     this.getUserByEmail(this.profile_email);
+    this.verifyUser(this.profile_email);
   }
-
-
 
   init() {
     // set auth0 info into our user
@@ -127,6 +140,15 @@ export class UserService {
         });
       }
     );
+  }
+
+  verifyUser( email: string) {
+    console.log('verifyUser::', {
+      user: this.user,
+      userObs: this.userObservable,
+      email,
+    });
+
   }
 
   setFavorite(jeux: Game) {

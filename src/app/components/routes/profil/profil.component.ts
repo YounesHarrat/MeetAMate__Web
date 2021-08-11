@@ -15,7 +15,9 @@ export class ProfilComponent implements OnInit {
   user = new User();
   ngOnInit(): void {
     this.user = this.userService.user;
-    if ( this.user.pseudo ) {
+    console.log('Profil::OnInit::', this.user);
+
+    if ( this.user?.nom && this.user?.prenom && this.user?.age ) {
 
     } else {
       console.log('%c SEEMS LIKE YOUR PROFILE ISNT FINISHED YET ', 'color:red');

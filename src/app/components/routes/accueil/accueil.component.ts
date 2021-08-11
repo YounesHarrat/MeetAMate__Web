@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-accueil',
@@ -37,10 +39,12 @@ export class AccueilComponent implements OnInit {
     {src:"assets/games/rocket.jpg"},
   ]
 
-  constructor() { }
+  user!: User;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-
+    this.user = this.userService.user;
   }
 
   openDiscord(){
