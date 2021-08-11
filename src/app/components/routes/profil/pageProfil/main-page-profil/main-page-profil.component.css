@@ -50,3 +50,8 @@ h1 {
 .userProfil {
   color: white;
 }
+
+.mat-expansion-panel {
+  background-color: #e2a551;
+  padding: 10% 5% 10% 5%;
+}

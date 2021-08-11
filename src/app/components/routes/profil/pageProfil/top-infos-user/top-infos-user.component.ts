@@ -47,7 +47,7 @@ onSelectFile(event:any) {
     this.url = this.user.avatar;
     Object.keys(this.user).forEach( (v:any) => {
       const value = this.user.get(v);
-      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) ) {
+      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && v !== 'avatar' && value !== '?') {
         console.log('UserBAckLog => ', v, this.user.get(v));
         this.userInfoKeys.push(v);
         this.userInfoArray.push(this.user.get(v));
