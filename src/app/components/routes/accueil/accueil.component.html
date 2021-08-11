@@ -11,9 +11,10 @@
 
       <!-- le conteneur fenêtre -->
 <div class="marquee-rtl fluidContainer2" >
-  <!-- le contenu défilant -->
-  <div >
-    <img class="imgSlider" *ngFor="let stock of stockImg" src={{stock.src}} alt="">
+  <div class="box">
+    <span *ngFor="let stock of stockImg; let indexOfelement=index;" [style]="'--i:'+indexOfelement">
+      <img class="imgSlider" src={{stock.src}} alt="">
+    </span>
   </div>
 </div>
 

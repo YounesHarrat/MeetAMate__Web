@@ -19,12 +19,6 @@ mat-card {
   padding: 0;
 }
 
-/* .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-} */
-
-
 mat-card-image {
   max-width: 8vh;
   max-height: 10vh;
@@ -97,38 +91,45 @@ mat-card-actions{
   color: white;
 }
 
-/* le block conteneur */
-.marquee-rtl {
-  max-width: 100%;                      /* largeur de la fenêtre */
-  margin: 1em auto 2em;
-  overflow: hidden;                     /* masque tout ce qui dépasse */
-  margin-top: 100px;
+.box {
+  position: relative;
+  margin-top: 170px;
+  margin-bottom: 130px;
+  margin-left: 790px;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: animate 30s linear infinite;
 }
 
-/* le bloc défilant */
-.marquee-rtl > :first-child {
-  display: flex;
-  flex-direction: row;                /* modèle de boîte en ligne */
-  padding-right: 2em;                   /* un peu d'espace pour la transition */
-  padding-left: 100%;                   /* placement à droite du conteneur */
-  white-space: nowrap;                  /* pas de passage à la ligne */
-  animation: defilement-rtl 20s infinite linear;
-
-}
-
-@keyframes defilement-rtl {
+@keyframes animate {
   0% {
-    transform: translate3d(0,0,0);      /* position initiale à droite */
+    transform: perspective(1000px) rotateY(0deg);
   }
   100% {
-    transform: translate3d(-300%,0,0);
+    transform: perspective(1000px) rotateY(360deg);
   }
 }
 
-.imgSlider {
-  max-width: 330px;
-  max-height: 400px;
-  padding: 10px;
+.box span {
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 30deg)) translateZ(400px);
+  -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.box span img{
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .icon{
@@ -157,12 +158,6 @@ mat-card-actions{
   width: 95%;
   height: 95%;
   border-radius: 5px 5px;
-}
-
-#top {
-  -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
-  animation-timing-function: linear;
-
 }
 
 .fluidContainer1 {

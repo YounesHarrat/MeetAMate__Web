@@ -25,3 +25,6 @@ mat-card {
   box-shadow: 3px 3px 10px #e2a551;
 }
 
+html {
+  scroll-behavior: smooth;
+}

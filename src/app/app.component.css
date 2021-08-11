@@ -1,6 +1,3 @@
-div {
-  /* border: 1px solid red; */
-}
 
 .container {
   height: auto;
@@ -10,7 +7,6 @@ div {
   left:0;
   right:0;
   bottom: 0;
-
 }
 
 .col {
@@ -40,7 +36,6 @@ div {
   bottom:1%;
   right:1%;
   z-index:9999;
-  scroll-behavior: smooth;
 }
 
 .iconUp{

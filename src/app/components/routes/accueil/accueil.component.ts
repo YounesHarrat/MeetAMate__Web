@@ -20,8 +20,22 @@ export class AccueilComponent implements OnInit {
     {src:"assets/games/csgo.jpg"},
     {src:"assets/games/phasmophobia.jpg"},
     {src:"assets/games/raft.jpg"},
+    
+  ];
 
-
+  styles = [
+    {style:"--i:1"},
+    {style:"--i:2"},
+    {style:"--i:3"},
+    {style:"--i:4"},
+    {style:"--i:5"},
+    {style:"--i:6"},
+    {style:"--i:7"},
+    {style:"--i:8"},
+    {style:"--i:9"},
+    {style:"--i:10"},
+    {style:"--i:11"},
+    {style:"--i:12"},
   ];
 
   plateformes = [
