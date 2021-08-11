@@ -35,6 +35,8 @@ import { UserService } from './services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
 import { NonConnecterComponent } from './shared/non-connecter/non-connecter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfilDialogComponent } from './shared/user-profil-dialog/user-profil-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     SigninButtonComponent,
     CarouselComponent,
     NonConnecterComponent,
+    UserProfilDialogComponent,
 
 
   ],
@@ -67,12 +70,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ScrollingModule,
     // 👇 add and initialize AuthModule
     AuthModule.forRoot({
       ...env.auth,
     }),
     HttpClientModule,
+    ScrollingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  entryComponents: [
+    UserProfilDialogComponent,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

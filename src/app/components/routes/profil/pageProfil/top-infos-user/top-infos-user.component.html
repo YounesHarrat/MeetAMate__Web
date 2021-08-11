@@ -9,38 +9,27 @@
     <input id="fileInput" type='file' (change)="onSelectFile($event)">
   </div>
 
-  <ul>
-    <li *ngIf="user.nom !== '?' && user.prenom != '?'">
-      {{user.nom}} {{user.prenom}}
-    </li>
-    <li *ngIf="user.age !== '?'">
-      {{user.age}} ans
-    </li>
-    <ng-template #setAgeTemplate>
-      <li>
-        how old are you ?
-        <input id="age" type="number" name="age" >
-        <button type="button" (click)="setAge()" >Valider</button>
-      </li>
-    </ng-template>
-    <li class="pseudo" *ngIf="user.pseudo !== '?'">
-      MateName : {{user.pseudo}}
-    </li>
-    <ng-template #setMateName>
-      <li>
-        choose a pseudo:
-        <input id="inputPseudo" type="text" name="pseudo" value="" >
-        <button type="submit" (click)="setPseudo()">Valider</button>
-      </li>
-    </ng-template>
-    <li *ngIf="user.favorite !== '?'">
-      {{user.favorite}}
-    </li>
+  <div class="userProfil row">
+    <div class="col">
+      <p *ngFor="let key of userInfoKeys">{{key}}</p>
+    </div>
+    <div class="col">
+      <p *ngFor="let item of userInfoArray;">{{item}}</p>
+    </div>
+  </div>
 
-  </ul>
 </div>
 
 <br>
+
+<div *ngIf="userInfoKeys.length > 4;else completeProfile">
+  Profile Completed
+</div>
+<ng-template #completeProfile>
+  <h1>Complete your Profil</h1>
+  <button mat-raised-button (click)="openProfilDialog()">Complete your Profil</button>
+
+</ng-template>
 
 <!-- <div class="mainMiddleUser" *ngIf="user.communityList[0]">
 

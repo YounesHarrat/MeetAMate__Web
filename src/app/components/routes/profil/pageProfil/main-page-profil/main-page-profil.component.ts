@@ -105,14 +105,11 @@ export class MainPageProfilComponent implements OnInit {
 
   // }
 
-  user: any = new User();
+  user!: User;
   constructor(public userService: UserService, public auth0: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.user = this.userService.user;
-    if (this.user.pseudo === "") {
-      this.userService.init();
-    }
   }
 
   gotoEditProfile() {

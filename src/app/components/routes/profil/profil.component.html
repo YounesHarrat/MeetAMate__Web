@@ -1,7 +1,7 @@
-<div class="profilContainer1" *ngIf="auth0.isAuthenticated$ ">
+<div class="profilContainer1" *ngIf="auth0.isAuthenticated$ | async">
   <app-main-page-profil></app-main-page-profil>
 </div>
 
-<div class="profilContainer" *ngIf="(auth0.isAuthenticated$) === false">
+<div class="profilContainer" *ngIf="(auth0.isAuthenticated$ | async) === false">
     <app-non-connecter></app-non-connecter>
 </div>
