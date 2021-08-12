@@ -5,13 +5,13 @@
 .joinCommunity{
     position:relative;
     z-index: 9999;
-    top: -445px;
+    top: -582px;
     left: 90%;
 }
 .leaveCommunity{
     position:relative;
     z-index: 9999;
-    top: -445px;
+    top: -582px;    
     left: 90%;
 }
 .example-container {
