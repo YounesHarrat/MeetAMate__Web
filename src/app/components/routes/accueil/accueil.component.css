@@ -5,6 +5,7 @@
 .discord-card {
   width: fit-content;
   height: fit-content;
+  margin-bottom: 40px;
 }
 .row{
   display: flex;
@@ -95,7 +96,7 @@ mat-card-actions{
   position: relative;
   margin-top: 170px;
   margin-bottom: 130px;
-  margin-left: 790px;
+  margin-left: 860px;
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
@@ -148,26 +149,13 @@ mat-card-actions{
   margin: auto;
 }
 
-.discord{
-  display: flex;
-  margin-top: 50px;
-}
-
-.imgDiscord{
-  margin: auto;
-  width: 95%;
-  height: 95%;
-  border-radius: 5px 5px;
-}
 
 .fluidContainer1 {
   width: 100vw;
-  /* background-color: rgba(18, 179, 179, 0.781); */
 }
 
 .fluidContainer2 {
   width: 100vw;
-  /* background-color: rgba(170, 190, 190, 0.87); */
 }
 
 .fluidContainer3 {
