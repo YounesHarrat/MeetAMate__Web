@@ -70,7 +70,7 @@
   font-size: larger;
 }
 .search{
-  margin-top: 50px;
+  margin-top: 70px;
   margin-left: 30%;
   border: 1px solid #e2a551;
   box-shadow: 3px 3px 10px #e2a551;
@@ -80,10 +80,13 @@
   height: 26px;
   font-size: larger;
   display: inline-block;
+  padding: 8px;}
+.label{
+  color: burlywood;
 }
-.inputSearch{
-  display: inline;
+.tertiary{
+  margin-top: -5px;
 }
-.btnSearch{
-  background-color: #e2a551;
+.groupeSearch{
+  display: flex;
 }
