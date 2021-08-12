@@ -86,6 +86,7 @@
 }
 .tertiary{
   margin-top: -5px;
+  cursor: default;
 }
 .groupeSearch{
   display: flex;
