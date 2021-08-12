@@ -5,7 +5,7 @@ import { AccueilComponent } from './components/routes/accueil/accueil.component'
 import { AmisComponent } from './components/routes/amis/amis.component';
 import { CommunauteComponent } from './components/routes/communaute/communaute.component';
 import { JeuxComponent } from './components/routes/jeux/jeux.component';
-import { ParametresComponent } from './components/routes/parametres/parametres.component';
+import { SupportComponent } from './components/routes/support/support.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
 import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
 
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent},
   { path: 'jeux', component: JeuxComponent},
   { path: 'communaute', component: CommunauteComponent},
-  { path: 'parametres', component: ParametresComponent},
+  { path: 'parametres', component: SupportComponent},
   { path: 'amis', component: AmisComponent},
   { path: 'authentification', component: AuthentificationComponent },
 

@@ -13,7 +13,7 @@ import { JeuxComponent } from './components/routes/jeux/jeux.component';
 import { CommunauteComponent } from './components/routes/communaute/communaute.component';
 import { AmisComponent } from './components/routes/amis/amis.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
-import { ParametresComponent } from './components/routes/parametres/parametres.component';
+import { SupportComponent } from './components/routes/support/support.component';
 import { MainPageProfilComponent } from './components/routes/profil/pageProfil/main-page-profil/main-page-profil.component';
 import { TopInfosUserComponent } from './components/routes/profil/pageProfil/top-infos-user/top-infos-user.component';
 import { LeftListGameUserComponent } from './components/routes/profil/pageProfil/left-list-game-user/left-list-game-user.component';
@@ -46,7 +46,7 @@ import { NonConnecterComponent } from './non-connecter/non-connecter.component';
     JeuxComponent,
     CommunauteComponent,
     AmisComponent,
-    ParametresComponent,
+    SupportComponent,
     MainPageProfilComponent,
     TopInfosUserComponent,
     LeftListGameUserComponent,

@@ -18,7 +18,7 @@ export class TopNavBarComponent implements OnInit {
     {name:" Profil", route:"/profil", icon:"account_circle"},
     {name:" Liste des jeux", route:"/jeux", icon:"videogame_asset"},
     {name:" Communauté", route:"/communaute", icon:"group"},
-    {name:" Paramètre", route:"/parametres", icon:"settings"},
+    {name:" Support", route:"/parametres", icon:"contact_support"},
     {name:" Se connecter/deconnecter", route:"/authentification", icon:"fingerprint"}
   ]
 

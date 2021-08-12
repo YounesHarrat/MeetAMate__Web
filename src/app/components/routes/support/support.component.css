@@ -1,7 +1,5 @@
 .fluidContainer0 {
   width: 100vw;
-  background-color: rgba(3, 68, 99, 0.877);
-
 }
 
 .fluidContainer1 {
@@ -16,16 +14,10 @@
 
 .fluidContainer3 {
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.781);
 }
 
 .heightTen {
   height: 10vh;
-}
-
-.heightTwenty {
-  height: 20vh;
-
 }
 
 .box {
@@ -35,7 +27,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .row {
