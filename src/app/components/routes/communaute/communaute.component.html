@@ -4,7 +4,7 @@
         <mat-form-field class="search">  
             <div class="groupeSearch">                   
             <input matInput type="search" name="search" (keyup)="onKey($event)">
-            <button mat-button class="tertiary">
+            <button mat-button class="tertiarySearch">
                 <mat-icon>search </mat-icon>
             </button>     
         </div>     
@@ -14,7 +14,7 @@
             <p class="titreJeu" >{{jeu.title}}</p>
             <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
             <mat-card-actions>
-                <button mat-button class="tertiary" (click)="onPress(jeu)">
+                <button mat-button class="tertiaryCommu" (click)="onPress(jeu)">
                     <mat-icon>add </mat-icon>
                 </button>
             </mat-card-actions>
