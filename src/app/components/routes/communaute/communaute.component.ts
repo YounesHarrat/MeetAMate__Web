@@ -123,7 +123,7 @@ export class CommunauteComponent implements OnInit {
     }
   }
 
-  onPress(jeu : Game) {
+  onPress(jeu : any) {
     this.display = true;
     this.selectJeu = jeu;
     var index = Number(jeu.id)
