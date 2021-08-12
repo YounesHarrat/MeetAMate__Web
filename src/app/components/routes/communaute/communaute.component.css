@@ -69,3 +69,21 @@
   color: burlywood;
   font-size: larger;
 }
+.search{
+  margin-top: 50px;
+  margin-left: 30%;
+  border: 1px solid #e2a551;
+  box-shadow: 3px 3px 10px #e2a551;
+  width: 41%;
+  background-color: #212529;
+  color: burlywood;
+  height: 26px;
+  font-size: larger;
+  display: inline-block;
+}
+.inputSearch{
+  display: inline;
+}
+.btnSearch{
+  background-color: #e2a551;
+}

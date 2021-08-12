@@ -10,5 +10,4 @@ export class GameInfo {
     this.Nom = nom;
     this.Heures = heure;
   }
-
 }

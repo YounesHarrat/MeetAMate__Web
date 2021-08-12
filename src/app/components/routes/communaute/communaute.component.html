@@ -1,8 +1,13 @@
 
 <div class="profilContainer blur" *ngIf="auth0.isAuthenticated$ | async">
     <ng-template #mainPage>
+        <div class="inputSearch">
+        <mat-form-field class="search">
+            <input matInput type="search" class="search-input" (keyup)="onKey($event)">                   
+        </mat-form-field>
+        </div> 
         <div class="container" >            
-        <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeu">
+        <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
             <p class="titreJeu" >{{jeu.title}}</p>
             <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
             <mat-card-actions>
