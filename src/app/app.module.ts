@@ -31,10 +31,12 @@ import { LoginButtonComponent } from './shared/authButtons/loginButton/login-but
 import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
 
 // Services
-import { UserService } from '../app/shared/services/user/user.service';
+import { UserService } from './services/user/user.service';
 import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
-import { NonConnecterComponent } from './non-connecter/non-connecter.component';
+import { NonConnecterComponent } from './shared/non-connecter/non-connecter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfilDialogComponent } from './shared/user-profil-dialog/user-profil-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     SigninButtonComponent,
     CarouselComponent,
     NonConnecterComponent,
+    UserProfilDialogComponent,
+
 
   ],
   imports: [
@@ -66,12 +70,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ScrollingModule,
-    HttpClientModule,
     // 👇 add and initialize AuthModule
     AuthModule.forRoot({
       ...env.auth,
     }),
+    HttpClientModule,
+    ScrollingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  entryComponents: [
+    UserProfilDialogComponent,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

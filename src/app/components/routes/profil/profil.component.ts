@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-profil',
@@ -11,11 +12,16 @@ export class ProfilComponent implements OnInit {
 
   constructor(public userService: UserService, public auth0: AuthService) { }
 
-
+  user = new User();
   ngOnInit(): void {
+    this.user = this.userService.user;
+    console.log('Profil::OnInit::', this.user);
 
-    console.log('ProfilComponent init', this.userService);
+    if ( this.user?.nom && this.user?.prenom && this.user?.age ) {
 
+    } else {
+      console.log('%c SEEMS LIKE YOUR PROFILE ISNT FINISHED YET ', 'color:red');
+    }
   }
 
 }

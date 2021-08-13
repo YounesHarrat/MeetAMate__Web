@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
-import { User } from 'src/app/shared/models/user';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-main-page-profil',
@@ -104,15 +105,15 @@ export class MainPageProfilComponent implements OnInit {
 
   // }
 
-  user: User = new User();
-  constructor(public userService: UserService, public auth0: AuthService) { }
+  user!: User;
+  constructor(public userService: UserService, public auth0: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.user = this.userService.user;
-    if (this.user.pseudo === "") {
-      this.userService.init();
-    }
+  }
 
+  gotoEditProfile() {
+    this.router.navigate(['/profil/edit']);
   }
 
 }

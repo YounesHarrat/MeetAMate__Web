@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from 'src/app/shared/models/game';
-import { GameInfo } from 'src/app/shared/models/game-info';
+import { Game } from 'src/app/models/game';
+import { GameInfo } from 'src/app/models/game-info';
 import { AuthService } from '@auth0/auth0-angular';
-import { UserService } from 'src/app/shared/services/user/user.service';
-import { User } from 'src/app/shared/models/user';
-import { HttpClient } from '@angular/common/http';
-import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { UserService } from 'src/app/services/user/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-communaute',
@@ -51,7 +48,7 @@ export class CommunauteComponent implements OnInit {
     {idJeu:"2", listePseudo:["Papapoule", "Docker", "Powershell", "K8s"]},
     {idJeu:"3", listePseudo:["Chrome", "Steeaaam", "Explorer", "Opera"]}
   ]
-  constructor(public userService: UserService, public auth0: AuthService, private http:HttpClient) { 
+  constructor(public userService: UserService, public auth0: AuthService) {
     this.display = false;
   }
 
@@ -75,12 +72,12 @@ export class CommunauteComponent implements OnInit {
     // this.JeuId = data.results.map((r: { id: any; }) => r.id);
     // this.JeuImg = data.results.map((r: { background_image: any; }) => r.background_image);
     // this.JeuName = data.results.map((r: { name: any; }) => r.name);
-    
+
     // this.JeuId.forEach((element: any, key : number) => {
     //   console.log(this.JeuImg[key])
-    //   var Jeu = {id:element, 
-    //             title:this.JeuName[key], 
-    //             communityBackgroundUrl:this.JeuImg[key], 
+    //   var Jeu = {id:element,
+    //             title:this.JeuName[key],
+    //             communityBackgroundUrl:this.JeuImg[key],
     //             pictureUrl:this.JeuImg[key],
     //             info: new GameInfo() }
     //    this.ListeDeJeu.push(Jeu);
@@ -90,7 +87,7 @@ export class CommunauteComponent implements OnInit {
   }
 
   onKey(event: any) { // without type info
-    
+
     var search = event.target.value;
     var index = 1;
     this.ListeDeJeux.forEach(element => {
@@ -127,6 +124,6 @@ export class CommunauteComponent implements OnInit {
     this.display = true;
     this.selectJeu = jeu;
     var index = Number(jeu.id)
-    this.communauteJeu = this.ListeCommunaute[index - 1 ].listePseudo 
+    this.communauteJeu = this.ListeCommunaute[index - 1 ].listePseudo
   }
 }

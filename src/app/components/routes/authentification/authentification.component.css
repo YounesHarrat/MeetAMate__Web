@@ -10,18 +10,19 @@
   width: fit-content;
   border: 2px solid white;
   background-color: black;
+  color: #e2a551;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 10%;
   padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #e2a551;
+  align-items: center;
   font-size: 1.5rem;
   margin-top: 44px;
 }
 
 .containerUser {
   width: fit-content;
-  
+
 }

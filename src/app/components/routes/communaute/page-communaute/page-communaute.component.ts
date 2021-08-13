@@ -17,18 +17,18 @@ export class PageCommunauteComponent implements OnInit {
   btnEventClick = false;
   btnQuestionClick = false;
   panelOpenState = false;
-  
+
   ListeEvent = [
     {id:"1", idJeu:"1", title:"A1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"2", idJeu:"1", title:"A2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"3", idJeu:"1", title:"A3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"4", idJeu:"1", title:"A4", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
-    {id:"5", idJeu:"1", title:"A5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},  
+    {id:"5", idJeu:"1", title:"A5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"6", idJeu:"2", title:"RL1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"7", idJeu:"2", title:"RL2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"8", idJeu:"2", title:"RL3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"9", idJeu:"2", title:"RL4", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
-    {id:"10", idJeu:"2", title:"RL5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"}, 
+    {id:"10", idJeu:"2", title:"RL5", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"11", idJeu:"3", title:"F1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"12", idJeu:"3", title:"F2", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"13", idJeu:"3", title:"F3", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
@@ -38,14 +38,14 @@ export class PageCommunauteComponent implements OnInit {
     {id:"17", idJeu:"4", title:"Solo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"18", idJeu:"4", title:"Duo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     {id:"19", idJeu:"4", title:"Tournoi", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
-    {id:"20", idJeu:"4", title:"Solo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"}, 
+    {id:"20", idJeu:"4", title:"Solo", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
     ]
   ListeQuestion = [
     {id:"1", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Quel est le Dominus : Snake Skin ?"},
     {id:"2", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Comment s'appelle la nouvelle mise à jour sortie le 4 octobre 2016 ?"},
     {id:"3", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Qui est le joueur emblématique de Rocket League ?"},
     {id:"4", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Quel est le véhicule qu'on a en tout premier ?"},
-    {id:"5", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Quel était l'ancêtre de Rocket League ?"},  
+    {id:"5", idJeu:"2", date:"28/04/2021", heure:"11h00", contenu:"Quel était l'ancêtre de Rocket League ?"},
     {id:"6", idJeu:"1", date:"28/04/2021", heure:"11h00", contenu:"C'est l'arme la plus détestée par la communauté, elle utilise des balles de pompe. C'est..."},
     {id:"7", idJeu:"1", date:"28/04/2021", heure:"11h00", contenu:"De quel univers est issu Apex Legends ?"},
     {id:"8", idJeu:"1", date:"28/04/2021", heure:"11h00", contenu:"Il tire balle par balle à environ 45 dégâts... Il utilise des balles lourdes, c'est..."},
@@ -55,7 +55,7 @@ export class PageCommunauteComponent implements OnInit {
     {id:"12", idJeu:"3", date:"28/04/2021", heure:"11h00", contenu:"Quand a commencé le projet ?"},
     {id:"13", idJeu:"3", date:"28/04/2021", heure:"11h00", contenu:"Quand Fortnite sortira-t-il officiellement ?"},
     {id:"14", idJeu:"3", date:"28/04/2021", heure:"11h00", contenu:"Quel est le but du jeu ?"},
-    {id:"15", idJeu:"3", date:"28/04/2021", heure:"11h00", contenu:"Combien y a-t-il de joueurs qui jouent dans une partie ?"},   
+    {id:"15", idJeu:"3", date:"28/04/2021", heure:"11h00", contenu:"Combien y a-t-il de joueurs qui jouent dans une partie ?"},
   ]
 
   ListeReponse = [
@@ -63,7 +63,7 @@ export class PageCommunauteComponent implements OnInit {
     {id:"2", idQuestion:"1", idJeu:"2", contenu:"La voiture au sol"},
     {id:"3", idQuestion:"3", idJeu:"2", contenu:"Qui est le joueur emblématique de Rocket League ?"},
     {id:"4", idQuestion:"4", idJeu:"2", contenu:"Quel est le véhicule qu'on a en tout premier ?"},
-    {id:"5", idQuestion:"5", idJeu:"2", contenu:"Quel était l'ancêtre de Rocket League ?"},  
+    {id:"5", idQuestion:"5", idJeu:"2", contenu:"Quel était l'ancêtre de Rocket League ?"},
     {id:"6", idQuestion:"6", idJeu:"1", contenu:"C'est l'arme la plus détestée par la communauté, elle utilise des balles de pompe. C'est..."},
     {id:"7", idQuestion:"7", idJeu:"1", contenu:"De quel univers est issu Apex Legends ?"},
     {id:"8", idQuestion:"8", idJeu:"1", contenu:"Il tire balle par balle à environ 45 dégâts... Il utilise des balles lourdes, c'est..."},
@@ -73,11 +73,11 @@ export class PageCommunauteComponent implements OnInit {
     {id:"12", idQuestion:"12", idJeu:"3", contenu:"Quand a commencé le projet ?"},
     {id:"13", idQuestion:"13", idJeu:"3", contenu:"Quand Fortnite sortira-t-il officiellement ?"},
     {id:"14", idQuestion:"14", idJeu:"3", contenu:"Quel est le but du jeu ?"},
-    {id:"15", idQuestion:"15", idJeu:"3", contenu:"Combien y a-t-il de joueurs qui jouent dans une partie ?"},   
+    {id:"15", idQuestion:"15", idJeu:"3", contenu:"Combien y a-t-il de joueurs qui jouent dans une partie ?"},
   ]
 
 
-  
+
   constructor() {
   }
 
@@ -111,19 +111,19 @@ export class PageCommunauteComponent implements OnInit {
 
   addReponse(contenu: string, idQuestion: string) {
     var newReponse = {id:"4", idQuestion:idQuestion, idJeu:this.jeu.id, contenu:contenu};
-    this.ListeReponse.push(newReponse)    
+    this.ListeReponse.push(newReponse)
   }
   addQuestion(contenu: string) {
     var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
-    this.ListeQuestion.push(newQuestion)    
+    this.ListeQuestion.push(newQuestion)
   }
   addEvent(titres: string, dates: string, heures: string, descs: string){
     var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
-    this.ListeEvent.push(newEvent)    
+    this.ListeEvent.push(newEvent)
   }
 
   clickEvents(){
-    this.btnEventClick = true 
+    this.btnEventClick = true
     this.btnQuestionClick = false;
   }
   clickQuestions(){
