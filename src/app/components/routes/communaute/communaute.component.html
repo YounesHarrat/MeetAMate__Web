@@ -1,14 +1,10 @@
 
 <div class="profilContainer blur" *ngIf="auth0.isAuthenticated$ | async">
     <ng-template #mainPage>
-        <mat-form-field class="search">
-          <div class="groupeSearch">
-            <input matInput type="search" name="search" (keyup)="onKey($event)">
-            <button mat-button class="tertiarySearch">
-                <mat-icon>search </mat-icon>
-            </button>
-          </div>
-        </mat-form-field>
+          <input matInput class="searchBox" type="search" name="search" (keyup)="onKey($event)">
+          <button mat-button class="tertiarySearch">
+              <mat-icon>search </mat-icon>
+          </button>
         <div class="container">
         <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
             <p class="titreJeu" >{{jeu.title}}</p>
