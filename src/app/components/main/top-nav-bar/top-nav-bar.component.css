@@ -12,25 +12,26 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  margin-bottom: 5%;
 }
-
-
 
 .stickyNav {
   position: -webkit-sticky;
   position: sticky;
-  top: 100px;
-  z-index: 100;
+  top: 12%;
+  z-index: 101;
+  margin-top: 10%;
   width: fit-content;
-  height: fit-content;
+  height: min-content;
   background-color: #212529;
   border-radius: 15%;
   border: #e2a551 2px solid ;
 }
 
-/* .sidenav-container {
-  top: -338px;
-} */
+.sidenav-container {
+  top: 10%;
+  margin: auto;
+}
 
 mat-toolbar {
   height: 10vh;

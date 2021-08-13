@@ -1,15 +1,15 @@
 
 <div class="profilContainer blur" *ngIf="auth0.isAuthenticated$ | async">
     <ng-template #mainPage>
-        <mat-form-field class="search">  
-            <div class="groupeSearch">                   
+        <mat-form-field class="search">
+          <div class="groupeSearch">
             <input matInput type="search" name="search" (keyup)="onKey($event)">
             <button mat-button class="tertiarySearch">
                 <mat-icon>search </mat-icon>
-            </button>     
-        </div>     
+            </button>
+          </div>
         </mat-form-field>
-        <div class="container">            
+        <div class="container">
         <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
             <p class="titreJeu" >{{jeu.title}}</p>
             <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
@@ -21,7 +21,7 @@
         </mat-card>
     </div>
     </ng-template>
-    
+
     <div id="anyone" *ngIf="display; else mainPage">
         <app-page-communaute [jeu]="selectJeu" [commu]="communauteJeu"></app-page-communaute>
     </div>
@@ -30,7 +30,6 @@
   <div class="profilContainer blur" *ngIf="(auth0.isAuthenticated$ | async) === false">
 
     <app-non-connecter></app-non-connecter>>
-  
+
   </div>
-  
-  
+

@@ -7,16 +7,16 @@
     margin-top: 15px;
   }
 
-  
+
   mat-card-image {
     max-width: 8vh;
     max-height: 10vh;
   }
-  
+
   .mat-card-image:first-child{
     margin-top: 0;
   }
-  
+
   .imgCard {
     min-width: 550px;
     min-height: 400px;
@@ -25,15 +25,15 @@
     margin: auto;
     border-radius: 5px 5px;
   }
-  
+
   mat-icon {
     color: white;
   }
-  
+
   mat-button {
     z-index: 99999;
   }
-  
+
   mat-card-actions{
     display: flex;
     justify-content: space-evenly;
@@ -41,18 +41,18 @@
     z-index: 99999;
     top: -60px;
   }
-  
+
   .mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
     margin: 0;
   }
-  
+
   .centered {
     margin: auto;
     margin-top: -30px;
     overflow-y: hidden;
     scroll-behavior: smooth;
   }
-  
+
   .container {
     display: flex;
     flex-direction: row;
@@ -86,12 +86,12 @@
 }
 .tertiaryCommu{
   margin-top: -5px;
-  background-color: #e2a551; 
+  background-color: #e2a551;
 }
 .tertiarySearch{
   margin-top: -5px;
   cursor: default;
-  background-color: #e2a551; 
+  background-color: #e2a551;
 }
 .groupeSearch{
   display: flex;
