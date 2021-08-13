@@ -130,3 +130,6 @@ textarea{
     resize: none;
     outline: none;
 }
+mat-expansion-panel{
+    background-color: #212529;
+}
