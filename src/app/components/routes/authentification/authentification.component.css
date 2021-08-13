@@ -1,28 +1,28 @@
 .main {
   margin:auto;
+  padding: auto;
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 25px;
 }
 
 .form {
   width: fit-content;
-  border: 2px solid white;
-  background-color: black;
-  color: #e2a551;
+  color: white;
   margin: auto;
   margin-top: 10%;
-  padding: 50px;
+  padding:auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  margin-top: 44px;
+  background: #212529;
+  border: solid #e2a551;
 }
 
 .containerUser {
   width: fit-content;
-
 }

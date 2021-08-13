@@ -54,7 +54,7 @@ export class CommunauteComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.user;
-    if (this.user.pseudo === "") {
+    if (this.user?.pseudo === "") {
       this.userService.init();
       console.log(this.userService.user);
     }

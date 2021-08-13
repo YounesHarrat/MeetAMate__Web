@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "", component: AppComponent, pathMatch: 'full'},
   { path: 'accueil', component: AccueilComponent},
   { path: 'profil', component: ProfilComponent},
-  { path: 'jeux', component: JeuxComponent},
+  // { path: 'jeux', component: JeuxComponent},
   { path: 'communaute', component: CommunauteComponent},
   // { path: 'parametres', component: ParametresComponent},
   { path: 'amis', component: AmisComponent},

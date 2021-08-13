@@ -14,11 +14,13 @@
 	width: fit-content;
 }
 .profilContainer1 {
-  margin-top: 70px;
+  padding: auto;
+  margin:auto;
+  margin-top: 5%;
   width: 90%;
   background: #212529;
   border: solid #e2a551;
-  margin-left: 90px;
+
 }
 .row {
   display: flex;
