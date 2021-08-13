@@ -4,7 +4,6 @@ import { GameInfo } from 'src/app/models/game-info';
 import { AuthService } from '@auth0/auth0-angular';
 import { UserService } from 'src/app/services/user/user.service';
 import { User } from 'src/app/models/user';
-
 @Component({
   selector: 'app-communaute',
   templateUrl: './communaute.component.html',

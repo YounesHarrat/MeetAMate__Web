@@ -1,8 +1,6 @@
-import { Time } from '@angular/common';
+import { Location } from '@angular/common';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Game } from 'src/app/models/game';
-import { JeuxComponent } from '../../jeux/jeux.component';
 @Component({
   selector: 'app-page-communaute',
   templateUrl: './page-communaute.component.html',
@@ -78,10 +76,12 @@ export class PageCommunauteComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor( public location: Location) {
   }
 
   ngOnInit() {
+    // rename url by adding game title in it
+    this.location.replaceState('/communaute/'+this.jeu.title.toString() );
     this.onLoadEvents();
     this.onLoadQuestions();
     this.onLoadReponses();
@@ -104,7 +104,7 @@ export class PageCommunauteComponent implements OnInit {
   onLoadReponses() {
     var IdJeu = this.jeu.id;
     this.ListeReponse =  this.ListeReponse.filter(function(ListeReponse) {
-    console.log(ListeReponse.idJeu == IdJeu)
+    // console.log(ListeReponse.idJeu == IdJeu)
     return ListeReponse.idJeu == IdJeu
   });
   }
