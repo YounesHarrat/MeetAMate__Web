@@ -84,9 +84,14 @@
 .label{
   color: burlywood;
 }
-.tertiary{
+.tertiaryCommu{
+  margin-top: -5px;
+  background-color: #e2a551; 
+}
+.tertiarySearch{
   margin-top: -5px;
   cursor: default;
+  background-color: #e2a551; 
 }
 .groupeSearch{
   display: flex;

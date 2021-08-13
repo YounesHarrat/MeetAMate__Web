@@ -4,8 +4,8 @@
     </div>
         
     <!--Afficher soit l'un soit l'autre-->
-    <button mat-raised-button color="warn" class="leaveCommunity" >Quitter</button>
-    <button mat-raised-button color="primary" class="joinCommunity" >Rejoindre</button>
+    <button mat-raised-button color="warn" class="leaveCommunity" (click)="leaveCommunity(jeu.id)" >Quitter</button>
+    <button mat-raised-button color="primary" class="joinCommunity" (click)="joinCommunity(jeu.id)" >Rejoindre</button>
 </div>
  
 <div class="leftContainer">
@@ -82,14 +82,14 @@
         </div>     
         </div>   
     </div>
-    <div class="rightContainer">
+    <!-- <div class="rightContainer">
         <p class="titleRight">Membre :</p>
         <ul>
             <div class="containerEvent" *ngFor="let commuanute of commu">
                 <li>{{commuanute}}</li>
             </div>
         </ul>
-    </div>
+    </div> -->
 </div>
 
 <ng-template #questions>

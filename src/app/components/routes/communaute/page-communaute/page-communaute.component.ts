@@ -130,4 +130,11 @@ export class PageCommunauteComponent implements OnInit {
     this.btnQuestionClick = true;
     this.btnEventClick = false
   }
+
+  joinCommunity(id:any){
+    console.log(id)
+  }
+  leaveCommunity(id:any){
+    console.log(id)
+  }
 }

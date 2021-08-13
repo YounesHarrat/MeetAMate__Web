@@ -74,15 +74,15 @@
 
 .centerContainerQuestion{
     display: flex;  
-    width: 50%;    
+    width: 90%;    
     flex-wrap: wrap;
     flex-direction: column;
-    margin-left: 20%;
 }
 .questionLabel{
-    text-align: center;
+    text-align: inherit;
     margin-top: 10px;
     color:white;
+    margin-left: 12%;
 }
 .pseudoLabel{
     margin-top: 10px;
