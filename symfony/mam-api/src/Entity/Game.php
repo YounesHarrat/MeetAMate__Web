@@ -41,6 +41,10 @@ class Game
     private $description;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $backgroundPicture;
+    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="games")
      */
     private $linked_to;
@@ -143,6 +147,18 @@ class Game
         if ($this->users->removeElement($user)) {
             $user->removeFollowedGame($this);
         }
+
+        return $this;
+    }
+
+    public function getBackgroundPicture(): ?string
+    {
+        return $this->backgroundPicture;
+    }
+
+    public function setBackgroundPicture(string $backgroundPicture): self
+    {
+        $this->backgroundPicture = $backgroundPicture;
 
         return $this;
     }

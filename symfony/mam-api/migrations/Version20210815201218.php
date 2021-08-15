@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210809144721 extends AbstractMigration
+final class Version20210815201218 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20210809144721 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE auth_profile (id INT AUTO_INCREMENT NOT NULL, nickname VARCHAR(255) DEFAULT NULL, name VARCHAR(255) DEFAULT NULL, picture VARCHAR(255) DEFAULT NULL, updated_at DATETIME DEFAULT NULL, email VARCHAR(255) DEFAULT NULL, email_verified TINYINT(1) DEFAULT NULL, sub VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE game (id INT AUTO_INCREMENT NOT NULL, linked_to_id INT DEFAULT NULL, nom VARCHAR(255) NOT NULL, plateforme VARCHAR(255) DEFAULT NULL, picture VARCHAR(255) NOT NULL, description VARCHAR(255) DEFAULT NULL, INDEX IDX_232B318C8031A592 (linked_to_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE game (id INT AUTO_INCREMENT NOT NULL, linked_to_id INT DEFAULT NULL, nom VARCHAR(255) NOT NULL, plateforme VARCHAR(255) DEFAULT NULL, picture VARCHAR(255) NOT NULL, description VARCHAR(255) DEFAULT NULL, background_picture VARCHAR(255) DEFAULT NULL, INDEX IDX_232B318C8031A592 (linked_to_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE social_network_data (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, pseudo VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, auth_profile_id INT DEFAULT NULL, nom VARCHAR(255) NOT NULL, prenom VARCHAR(255) NOT NULL, age VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, pseudo VARCHAR(255) DEFAULT NULL, avatar VARCHAR(255) DEFAULT NULL, favorite VARCHAR(255) DEFAULT NULL, UNIQUE INDEX UNIQ_8D93D649D2FF1F0C (auth_profile_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user_game (user_id INT NOT NULL, game_id INT NOT NULL, INDEX IDX_59AA7D45A76ED395 (user_id), INDEX IDX_59AA7D45E48FD905 (game_id), PRIMARY KEY(user_id, game_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
