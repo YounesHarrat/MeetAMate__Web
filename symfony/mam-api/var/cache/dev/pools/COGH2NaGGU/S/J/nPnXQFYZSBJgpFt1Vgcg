@@ -11,6 +11,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 [
                     'App\\Entity\\AuthProfile',
                     'App\\Entity\\Game',
+                    'App\\Entity\\SocialNetworkData',
                     'App\\Entity\\User',
                 ],
             ],

@@ -9,8 +9,6 @@ import { Game } from 'src/app/models/game';
 export class PageCommunauteComponent implements OnInit {
   @Input()
   jeu:Game = new Game();
-  @Input()
-  commu:Array<string> = new Array();
 
   btnEventClick = false;
   btnQuestionClick = false;
