@@ -4,6 +4,6 @@ export class Game {
   id: string = "";
   nom: string = "";
   picture: string = "";
-  background_picture: string = "";
+  backgroundPicture: string = "";
   info: GameInfo = new GameInfo();
 }
