@@ -78,6 +78,7 @@ export class PageCommunauteComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.jeu)
     // rename url by adding game title in it
     this.location.replaceState('/communaute/'+this.jeu.nom.toString() );
     this.onLoadEvents();
