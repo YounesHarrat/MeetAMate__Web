@@ -1,5 +1,5 @@
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -25,6 +25,8 @@ export class GameService {
   constructor( private http: HttpClient) {
   }
 
-
+  public getAllGame(): any {
+  return (this.http.get<HttpResponse<any>[]>(this.API_URL+'/games', this.options )) ;
+  }
 
 }

@@ -19,8 +19,8 @@
 
 <div class="container row fluidContainer5">
   <mat-card class="card col secondary" *ngFor="let jeux of (ListeDeJeux |slice: lowValue: highValue)">
-    <img mat-card-image src="{{jeux.pictureUrl}}" alt="Apex Legend">
-    <h1 class="titleGame">{{jeux.title}}</h1>
+    <img mat-card-image src="{{jeux.picture}}" alt="Apex Legend">
+    <h1 class="titleGame">{{jeux.nom}}</h1>
     <mat-card-actions class="row">
       <button mat-button class="tertiary" (click)="selectFavorite(jeux)">
         <mat-icon class="favorite">favorite</mat-icon>

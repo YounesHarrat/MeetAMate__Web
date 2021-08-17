@@ -14,23 +14,23 @@ import { UserService } from 'src/app/services/user/user.service';
 export class JeuxComponent implements OnInit {
 
   ListeDeJeux = [
-    {id:"1", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", communityBackgroundUrl:"",
+    {id:"1", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", background_picture:"",
       info: new GameInfo(1, 'Apex Legend', 10)},
-    {id:"2", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", communityBackgroundUrl:"",
+    {id:"2", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", background_picture:"",
       info: new GameInfo(2, 'Rocket League', 100)},
-    {id:"3", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", communityBackgroundUrl:"",
+    {id:"3", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", background_picture:"",
       info: new GameInfo(3, 'Fortnite', 20)},
-      {id:"4", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", communityBackgroundUrl:"",
+      {id:"4", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", background_picture:"",
       info: new GameInfo(4, 'Apex Legend', 10)},
-    {id:"5", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", communityBackgroundUrl:"",
+    {id:"5", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", background_picture:"",
       info: new GameInfo(5, 'Rocket League', 100)},
-    {id:"6", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", communityBackgroundUrl:"",
+    {id:"6", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", background_picture:"",
       info: new GameInfo(6, 'Fortnite', 20)},
-      {id:"7", title:"Apex Legend", pictureUrl:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", communityBackgroundUrl:"",
+      {id:"7", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", background_picture:"",
       info: new GameInfo(7, 'Apex Legend', 10)},
-    {id:"8", title:"Rocket League", pictureUrl:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", communityBackgroundUrl:"",
+    {id:"8", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", background_picture:"",
       info: new GameInfo(8, 'Rocket League', 100)},
-    {id:"9", title:"Fortnite", pictureUrl:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", communityBackgroundUrl:"",
+    {id:"9", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", background_picture:"",
       info: new GameInfo(9, 'Fortnite', 20)},
     ]
 

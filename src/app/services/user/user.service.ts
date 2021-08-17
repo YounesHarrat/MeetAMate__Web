@@ -152,7 +152,7 @@ export class UserService {
   }
 
   setFavorite(jeux: Game) {
-    this.user.favorite = jeux.title;
+    this.user.favorite = jeux.nom;
   }
 
   setPseudo(pseudo:string) {

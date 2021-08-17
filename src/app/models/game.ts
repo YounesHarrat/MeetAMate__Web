@@ -2,8 +2,8 @@ import { GameInfo } from "./game-info";
 
 export class Game {
   id: string = "";
-  title: string = "";
-  pictureUrl: string = "";
-  communityBackgroundUrl: string = "";
+  nom: string = "";
+  picture: string = "";
+  background_picture: string = "";
   info: GameInfo = new GameInfo();
 }

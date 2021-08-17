@@ -7,8 +7,8 @@
           </button>
         <div class="container">
         <mat-card class="example-card secondary" *ngFor="let jeu of ListeDeJeux">
-            <p class="titreJeu" >{{jeu.title}}</p>
-            <img class="imgCard" mat-card-image src="{{jeu.pictureUrl}}" alt="Fortnite" >
+            <p class="titreJeu" >{{jeu.nom}}</p>
+            <img class="imgCard" mat-card-image src="{{jeu.picture}}" alt="Fortnite" >
             <mat-card-actions>
                 <button mat-button class="tertiaryCommu" (click)="onPress(jeu)">
                     <mat-icon>add </mat-icon>
