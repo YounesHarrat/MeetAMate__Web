@@ -34,8 +34,10 @@ mat-card {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #212529;
+  overflow-x: hidden;
 }
