@@ -127,9 +127,10 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
             <mat-panel-description class="questionLabel">    
-                <input class="text" class="textAreaReponse" #question>                  
+                <input class="questionCommu" matInput maxlength="200" placeholder="Ex. J'ai besoin d'aide pour .." #question>
+                <mat-hint align="end" class="resteCaract">{{question.value.length}} / 256</mat-hint>                
             </mat-panel-description>
-            <button (click)="addQuestion(question.value)">Valider</button>
+            <button mat-raised-button (click)="addQuestion(question.value)">Valider</button>
         </mat-expansion-panel>
     </mat-accordion>
     </div>
@@ -164,9 +165,12 @@
       </div>
     </div>
     <div>
-        <textarea class="textAreaReponse"type="text" #reponse></textarea>
+        <input class="textAreaReponse" matInput maxlength="200" placeholder="Votre réponse" #reponse>
+        <mat-hint align="end" class="resteCaract">{{reponse.value.length}} / 200</mat-hint>                
+
+        <!-- <textarea class="textAreaReponse"type="text" #reponse></textarea> -->
     </div>
-    <button (click)="addReponse(reponse.value,  question.id)">Répondre</button>
+    <button mat-raised-button (click)="addReponse(reponse.value,  question.id)">Répondre</button>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

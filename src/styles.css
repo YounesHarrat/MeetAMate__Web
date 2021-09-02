@@ -18,6 +18,9 @@ body {
 .tertiaryCustom {
   background-color: #e2a551; /*BORDER*/
 }
+.tertiary{
+  background-color:#e2a551; 
+}
 
 p,h1,h2,h3 {
   color: white ;

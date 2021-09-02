@@ -110,6 +110,7 @@
     margin-bottom: 3rem;
 }
 .textAreaReponse{
+    margin-bottom: 5px;
     margin-top: 2rem;
     min-width: 100%;
     min-height: 100%;
@@ -132,4 +133,12 @@ textarea{
 }
 mat-expansion-panel{
     background-color: #212529;
+}
+.questionCommu{
+    width: -webkit-fill-available;
+    margin-left: -13%;
+}
+.resteCaract{
+    color:white;
+    margin-left: 93%;
 }
