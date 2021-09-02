@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent},
   // { path: 'jeux', component: JeuxComponent},
   { path: 'communaute', component: CommunauteComponent},
-  // { path: 'parametres', component: ParametresComponent},
+  { path: 'parametres', component: SupportComponent},
   { path: 'amis', component: AmisComponent},
   { path: 'authentification', component: AuthentificationComponent },
 
