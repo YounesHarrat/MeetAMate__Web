@@ -154,11 +154,18 @@ export class PageCommunauteComponent implements OnInit {
   }
 
   joinCommunity(id:any){
+<<<<<<< HEAD
     console.log(id)
     console.log(this.user.id)
   }
   leaveCommunity(id:any){
     console.log(id)
     console.log(this.user.id)
+=======
+    console.log(id);
+  }
+  leaveCommunity(id:any){
+    console.log(id);
+>>>>>>> d0fbbb150cb0d7ce4b42e2777d802fc3b61b7c17
   }
 }

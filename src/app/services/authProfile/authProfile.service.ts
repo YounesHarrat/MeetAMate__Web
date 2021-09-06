@@ -87,8 +87,10 @@ export class AuthProfileService {
   public onAuth(authProfile: AuthProfile) {
     if ( this.isNewAuthProfile(authProfile) ) {
       this.addAuthProfile(authProfile);
+      return true;
     } else {
       console.log('%c NO NEED TO POST A NEW AuthProfile TO DATABASE ! IT ALREADY EXISTS', 'color:red');
+      return false;
     }
   }
 
@@ -102,6 +104,9 @@ export class AuthProfileService {
     this.authProfilesObservable.asObservable().subscribe(
       data => {
         this.authProfiles = data;
+        console.log('isNewAuthProfile', {
+          data,
+        });
 
         for (let  i = 0; i < this.authProfiles.length; i++) {
           if ( this.authProfiles[i].email === authProfile.email ) {
