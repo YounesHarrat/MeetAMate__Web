@@ -15,7 +15,6 @@ export class ProfilComponent implements OnInit {
   user = new User();
   ngOnInit(): void {
     this.user = this.userService.user;
-    console.log('Profil::OnInit::', this.user);
 
     if ( this.user?.nom && this.user?.prenom && this.user?.age ) {
 

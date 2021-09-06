@@ -81,10 +81,9 @@ export class UserService {
         }
       });
     });
-
   }
 
-  // POST
+  // API REQUEST POST
 
   public postNewUser(user: any) {
     this.http.post(this.API_URL+'/users', user, this.options)
@@ -92,6 +91,42 @@ export class UserService {
       console.log('POST USER inside subscription ', obs);
     });
   }
+
+  updateUser() {
+    let userWithoutAuthProfile = {
+      nom: "",
+      prenom: "",
+      age: "",
+      pseudo: "",
+      avatar: "",
+    };
+    Object.keys( this.user ).forEach( (key: any) => {
+      switch (key) {
+        case 'nom':
+          userWithoutAuthProfile.nom = this.user.get(key);
+          break;
+        case 'prenom':
+          userWithoutAuthProfile.prenom = this.user.get(key);
+          break;
+        case 'age':
+          userWithoutAuthProfile.age = this.user.get(key);
+          break;
+        case 'pseudo':
+          userWithoutAuthProfile.pseudo = this.user.get(key);
+          break;
+        case 'avatar':
+          userWithoutAuthProfile.avatar = this.user.get(key);
+          break;
+      }
+    });
+
+    let jsonify = JSON.stringify(userWithoutAuthProfile);
+    this.http.put(this.API_URL+'/users/'+this.user.id, jsonify, this.options)
+    .subscribe(data => {
+      console.log('UpdateUser data => ', data);
+    });
+  }
+
 
 
   // FUNCTIONS
@@ -188,37 +223,5 @@ export class UserService {
     }
   }
 
-  updateUser() {
-
-
-    let userWithoutAuthProfile = {
-      nom: "",
-      prenom: "",
-      age: "",
-      pseudo: "",
-    };
-    Object.keys( this.user ).forEach( (key: any) => {
-      switch (key) {
-        case 'nom':
-          userWithoutAuthProfile.nom = this.user.get(key);
-          break;
-        case 'prenom':
-          userWithoutAuthProfile.prenom = this.user.get(key);
-          break;
-        case 'age':
-          userWithoutAuthProfile.age = this.user.get(key);
-          break;
-        case 'pseudo':
-          userWithoutAuthProfile.pseudo = this.user.get(key);
-          break;
-      }
-    });
-
-    let jsonify = JSON.stringify(userWithoutAuthProfile);
-    this.http.put(this.API_URL+'/users/'+this.user.id, jsonify, this.options)
-    .subscribe(data => {
-      console.log('UpdateUser data => ', data);
-    });
-  }
 
 }

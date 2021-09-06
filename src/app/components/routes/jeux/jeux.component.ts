@@ -60,8 +60,6 @@ export class JeuxComponent implements OnInit {
   }
 
   public selectFavorite(jeux: Game): void {
-    console.log('selectFavorite');
-
     this.userService.setFavorite(jeux);
   }
 
