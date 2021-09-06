@@ -194,6 +194,18 @@ export class UserService {
 
   setFavorite(jeux: Game) {
     this.user.favorite = jeux.nom;
+    const body = {
+      auth_profile_id: this.profile_Id,
+      nom: this.user.nom,
+      prenom: this.user.prenom,
+      age: this.user.age,
+      mail: this.profile_email,
+      pseudo: this.user.pseudo,
+      avatar: this.user.avatar,
+      favorite: jeux.nom
+    }
+    console.log(this.user)
+    this.http.put<User>(this.API_URL+'/users/'+this.user.id, body).subscribe(data => this.user.id = data.id);;
   }
 
   setPseudo(pseudo:string) {
