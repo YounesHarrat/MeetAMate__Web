@@ -39,17 +39,11 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
     this.url = this.user.avatar;
     Object.keys(this.user).forEach( (v:any) => {
       const value = this.user.get(v);
-      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && v !== 'avatar' && value !== '?') {
-        console.log('UserBAckLog => ', v, this.user.get(v));
+      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && value !== '?') {
         this.userInfoKeys.push(v);
         this.userInfoArray.push(this.user.get(v));
       }
     });
-    console.log('TopInfoUserINIT::', {
-      user: this.user,
-      userInfoArray: this.userInfoArray
-    });
-
   }
 
   setPseudo(): void {
@@ -62,7 +56,6 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
   setAge(): void {
     // @ts-ignore
     const age = document.getElementById('age').value;
-    console.log('setAge', age);
     this.userService.setAge(age);
   }
 
@@ -79,30 +72,22 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(UserProfilDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', {
-        result,
-        1: this.userInfoArray,
-        2: this.userInfoKeys,
-      });
     });
   }
 
   // change avatar image
   onSelectFile(event:any) {
     if (event.target.files && event.target.files[0]) {
-      console.log(event)
-       var reader = new FileReader();
-
-       reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
-
-       reader.onload = (event) => { // appeler une fois que la convertion est OK
-       if(reader.result != null)
-         {
-           this.url = reader.result.toString()
-           this.userService.user.avatar = this.url;
-         }
-
-       }
-     }
-   }
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
+      reader.onload = (event) => { // appeler une fois que la convertion est OK
+      if(reader.result != null) {
+        this.url = reader.result.toString();
+        this.userService.user.avatar = this.url;
+        this.user.avatar = this.url;
+      }
+      this.userService.updateUser();
+      }
+    }
+  }
 }
