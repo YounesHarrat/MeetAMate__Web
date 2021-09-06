@@ -82,7 +82,7 @@ onSelectFile(event:any) {
     dialogConfig.autoFocus = true;
     dialogConfig.height = '400px';
     dialogConfig.width = '600px';
-    dialogConfig.position = { top: '40vh', bottom: '50vh', left: '40vw', right: '40vw'};
+    dialogConfig.position = { top: '20vh', bottom: '20vh', left: '30vw', right: '30vw'};
 
     const dialogRef = this.dialog.open(UserProfilDialogComponent, dialogConfig);
 

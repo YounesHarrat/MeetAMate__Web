@@ -7,20 +7,38 @@
     </form>
   </div>
  -->
-  <h2 mat-dialog-title>User Profil</h2>
-<!--
+
+
     <mat-dialog-content [formGroup]="form">
-
+      <h2 mat-dialog-title>User Profil</h2>
       <mat-form-field>
-          <input matInput
-                  placeholder="Course Description"
-                 formControlName="description">
+          <label for="pseudo">Pseudo</label>
+          <input matInput formControlName="pseudo">
       </mat-form-field>
-        ....
+      <br>
+      <mat-form-field>
+        <label for="nom">Nom</label>
+        <input matInput formControlName="nom">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="prenom">Prenom</label>
+        <input matInput formControlName="prenom">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="age">Age</label>
+        <input matInput formControlName="age">
+      </mat-form-field>
+      <br>
+      <!-- <mat-form-field>
+        <label for="age"></label>
+        <input matInput placeholder="Age" formControlName="age">
+      </mat-form-field> -->
 
-  </mat-dialog-content> -->
+    </mat-dialog-content>
 
-  <mat-dialog-actions>
+  <mat-dialog-actions >
       <button class="mat-raised-button"(click)="closeDialog()">Close</button>
-      <button class="mat-raised-button mat-primary"(click)="closeDialog()">Save</button>
+      <button class="mat-raised-button mat-primary"(click)="saveUser()">Save</button>
   </mat-dialog-actions>
