@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
@@ -11,28 +11,12 @@ import { UserProfilDialogComponent } from 'src/app/shared/user-profil-dialog/use
   templateUrl: './top-infos-user.component.html',
   styleUrls: ['./top-infos-user.component.css']
 })
-export class TopInfosUserComponent implements OnInit {
+export class TopInfosUserComponent implements OnInit, OnChanges {
 
   name = 'Angular 4';
   url = '';
 
-onSelectFile(event:any) {
-   if (event.target.files && event.target.files[0]) {
-     console.log(event)
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
-
-      reader.onload = (event) => { // appeler une fois que la convertion est OK
-      if(reader.result != null)
-        {
-          this.url = reader.result.toString()
-          this.userService.user.avatar = this.url;
-        }
-
-      }
-    }
-  }
 
   @Input() user!: User;
   userInfoArray!: any[];
@@ -43,21 +27,23 @@ onSelectFile(event:any) {
     this.userInfoKeys = [];
    }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    // throw new Error('Method not implemented.');
+    console.log('Changes ! :: ', {
+      change: changes,
+    });
+
+  }
+
   ngOnInit(): void {
     this.url = this.user.avatar;
     Object.keys(this.user).forEach( (v:any) => {
       const value = this.user.get(v);
-      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && v !== 'avatar' && value !== '?') {
-        console.log('UserBAckLog => ', v, this.user.get(v));
+      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && value !== '?') {
         this.userInfoKeys.push(v);
         this.userInfoArray.push(this.user.get(v));
       }
     });
-    console.log('TopInfoUserINIT::', {
-      user: this.user,
-      userInfoArray: this.userInfoArray
-    });
-
   }
 
   setPseudo(): void {
@@ -70,7 +56,6 @@ onSelectFile(event:any) {
   setAge(): void {
     // @ts-ignore
     const age = document.getElementById('age').value;
-    console.log('setAge', age);
     this.userService.setAge(age);
   }
 
@@ -82,12 +67,27 @@ onSelectFile(event:any) {
     dialogConfig.autoFocus = true;
     dialogConfig.height = '400px';
     dialogConfig.width = '600px';
-    dialogConfig.position = { top: '40vh', bottom: '50vh', left: '40vw', right: '40vw'};
+    dialogConfig.position = { top: '20vh', bottom: '20vh', left: '30vw', right: '30vw'};
 
     const dialogRef = this.dialog.open(UserProfilDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
+  }
+
+  // change avatar image
+  onSelectFile(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
+      reader.onload = (event) => { // appeler une fois que la convertion est OK
+      if(reader.result != null) {
+        this.url = reader.result.toString();
+        this.userService.user.avatar = this.url;
+        this.user.avatar = this.url;
+      }
+      this.userService.updateUser();
+      }
+    }
   }
 }

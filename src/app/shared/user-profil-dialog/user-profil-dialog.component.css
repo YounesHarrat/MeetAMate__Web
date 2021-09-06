@@ -1,0 +1,25 @@
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
+::ng-deep .mat-dialog-container {
+  color: white;
+  border: 2px solid #e2a551;
+  overflow: -moz-hidden-unscrollable;
+  background-color: #212529;
+  height: min-content;
+}
+
+

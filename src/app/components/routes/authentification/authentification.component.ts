@@ -18,6 +18,13 @@ export class AuthentificationComponent implements OnInit {
   constructor(public auth: AuthService, public userService: UserService) { }
 
   ngOnInit(): void {
+    this.checkUserAuth();
+    if (localStorage.getItem('isLoggedIn') === 'true' ) {
+      const token = localStorage.getItem('token');
+    }
+  }
+
+  checkUserAuth() {
     this.auth.user$.subscribe(
       (profile) => {
         if (profile?.email ) {
@@ -34,13 +41,6 @@ export class AuthentificationComponent implements OnInit {
         }
       }
     );
-    console.log('AuthentificationComponent::OnInit::', {
-      localStorage,
-    });
-    if (localStorage.getItem('isLoggedIn') === 'true' ) {
-      const token = localStorage.getItem('token');
-    }
   }
-
 
 }
