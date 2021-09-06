@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
@@ -11,28 +11,12 @@ import { UserProfilDialogComponent } from 'src/app/shared/user-profil-dialog/use
   templateUrl: './top-infos-user.component.html',
   styleUrls: ['./top-infos-user.component.css']
 })
-export class TopInfosUserComponent implements OnInit {
+export class TopInfosUserComponent implements OnInit, OnChanges {
 
   name = 'Angular 4';
   url = '';
 
-onSelectFile(event:any) {
-   if (event.target.files && event.target.files[0]) {
-     console.log(event)
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
-
-      reader.onload = (event) => { // appeler une fois que la convertion est OK
-      if(reader.result != null)
-        {
-          this.url = reader.result.toString()
-          this.userService.user.avatar = this.url;
-        }
-
-      }
-    }
-  }
 
   @Input() user!: User;
   userInfoArray!: any[];
@@ -42,6 +26,14 @@ onSelectFile(event:any) {
     this.userInfoArray = [];
     this.userInfoKeys = [];
    }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // throw new Error('Method not implemented.');
+    console.log('Changes ! :: ', {
+      change: changes,
+    });
+
+  }
 
   ngOnInit(): void {
     this.url = this.user.avatar;
@@ -87,7 +79,30 @@ onSelectFile(event:any) {
     const dialogRef = this.dialog.open(UserProfilDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed', {
+        result,
+        1: this.userInfoArray,
+        2: this.userInfoKeys,
+      });
     });
   }
+
+  // change avatar image
+  onSelectFile(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      console.log(event)
+       var reader = new FileReader();
+
+       reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
+
+       reader.onload = (event) => { // appeler une fois que la convertion est OK
+       if(reader.result != null)
+         {
+           this.url = reader.result.toString()
+           this.userService.user.avatar = this.url;
+         }
+
+       }
+     }
+   }
 }

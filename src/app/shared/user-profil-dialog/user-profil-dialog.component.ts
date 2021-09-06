@@ -16,7 +16,6 @@ export class UserProfilDialogComponent implements OnInit {
     private userService: UserService,
     public dialogRef: MatDialogRef<UserProfilDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-
   }
 
   ngOnInit(): void {
@@ -37,11 +36,20 @@ export class UserProfilDialogComponent implements OnInit {
   }
 
   saveUser() {
-    console.log('checking form on save =>', this.form);
-    this.userService.setPseudo(this.form.value.pseudo);
-    this.userService.setPseudo(this.form.value.pseudo);
 
+    this.userService.setPseudo(this.form.value.pseudo);
+    this.userService.setAge(this.form.value.age);
+    this.userService.setNom(this.form.value.nom);
+    this.userService.setPrenom(this.form.value.prenom);
     this.userService.updateUser();
-    this.dialogRef.close();
+  }
+
+  save() {
+    console.log('checking form on save =>', {
+      form: this.form,
+      user: this.userService.user,
+    });
+    this.saveUser();
+    this.closeDialog();
   }
 }

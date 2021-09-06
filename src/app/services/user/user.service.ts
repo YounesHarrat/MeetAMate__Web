@@ -72,7 +72,11 @@ export class UserService {
         if ( user.mail === email ) {
           // this.user = user;
           this.user.id = user.id;
-          this.user.mail = user.mail
+          this.user.mail = user.mail;
+          this.setPseudo(user.pseudo);
+          this.setAge(user.age);
+          this.setNom(user.nom);
+          this.setPrenom(user.prenom);
           this.userObservable.next(user);
         }
       });
@@ -93,27 +97,32 @@ export class UserService {
   // FUNCTIONS
 
   public async onAuth(authProfile: AuthProfile) {
-    this.user = new User();
-    this.user.authProfile = authProfile;
-    this.authProfileService.onAuth(authProfile);
-    this.profile_email = authProfile.email;
-    let cd = await this.authProfileService.isNewAuthProfile(authProfile)
-    if ( cd ) {
-        const body = {
-          auth_profile_id: this.profile_Id,
-          nom: this.user.nom,
-          prenom: this.user.prenom,
-          age: this.user.age,
-          mail: this.profile_email,
-          pseudo: this.user.pseudo,
-          avatar: this.user.avatar,
-        }
-        this.postNewUser(body);
+    if (this.user === undefined ) {
+      this.user = new User();
+      this.user.authProfile = authProfile;
+      this.profile_email = authProfile.email;
+      let isNewUser = await this.authProfileService.onAuth(authProfile);
+      if ( isNewUser ) {
+
+          const body = {
+            auth_profile_id: this.profile_Id,
+            nom: this.user.nom,
+            prenom: this.user.prenom,
+            age: this.user.age,
+            mail: this.profile_email,
+            pseudo: this.user.pseudo,
+            avatar: this.user.avatar,
+          }
+          this.postNewUser(body);
+      }
+      localStorage.setItem('isLoggedIn', "true");
+      localStorage.setItem('token', authProfile.sub);
+
     } else {
-      console.log('%c NO NEED TO POST A NEW USER TO DATABASE ! IT ALREADY EXISTS', 'color:red');
+      console.log('User is Connected', {
+        localStorage,
+      });
     }
-    localStorage.setItem('isLoggedIn', "true");
-    localStorage.setItem('token', authProfile.sub);
     this.getUserByEmail(this.profile_email);
     this.verifyUser(this.profile_email);
   }
@@ -163,6 +172,14 @@ export class UserService {
     this.user.age = age;
   }
 
+  setNom(nom:string) {
+    this.user.nom = nom;
+  }
+
+  setPrenom(prenom:string) {
+    this.user.prenom = prenom;
+  }
+
   addToGameUser(jeux: Game) {
     const found  = this.user.games.find(o => o.id === jeux.id );
     console.log('addToGameUser', jeux, found, this.user.games );
@@ -195,14 +212,12 @@ export class UserService {
           userWithoutAuthProfile.pseudo = this.user.get(key);
           break;
       }
-      console.log('updateUser =>', key, this.user, userWithoutAuthProfile);
     });
 
     let jsonify = JSON.stringify(userWithoutAuthProfile);
     this.http.put(this.API_URL+'/users/'+this.user.id, jsonify, this.options)
     .subscribe(data => {
       console.log('UpdateUser data => ', data);
-
     });
   }
 
