@@ -39,7 +39,7 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
     this.url = this.user.avatar;
     Object.keys(this.user).forEach( (v:any) => {
       const value = this.user.get(v);
-      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && value !== '?') {
+      if (value && !(value instanceof Array) && !(value instanceof AuthProfile) && value !== '?' && value !== 'avatar') {
         this.userInfoKeys.push(v);
         this.userInfoArray.push(this.user.get(v));
       }
