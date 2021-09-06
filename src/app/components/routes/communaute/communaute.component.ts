@@ -76,4 +76,10 @@ export class CommunauteComponent implements OnInit {
     this.selectJeu = jeu;
     var index = Number(jeu.id)
   }
+
+  public selectFavorite(jeux: Game): void {
+    console.log('selectFavorite');
+
+    this.userService.setFavorite(jeux);
+  }
 }

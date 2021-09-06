@@ -2,6 +2,8 @@ import { Location } from '@angular/common';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Game } from 'src/app/models/game';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-page-communaute',
   templateUrl: './page-communaute.component.html',
@@ -10,7 +12,7 @@ import { Game } from 'src/app/models/game';
 export class PageCommunauteComponent implements OnInit {
   @Input()
   jeu:Game = new Game();
-
+  user:User = new User();
   btnEventClick = false;
   btnQuestionClick = false;
   panelOpenState = false;
@@ -75,10 +77,15 @@ export class PageCommunauteComponent implements OnInit {
 
 
 
-  constructor( public location: Location, private dialog: MatDialog) {
+  constructor( public userService: UserService, public location: Location, private dialog: MatDialog) {
   }
 
   ngOnInit() {
+    this.user = this.userService.user;
+    if (this.user?.pseudo === "") {
+      this.userService.init();
+      console.log(this.userService.user);
+    }
     console.log(this.jeu)
     // rename url by adding game title in it
     this.location.replaceState('/communaute/'+this.jeu.nom.toString() );
@@ -148,8 +155,10 @@ export class PageCommunauteComponent implements OnInit {
 
   joinCommunity(id:any){
     console.log(id)
+    console.log(this.user.id)
   }
   leaveCommunity(id:any){
     console.log(id)
+    console.log(this.user.id)
   }
 }
