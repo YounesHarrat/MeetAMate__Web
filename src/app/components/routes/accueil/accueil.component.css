@@ -162,3 +162,6 @@ mat-card-actions{
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.781);
 }
+.tertiary{
+  background-color: #e2a551;
+}
