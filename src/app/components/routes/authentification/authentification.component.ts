@@ -4,7 +4,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
 import { AuthProfileService } from 'src/app/services/authProfile/authProfile.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { LoginButtonComponent } from 'src/app/shared/authButtons/loginButton/login-button.component';
+import { LoginButtonComponent } from 'src/app/shared/Log_Buttons/loginButton/login-button.component';
 
 @Component({
   selector: 'app-authentification',
