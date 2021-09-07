@@ -79,6 +79,7 @@ export class CommunauteComponent implements OnInit {
 
   public selectFavorite(jeux: Game): void {
     console.log(jeux);
-    this.userService.setFavorite(jeux);
+    this.userService.setFavorite(jeux.nom);
+
   }
 }

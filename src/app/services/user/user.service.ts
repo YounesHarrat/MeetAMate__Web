@@ -77,6 +77,7 @@ export class UserService {
           this.setAge(user.age);
           this.setNom(user.nom);
           this.setPrenom(user.prenom);
+          this.setFavorite(user.favorite);
           this.userObservable.next(user);
         }
       });
@@ -99,6 +100,7 @@ export class UserService {
       age: "",
       pseudo: "",
       avatar: "",
+      favorite: "",
     };
     Object.keys( this.user ).forEach( (key: any) => {
       switch (key) {
@@ -116,6 +118,10 @@ export class UserService {
           break;
         case 'avatar':
           userWithoutAuthProfile.avatar = this.user.get(key);
+          break;
+        case 'favorite':
+          console.log(this.user.get(key))
+          userWithoutAuthProfile.favorite = this.user.get(key);
           break;
       }
     });
@@ -145,6 +151,7 @@ export class UserService {
             mail: this.profile_email,
             pseudo: this.user.pseudo,
             avatar: this.user.avatar,
+            favorite: this.user.favorite,
           }
           this.postNewUser(body);
       }
@@ -192,20 +199,9 @@ export class UserService {
 
   }
 
-  setFavorite(jeux: Game) {
-    this.user.favorite = jeux.nom;
-    const body = {
-      auth_profile_id: this.profile_Id,
-      nom: this.user.nom,
-      prenom: this.user.prenom,
-      age: this.user.age,
-      mail: this.profile_email,
-      pseudo: this.user.pseudo,
-      avatar: this.user.avatar,
-      favorite: jeux.nom
-    }
-    console.log(this.user)
-    this.http.put<User>(this.API_URL+'/users/'+this.user.id, body).subscribe(data => this.user.id = data.id);;
+  setFavorite(jeux: string) {
+    this.user.favorite = jeux;
+    this.updateUser();
   }
 
   setPseudo(pseudo:string) {

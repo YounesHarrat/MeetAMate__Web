@@ -60,7 +60,7 @@ export class JeuxComponent implements OnInit {
   }
 
   public selectFavorite(jeux: Game): void {
-    this.userService.setFavorite(jeux);
+    this.userService.setFavorite(jeux.nom);
   }
 
   public addToGameUser(jeux: Game): void {
