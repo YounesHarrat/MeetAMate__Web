@@ -4,7 +4,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user.service';
 import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/GenericMessageSnackBarComponent';
-
+import { AuthProfile } from 'src/app/models/auth-profile';
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -16,6 +16,13 @@ export class ProfilComponent implements OnInit {
 
   user = new User();
   ngOnInit(): void {
+
+    this.auth0.user$.subscribe(
+      (authProfile: any) => {
+        this.userService.onAuth(authProfile);
+      }
+    )
+
     this.user = this.userService.user;
 
     if ( this.user?.nom && this.user?.prenom && this.user?.age ) {
@@ -38,6 +45,19 @@ export class ProfilComponent implements OnInit {
 
       }
     );
+    let authed = this.auth0.user$.subscribe(
+      obs => {
+        console.log({
+          obs,
+        });
+        
+      }
+    )
+    console.log({
+      Tuser: this.user,
+      UserServiceUser: this.userService.user,
+      authed,
+    })
   }
 
 }

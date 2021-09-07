@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
 import { UserService } from 'src/app/services/user/user.service';
@@ -14,10 +14,20 @@ export class AuthentificationComponent implements OnInit {
 
   profileJson: string = "null";
 
-  constructor(public auth: AuthService, public userService: UserService, private _successSnackBar: GenericActionSuccessSnackBarComponent) { }
+  constructor(public auth: AuthService, public userService: UserService, private _successSnackBar: GenericActionSuccessSnackBarComponent, private router: Router) { }
 
 
   ngOnInit(): void {
+    this.auth.user$.subscribe(
+    (profile) => {
+      if(profile) {
+        this.auth.logout();
+      }
+      else{
+        this.auth.loginWithRedirect();
+      }
+    })
+
     this.checkUserAuth();
     if (localStorage.getItem('isLoggedIn') === 'true' ) {
       const token = localStorage.getItem('token');
@@ -25,9 +35,12 @@ export class AuthentificationComponent implements OnInit {
   }
 
   checkUserAuth() {
+    console.log('checkUserAuth');
+    
     this.auth.user$.subscribe(
       (profile) => {
-        if (profile?.email ) {
+        
+        if (profile) {
           this.profileJson = JSON.stringify(profile, null, 2);
           let authProfile = new AuthProfile();
           authProfile.nickname = profile?.nickname ? profile.nickname : "";

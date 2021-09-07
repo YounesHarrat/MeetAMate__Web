@@ -119,20 +119,6 @@ export class PageCommunauteComponent implements OnInit {
   addReponse(contenu: string, idQuestion: string) {
     var newReponse = {id:"4", idQuestion:idQuestion, idJeu:this.jeu.id, contenu:contenu};
     this.ListeReponse.push(newReponse)
-
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.height = '400px';
-    dialogConfig.width = '600px';
-    dialogConfig.position = { top: '40vh', bottom: '50vh', left: '40vw', right: '40vw'};
-
-    const dialogRef = this.dialog.open(PageCommunauteComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
   addQuestion(contenu: string) {
     var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
