@@ -4,7 +4,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user.service';
-import { UserProfilDialogComponent } from 'src/app/shared/user-profil-dialog/user-profil-dialog.component';
+import { UserProfilDialogComponent } from 'src/app/shared/Dialogs/user-profil-dialog/user-profil-dialog.component';
 
 @Component({
   selector: 'app-top-infos-user',

@@ -27,16 +27,19 @@ import { CarouselComponent } from './components/routes/jeux/carousel/carousel';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 
-import { LoginButtonComponent } from './shared/authButtons/loginButton/login-button.component';
-import { LogoutButtonComponent } from './shared/authButtons/logoutButton/logout-button.component';
+import { LoginButtonComponent } from './shared/Log_Buttons/loginButton/login-button.component';
+import { LogoutButtonComponent } from './shared/Log_Buttons/logoutButton/logout-button.component';
 
 // Services
 import { UserService } from './services/user/user.service';
-import { SigninButtonComponent } from './shared/authButtons/signinButton/signin-button.component';
-import { NonConnecterComponent } from './shared/non-connecter/non-connecter.component';
+import { SigninButtonComponent } from './shared/Log_Buttons/signinButton/signin-button.component';
+import { NonConnecterComponent } from './shared/LoggedOut/non-connecter/non-connecter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserProfilDialogComponent } from './shared/user-profil-dialog/user-profil-dialog.component';
+import { UserProfilDialogComponent } from './shared/Dialogs/user-profil-dialog/user-profil-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GenericActionSuccessSnackBarComponent } from './shared/SnackBars/GenericActionSuccessSnackBarComponent';
+import { GenericActionErrorSnackBarComponent } from './shared/SnackBars/GenericActionErrorSnackBarComponent';
+import { GenericMessageSnackBarComponent } from './shared/SnackBars/GenericMessageSnackBarComponent';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NonConnecterComponent,
     UserProfilDialogComponent,
 
-
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   entryComponents: [
     UserProfilDialogComponent,
   ],
-  providers: [UserService],
+  providers: [UserService, GenericActionSuccessSnackBarComponent, GenericActionErrorSnackBarComponent, GenericMessageSnackBarComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

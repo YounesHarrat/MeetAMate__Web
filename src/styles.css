@@ -5,6 +5,11 @@ body {
   background-color: var(--background);
   --text: white;
   color: var(--text);
+  --warn: {
+    background-color: #171a1d;
+    font: #b40404;
+    border: #e2a551;
+  }
 }
 
 .primaryCustom {
@@ -18,8 +23,10 @@ body {
 .tertiaryCustom {
   background-color: #e2a551; /*BORDER*/
 }
-.tertiary{
-  background-color:#e2a551; 
+
+.warnCustom{
+  background-color: #171a1d ;
+  color: #b40404;
 }
 
 p,h1,h2,h3 {

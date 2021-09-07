@@ -5,6 +5,9 @@ import { AuthService } from '@auth0/auth0-angular';
 import { UserService } from 'src/app/services/user/user.service';
 import { User } from 'src/app/models/user';
 import { GameService } from 'src/app/services/game/game.service';
+import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/GenericMessageSnackBarComponent';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { GenericActionErrorSnackBarComponent } from 'src/app/shared/SnackBars/GenericActionErrorSnackBarComponent';
 @Component({
   selector: 'app-communaute',
   templateUrl: './communaute.component.html',
@@ -15,26 +18,37 @@ export class CommunauteComponent implements OnInit {
   display:boolean;
   selectJeu:Game = new Game();
   communauteJeu:Array<string> = new Array();
-  user:User = new User();
+  user!:User ;
   ListeDeJeux:Array<Game> = new Array();
   arrayTitle: Array<string> = new Array();
   arrayId: Array<string> = new Array();
 
-  constructor(public userService: UserService,public gameService: GameService, public auth0: AuthService) {
+  constructor(public userService: UserService,public gameService: GameService, public auth0: AuthService, public snackbar: MatSnackBar) {
     this.display = false;
   }
 
   ngOnInit(): void {
     this.user = this.userService.user;
-    if (this.user?.pseudo === "") {
-      this.userService.init();
-      console.log(this.userService.user);
-    }
-    this.gameService.getAllGame().subscribe( (res: Game[]) => {
+    this.auth0.isAuthenticated$.subscribe(
+      (result) => {
+        if (result) {
+          this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+            'Here you can join a Community of gamers like you, you can choose from a multitude of games !'
+          );
+        } else {
+          this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+            'You need to Login to get access to the Community.'
+          );
+        }
+
+      }
+    );
+
+      this.gameService.getAllGame().subscribe( (res: Game[]) => {
       console.log(res);
       this.ListeDeJeux = res
       console.log(this.ListeDeJeux)
-    })
+    });
   }
 
   onKey(event: any) { // without type info
