@@ -37,6 +37,9 @@ import { NonConnecterComponent } from './shared/LoggedOut/non-connecter/non-conn
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfilDialogComponent } from './shared/Dialogs/user-profil-dialog/user-profil-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GenericActionSuccessSnackBarComponent } from './shared/SnackBars/GenericActionSuccessSnackBarComponent';
+import { GenericActionErrorSnackBarComponent } from './shared/SnackBars/GenericActionErrorSnackBarComponent';
+import { GenericMessageSnackBarComponent } from './shared/SnackBars/GenericMessageSnackBarComponent';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NonConnecterComponent,
     UserProfilDialogComponent,
 
-
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   entryComponents: [
     UserProfilDialogComponent,
   ],
-  providers: [UserService],
+  providers: [UserService, GenericActionSuccessSnackBarComponent, GenericActionErrorSnackBarComponent, GenericMessageSnackBarComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

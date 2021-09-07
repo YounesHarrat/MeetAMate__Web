@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '@auth0/auth0-angular';
 import { AuthProfile } from 'src/app/models/auth-profile';
-import { AuthProfileService } from 'src/app/services/authProfile/authProfile.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { LoginButtonComponent } from 'src/app/shared/Log_Buttons/loginButton/login-button.component';
+import { GenericActionSuccessSnackBarComponent } from 'src/app/shared/SnackBars/GenericActionSuccessSnackBarComponent';
 
 @Component({
   selector: 'app-authentification',
@@ -15,7 +14,8 @@ export class AuthentificationComponent implements OnInit {
 
   profileJson: string = "null";
 
-  constructor(public auth: AuthService, public userService: UserService) { }
+  constructor(public auth: AuthService, public userService: UserService, private _successSnackBar: GenericActionSuccessSnackBarComponent) { }
+
 
   ngOnInit(): void {
     this.checkUserAuth();
@@ -38,9 +38,15 @@ export class AuthentificationComponent implements OnInit {
           authProfile.email_verified = profile?.email_verified !== undefined ? profile.email_verified : false;
           authProfile.sub = profile?.sub ? profile.sub : "";
           this.userService.onAuth(authProfile);
+          this.openSuccessfulConnectionSnackBar();
         }
+
       }
     );
+  }
+
+  openSuccessfulConnectionSnackBar() {
+    this._successSnackBar.openSuccessSnackBar();
   }
 
 }
