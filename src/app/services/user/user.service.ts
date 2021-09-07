@@ -136,6 +136,8 @@ export class UserService {
   // FUNCTIONS
 
   public async onAuth(authProfile: AuthProfile) {
+    console.log('UserService::onAuth');
+    
     if (this.user === undefined ) {
       this.user = new User();
       this.user.authProfile = authProfile;
@@ -164,6 +166,9 @@ export class UserService {
     }
     this.getUserByEmail(this.profile_email);
     this.verifyUser(this.profile_email);
+    console.log('%cUser Service onAuth', 'color:blue', {
+      user: this.user,
+    });
   }
 
   init() {
@@ -199,6 +204,8 @@ export class UserService {
 
   }
 
+
+  
   setFavorite(jeux: string) {
     this.user.favorite = jeux;
     this.updateUser();
