@@ -22,7 +22,7 @@ export class TopNavBarComponent implements OnInit {
     // {name:" Paramètre", route:"/parametres", icon:"settings"},
     {name:" Se connecter", route:"/authentification", icon:"fingerprint"}
   ]
-
+  
 
   private _mobileQueryListener: () => void;
   router: Router;
