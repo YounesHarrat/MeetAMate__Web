@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class MainPageProfilComponent implements OnInit {
 
-  // user = {
+  // user2 = {
   //   pseudo: "NachossOG",
   //   nom: "Harrat",
   //   prenom: "Younes",
