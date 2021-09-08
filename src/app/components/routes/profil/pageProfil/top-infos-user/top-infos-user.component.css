@@ -65,7 +65,7 @@
   color: red;
 }
 .pseudoSocial {
-  font-size: 60%;
+  font-size: 110%;
 }
 
 /* Cards infos jeux */
@@ -140,6 +140,7 @@
   display:block;
   width: 100%;
   height: 100%;
+  margin-left: 16px;
 }
 .imgLogoSteam {
   background-repeat: no-repeat;
@@ -150,6 +151,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  margin-left: 5px;
 }
 .imgLogoOrigin {
   background-repeat: no-repeat;
@@ -160,6 +162,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  margin-left: 5px;
 }
 .imgLogoEpicGames {
   background-repeat: no-repeat;
@@ -170,6 +173,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  margin-left: 5px;
 }
 .imgLogoBN {
   background-repeat: no-repeat;
@@ -180,6 +184,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  margin-left: 16px;
 }
 
 
@@ -229,4 +234,7 @@ p {
 
 #fileInput{
   display: none;
+}
+.expansion-panel-class{
+  background-color: #212529;
 }

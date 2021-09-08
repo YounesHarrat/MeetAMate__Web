@@ -15,7 +15,34 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
 
   name = 'Angular 4';
   url = '';
-
+  socialNetwork =  [
+        {
+          "Id" : 1,
+          "Name": "Discord",
+          "Pseudo": "SeeRak#4887"
+        },
+        {
+          "Id" : 2,
+          "Name": "Steam",
+          "Pseudo": "SeeRak",
+          "Url" : "https://steamcommunity.com/profiles/76561198207724565/",
+        },
+        {
+          "Id" : 1,
+          "Name": "Battle.Net",
+          "Pseudo": "SeeRak#2479"
+        },
+        {
+          "Id" : 1,
+          "Name": "Origin",
+          "Pseudo": "SeeRaki"
+        },
+        {
+          "Id" : 1,
+          "Name": "Epic Games",
+          "Pseudo": "SeeRak"
+        },
+      ]
 
 
   @Input() user!: User;

@@ -204,6 +204,10 @@ export class UserService {
 
   }
 
+  // getSocialNetwork(){
+  //   var test = this.http.get(this.API_URL+'/social_network_datas', this.options );
+  //   console.log("ahahahahahahhahh" + test)
+  // }
 
   
   setFavorite(jeux: string) {
