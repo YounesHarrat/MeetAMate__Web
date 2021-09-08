@@ -80,6 +80,8 @@ export class CommunauteComponent implements OnInit {
   public selectFavorite(jeux: Game): void {
     console.log(jeux);
     this.userService.setFavorite(jeux.nom);
-
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      jeux.nom + ' a bien été enregistré comme jeu favoris'
+    );
   }
 }

@@ -229,9 +229,15 @@ export class UserService {
 
   addToGameUser(jeux: Game) {
     const found  = this.user.games.find(o => o.id === jeux.id );
-    console.log('addToGameUser', jeux, found, this.user.games );
     if ( !found ) {
       this.user.games.push(jeux)
+    }
+  }
+  deleteToGameUser(jeux: Game) {
+    const found  = this.user.games.find(o => o.id === jeux.id );
+    console.log(found)
+    if ( !found ) {
+      this.user.games.slice(found)
     }
   }
 

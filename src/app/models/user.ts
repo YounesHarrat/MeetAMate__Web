@@ -49,7 +49,7 @@ export class User {
   pseudo: string = "";
   avatar: string = "";
   // User's info on each game he played
-  games: Array<Game> = [];
+  games: Array<Game> = new Array<Game>();
 
 
 

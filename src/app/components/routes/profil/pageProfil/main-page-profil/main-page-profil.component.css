@@ -20,13 +20,14 @@ h1 {
 
 .btnJeux{
   justify-content: center;
-  background-color: #171a1d;
+  background-color: #212529;
   border: solid #e2a551;
   color:white;
   font-size: 100%;
   margin-left: 5%;
   height: 5rem;
   width: 13rem;
+  margin-top: 15px;
 }
 .btnAmis{
   justify-content: center;
@@ -52,6 +53,9 @@ h1 {
 }
 
 .mat-expansion-panel {
-  background-color: #e2a551;
-  padding: 10% 5% 10% 5%;
+  background-color: #171a1d;
+}
+.expansion-panel-class{
+  border: solid #e2a551;
+
 }

@@ -5,5 +5,5 @@ export class Game {
   nom: string = "";
   picture: string = "";
   backgroundPicture: string = "";
-  info: GameInfo = new GameInfo();
+  plateforme: string = "";
 }

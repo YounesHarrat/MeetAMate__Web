@@ -1,9 +1,11 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Game } from 'src/app/models/game';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user.service';
+import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/GenericMessageSnackBarComponent';
 @Component({
   selector: 'app-page-communaute',
   templateUrl: './page-communaute.component.html',
@@ -77,7 +79,7 @@ export class PageCommunauteComponent implements OnInit {
 
 
 
-  constructor( public userService: UserService, public location: Location, private dialog: MatDialog) {
+  constructor( public userService: UserService, public location: Location, private dialog: MatDialog, public snackbar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -119,15 +121,23 @@ export class PageCommunauteComponent implements OnInit {
   addReponse(contenu: string, idQuestion: string) {
     var newReponse = {id:"4", idQuestion:idQuestion, idJeu:this.jeu.id, contenu:contenu};
     this.ListeReponse.push(newReponse)
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      'Votre reponse a bien été envoyé'
+    );
   }
   addQuestion(contenu: string) {
     var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
     this.ListeQuestion.push(newQuestion)
-    
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      'Votre question a bien été envoyé'
+    );
   }
   addEvent(titres: string, dates: string, heures: string, descs: string){
     var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
     this.ListeEvent.push(newEvent)
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      'Votre évènement a bien été ajouté'
+    );
   }
 
   clickEvents(){
@@ -139,12 +149,16 @@ export class PageCommunauteComponent implements OnInit {
     this.btnEventClick = false
   }
 
-  joinCommunity(id:any){
-    console.log(id)
-    console.log(this.user.id)
+  joinCommunity(jeu:Game){
+    this.userService.addToGameUser(jeu)
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      'Vous avez rejoins la communauté de : ' + jeu.nom
+    );
   }
-  leaveCommunity(id:any){
-    console.log(id)
-    console.log(this.user.id)
+  leaveCommunity(jeu:Game){
+    this.userService.deleteToGameUser(jeu)
+    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+      'Vous avez quitter la communauté de : ' + jeu.nom
+    );
   }
 }

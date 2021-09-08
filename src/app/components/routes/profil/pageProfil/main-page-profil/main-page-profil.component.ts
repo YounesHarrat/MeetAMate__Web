@@ -110,6 +110,7 @@ export class MainPageProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.user;
+    console.log(this.userService.user)
   }
 
   gotoEditProfile() {

@@ -18,4 +18,9 @@ li {
   font-size: 100%;
   margin-left: 5%;
   width: 10.3rem;
+  background-color:#212529 ;
+  margin-top: 30px;
+}
+mat-panel-title{
+  color:white
 }

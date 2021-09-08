@@ -1,16 +1,8 @@
 
   <mat-card *ngFor="let game of user.games" class="gameList">
 
-    <mat-expansion-panel>
-
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{ game.info.Nom }}
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <br>
-        {{ game.info.Heures }} h
-
-    </mat-expansion-panel>
+    <mat-panel-title>
+      {{ game.nom }}
+    </mat-panel-title>
 
   </mat-card>

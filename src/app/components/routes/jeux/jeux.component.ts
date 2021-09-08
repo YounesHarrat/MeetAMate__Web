@@ -15,23 +15,23 @@ export class JeuxComponent implements OnInit {
 
   ListeDeJeux = [
     {id:"1", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", backgroundPicture:"",
-      info: new GameInfo(1, 'Apex Legend', 10)},
+      plateforme:"PC"},
     {id:"2", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", backgroundPicture:"",
-      info: new GameInfo(2, 'Rocket League', 100)},
+    plateforme:"PC"},
     {id:"3", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", backgroundPicture:"",
-      info: new GameInfo(3, 'Fortnite', 20)},
+    plateforme:"PC"},
       {id:"4", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", backgroundPicture:"",
-      info: new GameInfo(4, 'Apex Legend', 10)},
+      plateforme:"PC"},
     {id:"5", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", backgroundPicture:"",
-      info: new GameInfo(5, 'Rocket League', 100)},
+    plateforme:"PC"},
     {id:"6", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", backgroundPicture:"",
-      info: new GameInfo(6, 'Fortnite', 20)},
+    plateforme:"PC"},
       {id:"7", nom:"Apex Legend", picture:"https://labo.fnac.com/wp-content/uploads/2019/02/apex-legends.png", backgroundPicture:"",
-      info: new GameInfo(7, 'Apex Legend', 10)},
+      plateforme:"PC"},
     {id:"8", nom:"Rocket League", picture:"https://image.api.playstation.com/vulcan/ap/rnd/202009/1717/O4a5fDUWo54zIJzOyKgV73U2.png", backgroundPicture:"",
-      info: new GameInfo(8, 'Rocket League', 100)},
+    plateforme:"PC"},
     {id:"9", nom:"Fortnite", picture:"https://store-images.s-microsoft.com/image/apps.39723.70702278257994163.958bb3bc-e151-4401-a360-075b4cb46da9.85b8ec28-bfa4-4a95-9e7a-156869284a19", backgroundPicture:"",
-      info: new GameInfo(9, 'Fortnite', 20)},
+    plateforme:"PC"},
     ]
 
   totalSize= this.ListeDeJeux.length;
