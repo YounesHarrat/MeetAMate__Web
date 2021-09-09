@@ -53,6 +53,14 @@ export class CommunauteComponent implements OnInit {
     });
   }
 
+  updatePage(event: any) {
+    console.log("update Page", {
+      event,
+      display: this.display,
+    });
+    this.display = event;
+  }
+
   onKey(event: any) { // without type info
 
     var search = event.target.value;

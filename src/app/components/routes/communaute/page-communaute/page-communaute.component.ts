@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Game } from 'src/app/models/game';
@@ -14,6 +14,11 @@ import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/Generi
 export class PageCommunauteComponent implements OnInit {
   @Input()
   jeu:Game = new Game();
+
+
+  @Input()
+  getSearchStatus: boolean = true;
+  @Output() getSearchStatusChange = new EventEmitter<boolean>();
   user:User = new User();
   btnEventClick = false;
   btnQuestionClick = false;
@@ -90,10 +95,23 @@ export class PageCommunauteComponent implements OnInit {
     }
     console.log(this.jeu)
     // rename url by adding game title in it
-    this.location.replaceState('/communaute/'+this.jeu.nom.toString() );
+    this.location.replaceState('/communaute/'+this.jeu.nom.toString());
+
     this.onLoadEvents();
     this.onLoadQuestions();
     this.onLoadReponses();
+    this.location.onUrlChange(() => {
+      console.log('location changed', this.location.getState);
+
+    })
+  }
+
+  goBack() {
+    console.log('location and history state', {
+      loc: this.location,
+    });
+    this.location.go('/communaute/');
+    this.getSearchStatusChange.emit(false);
   }
 
   onLoadEvents() {
