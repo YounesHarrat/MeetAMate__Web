@@ -39,24 +39,24 @@
                     <mat-panel-description>
                         <div class="divEvent">
                             <p>Titre :</p>
-                            <input type="text" size="40" #titre>
+                            <input type="text" size="40" #titre [(ngModel)]="titreEvent" required>
                         </div> <br>
                         <div>
                             <p>Date :</p>
-                            <input type="date" #dates>
+                            <input type="date" #dates [(ngModel)]="dateEvent" required>
                         </div>
                         <div>
                             <p>Heure :</p>
-                            <input type="time" #heure>
+                            <input type="time" #heure [(ngModel)]="heureEvent" required>
                         </div>
                         <div>
                             <p>Description :</p>
                             <textarea type="text"cols="50" rows="5" maxlength="150"
                                         placeholder="Veuillez saisir la description de votre évènement"
-                                        required #description></textarea>
+                                        required #description [(ngModel)]="descriptionEvent" required></textarea>
                         </div>
                     </mat-panel-description>
-                    <button (click)="addEvent(titre.value, dates.value, heure.value, description.value)">Valider</button>
+                    <button  type="submit" (click)="addEvent(titre.value, dates.value, heure.value, description.value)">Valider</button>
                 </mat-expansion-panel>
             </mat-accordion>
             </div>
@@ -131,7 +131,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
             <mat-panel-description class="questionLabel">
-                <input class="questionCommu" matInput maxlength="200" placeholder="Ex. J'ai besoin d'aide pour .." #question>
+                <input class="questionCommu" matInput maxlength="200" placeholder="Ex. J'ai besoin d'aide pour .." #question [(ngModel)]="inputQuestion" required>
                 <mat-hint align="end" class="resteCaract">{{question.value.length}} / 256</mat-hint>
             </mat-panel-description>
             <button mat-raised-button (click)="addQuestion(question.value)">Valider</button>
@@ -169,12 +169,12 @@
       </div>
     </div>
     <div>
-        <input class="textAreaReponse" matInput maxlength="200" placeholder="Votre réponse" #reponse>
+        <input class="textAreaReponse" matInput maxlength="200" placeholder="Votre réponse" #reponse [(ngModel)]="inputReponse" required>
         <mat-hint align="end" class="resteCaract">{{reponse.value.length}} / 200</mat-hint>
 
         <!-- <textarea class="textAreaReponse"type="text" #reponse></textarea> -->
     </div>
-    <button mat-raised-button (click)="addReponse(reponse.value,  question.id)">Répondre</button>
+    <button mat-raised-button (click)="addReponse(reponse.value,  question.id)" >Répondre</button>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

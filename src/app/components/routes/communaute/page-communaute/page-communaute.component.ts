@@ -14,8 +14,6 @@ import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/Generi
 export class PageCommunauteComponent implements OnInit {
   @Input()
   jeu:Game = new Game();
-
-
   @Input()
   getSearchStatus: boolean = true;
   @Output() getSearchStatusChange = new EventEmitter<boolean>();
@@ -23,6 +21,13 @@ export class PageCommunauteComponent implements OnInit {
   btnEventClick = false;
   btnQuestionClick = false;
   panelOpenState = false;
+
+  inputReponse = ''
+  inputQuestion = ''
+  titreEvent = ''
+  dateEvent = ''
+  heureEvent = ''
+  descriptionEvent = ''
 
   ListeEvent = [
     {id:"1", idJeu:"1", title:"A1", date:"28/04/2021", heure:"11h00", contenu:"baelbalebale"},
@@ -141,11 +146,13 @@ export class PageCommunauteComponent implements OnInit {
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
         'Votre reponse a bien été envoyé'
       );
+      this.inputReponse= '';
     }
     catch(e){
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
         'Une erreur est survenue'
       );
+      this.inputReponse= '';
     }
   }
   addQuestion(contenu: string) {
@@ -155,11 +162,13 @@ export class PageCommunauteComponent implements OnInit {
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
         'Votre question a bien été envoyé'
       );
+      this.inputQuestion= '';
     }
     catch(e){
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
         'Une erreur est survenue'
       );
+      this.inputQuestion= '';
     }
   }
   addEvent(titres: string, dates: string, heures: string, descs: string){
@@ -169,6 +178,10 @@ export class PageCommunauteComponent implements OnInit {
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
         'Votre évènement a bien été ajouté'
       );
+      this.titreEvent= '';
+      this.dateEvent= '';
+      this.heureEvent= '';
+      this.descriptionEvent= '';
     }
     catch(e){
       this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(

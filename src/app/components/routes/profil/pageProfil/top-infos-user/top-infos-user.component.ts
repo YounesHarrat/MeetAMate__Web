@@ -105,7 +105,7 @@ export class TopInfosUserComponent implements OnInit, OnChanges {
   // change avatar image
   onSelectFile(event:any) {
     if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+      var reader = new FileReader(); // lecture du fichier
       reader.readAsDataURL(event.target.files[0]); // convertis l'image en url
       reader.onload = (event) => { // appeler une fois que la convertion est OK
       if(reader.result != null) {
