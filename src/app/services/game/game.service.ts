@@ -29,4 +29,6 @@ export class GameService {
   return (this.http.get<HttpResponse<any>[]>(this.API_URL+'/games', this.options )) ;
   }
 
+
+
 }

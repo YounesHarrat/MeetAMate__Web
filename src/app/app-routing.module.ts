@@ -8,6 +8,7 @@ import { JeuxComponent } from './components/routes/jeux/jeux.component';
 import { SupportComponent } from './components/routes/support/support.component';
 import { ProfilComponent } from './components/routes/profil/profil.component';
 import { AuthentificationComponent } from './components/routes/authentification/authentification.component';
+import { PageCommunauteComponent } from './components/routes/communaute/page-communaute/page-communaute.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent},
   // { path: 'jeux', component: JeuxComponent},
   { path: 'communaute', component: CommunauteComponent},
+  { path: 'communaute/{$gameTitle}', component: PageCommunauteComponent},
   { path: 'parametres', component: SupportComponent},
   { path: 'amis', component: AmisComponent},
   { path: 'authentification', component: AuthentificationComponent },

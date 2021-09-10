@@ -1,13 +1,17 @@
 <div>
     <div width="50%" height="50%">
-    <img class="container" src="{{jeu.backgroundPicture}}" height="100%" width="100%">    
+    <img class="container" src="{{jeu.backgroundPicture}}" height="100%" width="100%">
     </div>
-        
+
     <!--Afficher soit l'un soit l'autre-->
     <button mat-raised-button color="warn" class="leaveCommunity" (click)="leaveCommunity(jeu)" >Quitter</button>
     <button mat-raised-button color="primary" class="joinCommunity" (click)="joinCommunity(jeu)" >Rejoindre</button>
 </div>
- 
+
+<div class="centeredContainer">
+  <button mat-raised-button color="warn" class="returnToCommunity" (click)="goBack()" >Retour</button>
+</div>
+
 <div class="leftContainer">
     <div>
         <button mat-raised-button color="primary" class="btnMenu" (click)="clickEvents()">Evenement</button>
@@ -23,34 +27,34 @@
         <div class="cardBtnQuestion">
             <mat-accordion>
                 <mat-expansion-panel hideToggle>
-                  <mat-expansion-panel-header>        
+                  <mat-expansion-panel-header>
                     <mat-panel-title>
                         <div>
                             <p class="labelBtn">
                                 Creer un évènement
                               </p>
-                        </div>              
+                        </div>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                     <mat-panel-description>
                         <div class="divEvent">
                             <p>Titre :</p>
-                            <input type="text" size="40" #titre>                  
+                            <input type="text" size="40" #titre>
                         </div> <br>
                         <div>
                             <p>Date :</p>
-                            <input type="date" #dates>                  
-                        </div>  
+                            <input type="date" #dates>
+                        </div>
                         <div>
                             <p>Heure :</p>
-                            <input type="time" #heure>                  
-                        </div>  
+                            <input type="time" #heure>
+                        </div>
                         <div>
                             <p>Description :</p>
-                            <textarea type="text"cols="50" rows="5" maxlength="150" 
-                                        placeholder="Veuillez saisir la description de votre évènement" 
-                                        required #description></textarea>                  
-                        </div>  
+                            <textarea type="text"cols="50" rows="5" maxlength="150"
+                                        placeholder="Veuillez saisir la description de votre évènement"
+                                        required #description></textarea>
+                        </div>
                     </mat-panel-description>
                     <button (click)="addEvent(titre.value, dates.value, heure.value, description.value)">Valider</button>
                 </mat-expansion-panel>
@@ -78,9 +82,9 @@
                 <mat-card-actions>
                     <button class="btnParticiper" mat-button>Participer</button>
                 </mat-card-actions>
-            </mat-card>            
-        </div>     
-        </div>   
+            </mat-card>
+        </div>
+        </div>
     </div>
     <!-- <div class="rightContainer">
         <p class="titleRight">Membre :</p>
@@ -108,8 +112,8 @@
             <mat-card-actions mat-dialog-actions>
                 <button class="btnParticiper" mat-button>Repondre</button>
             </mat-card-actions>
-        </mat-card>            
-    </div>   
+        </mat-card>
+    </div>
 </div>      -->
 
 <div class="centerContainerQuestion">
@@ -117,18 +121,18 @@
     <div class="cardBtnQuestion">
     <mat-accordion>
         <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>        
+          <mat-expansion-panel-header>
             <mat-panel-title>
                 <div>
                     <p class="labelBtn">
                         Creer une question
                       </p>
-                </div>              
+                </div>
             </mat-panel-title>
           </mat-expansion-panel-header>
-            <mat-panel-description class="questionLabel">    
+            <mat-panel-description class="questionLabel">
                 <input class="questionCommu" matInput maxlength="200" placeholder="Ex. J'ai besoin d'aide pour .." #question>
-                <mat-hint align="end" class="resteCaract">{{question.value.length}} / 256</mat-hint>                
+                <mat-hint align="end" class="resteCaract">{{question.value.length}} / 256</mat-hint>
             </mat-panel-description>
             <button mat-raised-button (click)="addQuestion(question.value)">Valider</button>
         </mat-expansion-panel>
@@ -139,7 +143,7 @@
     <div class="cardQuestion">
 <mat-accordion>
     <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>        
+      <mat-expansion-panel-header>
         <mat-panel-title>
             <div mat-card-avatar class="imgProfil"></div>
           <p class="pseudoLabel">
@@ -158,15 +162,15 @@
               <p class="pseudoLabel">
                 PSEUDO
               </p>
-              
+
             </mat-panel-title>
-            {{reponse.contenu}}            
+            {{reponse.contenu}}
         </mat-panel-description>
       </div>
     </div>
     <div>
         <input class="textAreaReponse" matInput maxlength="200" placeholder="Votre réponse" #reponse>
-        <mat-hint align="end" class="resteCaract">{{reponse.value.length}} / 200</mat-hint>                
+        <mat-hint align="end" class="resteCaract">{{reponse.value.length}} / 200</mat-hint>
 
         <!-- <textarea class="textAreaReponse"type="text" #reponse></textarea> -->
     </div>

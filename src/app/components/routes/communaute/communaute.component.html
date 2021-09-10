@@ -22,7 +22,7 @@
     </ng-template>
 
     <div id="anyone" *ngIf="display; else mainPage">
-        <app-page-communaute [jeu]="selectJeu"></app-page-communaute>
+        <app-page-communaute [jeu]="selectJeu" [getSearchStatus]="display"  (getSearchStatusChange)="updatePage($event)"></app-page-communaute>
     </div>
   </div>
 
