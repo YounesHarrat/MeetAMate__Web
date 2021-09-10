@@ -86,9 +86,7 @@ export class PageCommunauteComponent implements OnInit {
     this.user = this.userService.user;
     if (this.user?.pseudo === "") {
       this.userService.init();
-      console.log(this.userService.user);
     }
-    console.log(this.jeu)
     // rename url by adding game title in it
     this.location.replaceState('/communaute/'+this.jeu.nom.toString() );
     this.onLoadEvents();
@@ -119,27 +117,76 @@ export class PageCommunauteComponent implements OnInit {
   }
 
   addReponse(contenu: string, idQuestion: string) {
-    var newReponse = {id:"4", idQuestion:idQuestion, idJeu:this.jeu.id, contenu:contenu};
-    this.ListeReponse.push(newReponse)
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      'Votre reponse a bien été envoyé'
-    );
+    try{
+      var newReponse = {id:"4", idQuestion:idQuestion, idJeu:this.jeu.id, contenu:contenu};
+      this.ListeReponse.push(newReponse)
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Votre reponse a bien été envoyé'
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
   }
   addQuestion(contenu: string) {
-    var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
-    this.ListeQuestion.push(newQuestion)
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      'Votre question a bien été envoyé'
-    );
+    try{
+      var newQuestion = {id:"4", idJeu:this.jeu.id, date:"28/04/2021", heure:"11h00", contenu:contenu};
+      this.ListeQuestion.push(newQuestion)
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Votre question a bien été envoyé'
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
   }
   addEvent(titres: string, dates: string, heures: string, descs: string){
-    var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
-    this.ListeEvent.push(newEvent)
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      'Votre évènement a bien été ajouté'
-    );
+    try{
+      var newEvent = {id:"10", idJeu:this.jeu.id, title:titres, date:dates.toString(), heure:heures.toString(), contenu:descs};
+      this.ListeEvent.push(newEvent)
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Votre évènement a bien été ajouté'
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
   }
 
+  joinCommunity(jeu:Game){
+    try{
+      this.userService.addToGameUser(jeu)
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Vous avez rejoins la communauté de : ' + jeu.nom
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
+  }
+  leaveCommunity(jeu:Game){
+    try{
+      this.userService.deleteToGameUser(jeu)
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Vous avez quitter la communauté de : ' + jeu.nom
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
+    
+  }
+  
   clickEvents(){
     this.btnEventClick = true
     this.btnQuestionClick = false;
@@ -147,18 +194,5 @@ export class PageCommunauteComponent implements OnInit {
   clickQuestions(){
     this.btnQuestionClick = true;
     this.btnEventClick = false
-  }
-
-  joinCommunity(jeu:Game){
-    this.userService.addToGameUser(jeu)
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      'Vous avez rejoins la communauté de : ' + jeu.nom
-    );
-  }
-  leaveCommunity(jeu:Game){
-    this.userService.deleteToGameUser(jeu)
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      'Vous avez quitter la communauté de : ' + jeu.nom
-    );
   }
 }

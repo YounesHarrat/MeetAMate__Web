@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Game } from 'src/app/models/game';
 import { GameInfo } from 'src/app/models/game-info';
 import { UserService } from 'src/app/services/user/user.service';
+import { GenericMessageSnackBarComponent } from 'src/app/shared/SnackBars/GenericMessageSnackBarComponent';
 
 
 
@@ -42,7 +44,7 @@ export class JeuxComponent implements OnInit {
   pageEvent: any = null;
 
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService, public snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -60,11 +62,25 @@ export class JeuxComponent implements OnInit {
   }
 
   public selectFavorite(jeux: Game): void {
-    this.userService.setFavorite(jeux.nom);
+    try{
+      this.userService.setFavorite(jeux.nom);
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
   }
 
   public addToGameUser(jeux: Game): void {
-    this.userService.addToGameUser(jeux);
+    try{
+      this.userService.addToGameUser(jeux);
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }    
   }
 
   public setHighValue(): void {

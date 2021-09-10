@@ -45,12 +45,18 @@ export class CommunauteComponent implements OnInit {
       }
     );
 
+    try{
       this.gameService.getAllGame().subscribe( (res: Game[]) => {
-      console.log(res);
-      this.ListeDeJeux = res
-      this.ListeDeJeuxBis = res
-      console.log(this.ListeDeJeux)
-    });
+        this.ListeDeJeux = res
+        this.ListeDeJeuxBis = res
+      });
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue lors de la récupération des jeux'
+      );
+    }
+      
   }
 
   onKey(event: any) { // without type info
@@ -78,10 +84,17 @@ export class CommunauteComponent implements OnInit {
 
 
   public selectFavorite(jeux: Game): void {
-    console.log(jeux);
-    this.userService.setFavorite(jeux.nom);
-    this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
-      jeux.nom + ' a bien été enregistré comme jeu favoris'
-    );
+    try{
+      this.userService.setFavorite(jeux.nom);
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        jeux.nom + ' a bien été enregistré comme jeu favoris'
+      );
+    }
+    catch(e){
+      this.snackbar.openFromComponent( GenericMessageSnackBarComponent).instance.openSnackBar(
+        'Une erreur est survenue'
+      );
+    }
+    
   }
 }

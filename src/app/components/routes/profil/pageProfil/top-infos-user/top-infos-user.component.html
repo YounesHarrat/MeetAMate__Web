@@ -34,7 +34,7 @@
 <div class="mainMiddleUser">
 
   <div class="mainInfoDiscord">
-  <mat-expansion-panel hideToggle class="expansion-panel-class" >
+  <mat-expansion-panel hideToggle class="expansion-panel-class" #panel1 (mouseenter)="panel1.open()"(mouseleave)="panel1.close()">
     <mat-expansion-panel-header>
       <mat-panel-title>
           <label class="logoSocialDiscord" >
@@ -55,7 +55,7 @@
   </div> -->
 
     <div class="mainInfoSteam">
-    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+    <mat-expansion-panel hideToggle class="expansion-panel-class" #panel2 (mouseenter)="panel2.open()"(mouseleave)="panel2.close()">
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialSteam">
@@ -78,7 +78,7 @@
   </div> -->
 
     <div class="mainInfoBattleNet">
-    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+    <mat-expansion-panel hideToggle class="expansion-panel-class"#panel3 (mouseenter)="panel3.open()"(mouseleave)="panel3.close()" >
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialBN">
@@ -100,7 +100,7 @@
   </div> -->
 
     <div class="mainInfoOrigin">
-    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+    <mat-expansion-panel hideToggle class="expansion-panel-class" #panel4 (mouseenter)="panel4.open()"(mouseleave)="panel4.close()" >
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialOrigin">
@@ -121,7 +121,7 @@
   </div> -->
 
     <div class="mainInfoEpicGames">
-    <mat-expansion-panel hideToggle class="expansion-panel-class" >
+    <mat-expansion-panel hideToggle class="expansion-panel-class" #panel5 (mouseenter)="panel5.open()"(mouseleave)="panel5.close()">
       <mat-expansion-panel-header>
         <mat-panel-title>
             <label class="logoSocialEpicGames">
